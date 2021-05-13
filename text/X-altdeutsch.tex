@@ -1,0 +1,32 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{oldgerm}
+\usepackage{color}%\textcolor
+\usepackage[pdftex]{graphicx}% \scalebox
+% \usepackage{textfit}
+\begin{document}
+
+\textgoth{
+ ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+ abcdefghijklmnopqrs{}tuvwxyz
+ }\par
+
+Umlaute nicht via utf-8: \textgoth{äöüß} \textgoth{"a"o"u"s}
+
+``sz'' wird zu ``ß'':
+\textgoth{sz}
+
+``s'' am Ende von Wort oder von Silbe wird ``normal'' gesetzt durch ``s:''
+
+\textgoth{Alles: Aus:gang Abstand}
+ 
+\textswab{
+ ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+ abcdefghijklmnopqrs{}tuvwxyz
+ }\par
+\textfrak{
+ ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+ abcdefghijklmnopqrs{}tuvwxyz
+ }
+ 
+\end{document}

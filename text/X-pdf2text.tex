@@ -1,0 +1,31 @@
+\renewcommand{\footnote}[1]{}
+\renewcommand{\todo}[1]{}
+\renewcommand{\todof}[1]{}
+\pagestyle{empty}
+
+\renewcommand{\cBildDraw}[4]{\label{fig:#1}}
+\renewcommand{\cBild}[4]{\label{fig:#1}}
+\renewcommand{\includegraphics}[2][\empty]{~}
+
+\renewcommand{\cite}[1]{}
+\renewcommand{\tableofcontents}[1]{}
+
+\renewcommand{\chapter} [2][\empty]{XXXX> #2 <XXXX}
+\renewcommand{\section} [2][\empty]{XXXX=> #2 <=XXXX}
+\renewcommand{\subsection} [2][\empty]{XXXX==> #2 <==XXXX}
+\renewcommand{\subsubsection} [2][\empty]{XXXX===>#2 <===XXXX}
+\renewcommand{\SI} [2]{#1}
+
+% YYYY.*YYYY fliegt durch Skript raus
+\renewenvironment{verbatim}{YYYY}{YYYY}
+\renewenvironment{equation}{YYYY}{YYYY}
+\renewenvironment{equation*}{YYYY}{YYYY}
+\renewenvironment{align}{YYYY}{YYYY}
+\renewenvironment{align*}{YYYY}{YYYY}
+
+\cfoot[]{}
+\ifoot[]{}
+\ofoot[]{}
+\chead[]{}
+\ihead[]{}
+\ohead[]{}

@@ -1,0 +1,224 @@
+%äöüß
+\chapter{Estimating the Doping Efficiency and the Mobility}\label{chap:Rech}
+\addcontentsline{lof}{chapter}{\thechapter\hspace*{1ex} Estimating the Doping Efficiency and the Mobility}
+
+%
+\intro{Following four experimental chapters, a theoretical model for deriving trends for the \nLong, the doping efficiency as well as the charge carrier mobility from conductivity and Seebeck data is developed and is first applied to data of n- and later to p-doped samples.
+In \secref{rechMobLL}, a lower limit for the charge carrier mobility is derived from \cLong measurements. Afterwards, in \secref{rechDopEffLL} a similar estimation is performed for the \nLong and the doping efficiency.
+Supporting these findings by Seebeck data, the physically allowed position of the \EtLong is narrowed down in \secref{rechConclSeebeck}. This leads in \secref{rechConstEt} to the assumption of a constant \EtLong for all n-doped samples, allowing to derive absolute values for the above mentioned parameters of each sample. Finally, in \secref{rechApplyForP} the developed model is applied to data of p-doped samples.
+This chapter is finalized by a conclusion in \secref{rechConclusion}.
+}
+
+\newpage
+
+\section{Lower Limit of the Mobility}\label{sec:rechMobLL}
+%
+\cBild[b]
+{sim_H+D-vs-MR}
+{Relation of \CLong to densities of host and dopant molecules}
+{Influence of doping concentration \C on densities of host \nH and dopant \nD molecules, calculated via equations \eqref{nHD} on page~\pageref{eq:nHD}. Values given as a fraction of the total density of molecules $\nM=\nH+\nD$.}
+%
+In this first section a lower limit for the charge carrier mobility \mobLL is derived from conductivity measurements.
+Assuming a \C-independent and constant doping efficiency \DopEff, the \nLong \neh directly follows the trend of the \nDLongL for varying \CLong, illustrated in \figref{sim_H+D-vs-MR}, and can be calculated by \eqnrefPage{CCD-from-DopEff}:
+% %
+\begin{equation}
+\neh = \DopEff \cdot \nD = \DopEff \cdot \nM \cdot \frac{\C}{1+\C} \label{eq:CCD-from-DopEff-calc}
+\PUNKT
+\end{equation}
+%
+This calculated value of \neh can be correlated to the charge carrier mobility \mobeh for a measured conductivity \c as
+\begin{align}
+\mobeh &= \frac{\c}{e \cdot \neh} \label{eq:Cond-CCD-Mob-calc} \\
+\Rightarrow\mobeh &= \frac{\c}{e \cdot \DopEff \cdot \nM} \cdot \frac{1+\C}{\C}
+\label{eq:mob-von-DopEff+C}
+\PUNKT
+\end{align}
+Above equations show that for a given (measured) conductivity, the estimated mobility is inversely proportional to the estimated \neh and thus the \DopEff. Consequently, by measuring \c and assuming the maximum possible doping efficiency of \DopEff[100], meaning each dopant molecule is ionized and provides one free charge carrier, the lower limit of the mobility~\mobLL can be derived:
+\begin{equation}
+\mobLL = \frac{\c}{e \cdot 100\,\% \cdot \nM} \cdot \frac{1+\C}{\C}
+\label{eq:mobLL}
+\PUNKT
+\end{equation}
+
+\cBild{calc-MobLL-n}
+{Lower limit of mobility for n-doped \CS}
+{Lower limit of the charge carrier mobility \mobLL for n-doped \CS, calculated by \eqnref{mobLL} using measured conductivity data, probed at \T[40].}
+%
+In \figref{calc-MobLL-n}, this calculation is performed for the n-doped \CS samples presented in chapters~\ref{chap:PaddleWheels} and \ref{chap:AirStables}, using four different n-dopants. Here, the conductivity measured at a temperature of \T[40] (after thermal annealing) is used, as this data will later be compared to Seebeck studies performed at \Tm[40].
+%
+The lower limit of the mobility \mobLL is found to be highest for the dopant \CrPd with a maximum of \mobLL[0.90] for \C[0.005].
+Record values of the mobility of undoped \CS layers in the order of \mob[5] are found in the literature\cite{Itaka2006}\footnote{measured in an OFET geometry on a monolayer of \pen}.
+At \CLongs of \Ckl{0.045}, \mobLL is rather constant for \CrPd with values in the range of \mobLL[0.50], whereas at higher \C the \mobLL drops significantly.
+A similar trend is found for the second air-sensitive dopant \WPd. Below \C[0.150], almost constant values in the range of \mobLL[0.15] are derived, followed by a drop for higher \CLongs.
+This drop of the \mobLL suggests a disturbance of the morphology by the large amount of heavy dopants in the layer and hence a reduction of the real mobility.
+
+A different relation is found for the lighter air-stable dopants, \aob and \dmbi. The samples doped by \aob yield an almost constant lower limit of the charge carrier mobility in the order of only \mobLL[9E-3].
+Samples doped by \dmbi have a \mobLL that is as small as for \aob for the lowest \C, but strongly increasing with \C. A saturation value around of \mobLL[0.1] is observed, being even higher than for the air-sensitive dopants at these \CLongs.
+
+\Figref{calc-MobLL-n} shows that the materials which yield a linear relation of $\c(\C)$ at low \CLongs (compare \figrefPage{MR-Cond-n-PdvsAS}) have a \C-independent \mobLL.
+It is expected that for low \CLongs the mobility is the same for each dopant, therefore the different and almost constant values of the \mobLL indicate different doping efficiencies of the dopants, which is addressed in the next section. As the \cLongs of samples of \CS doped by \dmbi increase superlinearly with \CLong, this effect can most probably be attributed to an increasing \DopEff with \C for this dopant, as discussed in \secref{ResASCondMR}.
+From this simple model it cannot be distinguished whether the observed decrease or saturation of the \mobLL at high \C for \CrPd, \WPd and \dmbi are correlated to trends of the real mobility or a decreasing \DopEff.
+
+\section{Lower Limit of the Doping Efficiency}\label{sec:rechDopEffLL}
+Besides estimates for the lower limit of the mobility by assuming \DopEff[100], as done in the previous section, the opposite approach can be performed by assuming a constant mobility. If the highest measured literature value for the mobility \mobUL of the host material is chosen, a lower limit of the \nLong \nehLL and doping efficiency \DopEffLL can be derived:
+\begin{align}
+\nehLL &= \frac{\c}{e\cdot\mobUL} \label{eq:nehLL}\\
+\DopEffLL &= \frac{\c}{e \cdot \mobUL \cdot \nM} \cdot \frac{1+\C}{\C} \label{eq:DopEffLL}
+\PUNKT
+\end{align}
+As the real mobility in the used sample geometry is expected to be lower than this record value \mobUL and furthermore is expected to be negatively affected by the introduction of dopant molecules disturbing the morphology, the real values of \neh and \DopEff must be larger than \nehLL and \DopEffLL to fulfill \eqnref{mob-von-DopEff+C}.
+
+In case of \CS, the maximum reported value is in the order of \mob[5]\cite{Itaka2006}, measured in an OFET geometry.
+This value can be interpreted as an upper limit \mobUL, because OFET experiments usually overestimate the charge carrier mobility in comparison to conductivity measurements, as discussed in \secref{ResPd-EsEact}. In an OFET geometry the free charge carriers are generated by the field induced by the gate voltage and their number typically is much larger than values achieved by doping. As the mobility of an \OSC usually increases with charge carrier density, OFET channel mobilities are generally larger than the mobilities in the bulk material and hence in the conductivity geometry.
+
+\cBild[t]
+{calc-CCDLL+neLL-n}
+{Lower limits of \neLong and doping efficiency for n-doped \CS}
+{Lower limits of (a) \neLong \neLL and (b) doping efficiency \DopEffLL for n-doped \CS, calculated by assuming a constant mobility set to the record value for intrinsic \CS of \mob[5]\cite{Itaka2006} and using measured conductivity data, probed at \T[40].}%
+
+The lower limit of the \nLong \neLL is calculated for the n-doped \CS samples discussed in chapters~\ref{chap:PaddleWheels} and \ref{chap:AirStables}, again using the conductivity measured at a temperature of \T[40]. The results are depicted in \figref{calc-CCDLL+neLL-n}\,(a) and found to be largest for samples doped by \CrPd and lowest for \aob, as expected from the estimates for \mobLL in the previous section. All material combinations show an increase of \neLL with \CLong, with a saturation and a decrease observed for high concentrations of the two air-sensitive dopants, \CrPd and \WPd. If this decrease in \neLL is present in the real values of \ne as well, and not an artifact produced by the assumption of a constant mobility, the reason most probably is agglomeration and thus shielding of dopants. The highest \neLL close to $\SI[per-mode=reciprocal]{E19}{\per\cubic\centi\meter}$ are obtained for \CS highly doped by \dmbi, \CrPd or \WPd, whereas for \aob the largest value is one order of
+magnitude lower. These obtained values have to be seen in relation to the density of molecules of \CS of \mbox{$\nM{}_{\text{,C}_{60}}=\SI[per-mode=reciprocal]{1.36E+21}{\per\cubic\centi\meter}$} calculated via \eqnref{nM-from-MatPara} using the material parameters from \tabrefPage{MatProp}.
+
+Knowing \neLL, the lower limit of the doping efficiency \DopEffLL for each sample is calculated using \eqnref{DopEffLL} and the results are presented in \figref{calc-CCDLL+neLL-n}\,(b). As mobility and doping efficiency are inversely proportional, the trends of the curves for \DopEffLL correspond to the trends of the lower limits of the mobilities \mobLL, presented in \figref{calc-MobLL-n}. \CS doped by \CrPd leads to a maximum value of \DopEffLL[18] at \C[0.005] and an almost constant \mbox{$\DopEffLL\approx10\,\%$} up to \C[0.045], followed by a decrease. Samples comprising \WPd yield efficiencies around \DopEffLL[3] and a drop at $\C>\mr{0.147}$.
+\aob-doped samples have the lowest \DopEffLL of around \DopEffLL[0.2] and \dmbi samples start at a similar value, rising by a factor of 10 to a saturation around \DopEffLL[2] at high \CLongs. The gain in \DopEffLL for low \C of \dmbi samples is most probably correlated to an increasing real \DopEff in this range, as it is not unlikely that only for one dopant the mobility of \CS is rising with the \CLong.
+
+At low \CLongs, the real mobilities of all four material combinations are expected to be least affected by the dopants and are consequently similar. Therefore, the calculated \DopEffLL at low \C can be directly compared and should be correlated to the real doping efficiency \DopEff by the same constant factor for all four combinations. This factor is given by the ratio of the used record mobility of \mob[5] and the real value of the bulk material in this sample geometry. Hence, at low doping concentration the real doping efficiency \DopEff of \CrPd is approximately 3~times higher than for \WPd and around 15~times larger than for both air-stable compounds.
+
+\section{Conclusions from Seebeck Measurements}\label{sec:rechConclSeebeck}
+%
+The \nLong \neh is correlated to the density of dopant molecules~\nD via the doping efficiency \DopEff, see \eqnref{CCD-from-DopEff-calc}. On the other hand, \neh can be calculated by solving the integral of the product of \dosLong $\dos(E)$ and \fFDLong $\fFD(E,\Ef)$ over all energies, as demonstrated in \eqnrefPage{CCD-basic-integral}. Thus, for a known $\dos(E)$ and given \DopEff, the position of the \EfLongL can be derived by shifting \Ef until this condition is fulfilled:%
+\footnote{Here, for holes $\fFD(E)$ instead of $1-\fFD(E)$ is used as well, as for p-conduction the corresponding \dos is switched from LUMO to HOMO.}
+\begin{align}
+\neh &= \DopEff \cdot \nD
+=
+\int_{-\infty}^\infty
+\dos(E)
+ \cdot
+\fFD(E,\Ef)
+ ~ dE
+\PUNKT
+\intertext{Using a Gaussian density of states and setting its maximum to $\gausscenter=0$ this becomes:}
+\neh &= \DopEff \cdot \nD
+=
+\int_{-\infty}^\infty
+%\dos(E)
+\frac{\nH}{\sqrt{2 \pi} ~ \gausswidth} \exp{-\frac{E^2}{2\gausswidth^2}}
+ \cdot
+%f(E,T)
+\frac{1}{1+\exp{\frac{E-\Ef}{\kT}}}
+ ~ dE
+\label{eq:Ef-vonDopEff}
+\PUNKT
+\end{align}
+With \nH and \nD being the densities of host and dopant molecules that can be calculated from the \CLongL via equations~\eqref{nMHD} and \eqref{C}.
+Iterative numerical calculations allow to derive \Ef for varying \C and \DopEff, which is plotted in \figref{calc-Ef-von-DopEff} for n-doping using a \C-independent \dos of width \gausswidth[100] (sketched in \figref{calc-Ef-von-DopEff}) and setting \T[40]. As the doping efficiency cannot exceed \DopEff[100], only values above the solid line corresponding to the \Ef at \DopEff[100] are physically allowed. It can be seen that with increasing \C the \Ef reaches densely populated regions of the \dos, when assuming a constant \DopEff.
+
+%
+\cBild[p]
+{calc-Ef-von-DopEff}
+{Calculated \EfLong position for varying \CLong and \DopEffLong}
+{Calculated \EfLong position $\Ef(\C)$ for different doping efficiencies \DopEff using \eqnref{Ef-vonDopEff} for a Gaussian \dos with \gausswidth[100] and \T[40]. Only values in the gray area are physically allowed with $\DopEff\leq100\,\%$.
+}
+\cBild[p]
+{calc-ETr-von-Es+DopEff}%
+{Calculated \EtLong position for measured \Es and varying \CLong and \DopEffLong for n-doped \CS}%
+{Calculated \EtLong position \Et with respect to the maximum of the Gaussian \dosLong for measured \Es and varying \CLong and \DopEff for n-doped \CS samples. Parameters used: \gausswidth[100] and \T[40]. The gray area corresponds to the physically allowed range between lower and upper limit of the doping efficiency.
+}
+
+% \subsection{Application to Data}
+The approach presented above of deriving the position of \Ef for a given doping efficiency \DopEff is now combined with the data of the Seebeck studies to calculate the absolute position of the \EtLong \Et. Via Seebeck investigations the energy difference \Es between \Ef and \Et at a certain \CLong is derived, which is subtracted from a calculated \Ef for a given \DopEff at the same \C, yielding the position of \Et:
+\begin{equation}
+\Et = \Ef-\Es \tag{\ref{eq:Es=Ef-Et}}
+\PUNKT
+\end{equation}
+\Figref{calc-ETr-von-Es+DopEff} shows the resulting \Et for the data of the studied n-doped \CS layers.
+%
+In this calculation the width of the Gaussian \dos is set to \gausswidth[100] for all \C, which is chosen to be somewhat higher than the reported \gausswidth[88]\cite{Fishchuk2010} for undoped \CS to compensate the influence of doping that is expected to broaden the \dos.
+As the doping efficiency is required to be greater than the above derived lower limit \DopEffLL and cannot exceed \DopEff[100], only a certain region of \Et is allowed, marked by the filled areas in \figref{calc-ETr-von-Es+DopEff}. This physically possible region is for most samples between \meV{-300} and \meV{-100} with respect to the maximum of the Gaussian density of states. It is narrowest for \CrPd, due to the large value obtained for \DopEffLL.
+
+\section{Assuming a Constant Transport Level}\label{sec:rechConstEt}
+%
+%
+\cBild[b]
+{calc-Es-von-DopEff}
+{Measured and calculated \EsLong for varying \CLong and \DopEffLong at constant \Et for n-doped \CS}
+{Measured \EsLong \Es for n-doped \CS compared to calculated $\Es(\C)$ for constant \EtLong \Et[-225] at different doping efficiencies \DopEff. Calculations performed analogously to \figref{calc-Ef-von-DopEff} and subtracting \Et. Only values above the solid black line corresponding to \DopEff[100] are physically allowed. The \dos is sketched using the same scale as in \figref{calc-Ef-von-DopEff}.
+}
+%
+As derived in the last section, for most of the investigated n-doped samples the physically allowed \EtLong is in the range of \Et[-300] to \meV{-100} with respect to the maximum of the Gaussian density of states, when above mentioned parameters and assumptions are used. This suggests as a further approximation the assumption of a constant \EtLong for all samples and \CLongs. A value of \Et[-225] is chosen, as this value is in the allowed regime for almost all samples, indicated by the gray area in \figref{calc-ETr-von-Es+DopEff}.
+
+Subtracting this fixed \Et[-225] from the calculated $\Ef(\C)$ for different \DopEff, as plotted in \figref{calc-Ef-von-DopEff}, similar graphs can be drawn. These curves are compared to the measured Seebeck data in \figref{calc-Es-von-DopEff}. It can be seen that under this assumption the Seebeck results of \CS doped by \Ckl{0.100} of \WPd or \dmbi follow the trend of a constant doping efficiency, whereas at larger \C the \Es tends towards lower \DopEff. The samples doped by \CrPd and \aob show deviations from the tendency of a constant \DopEff.
+
+Using this fixed \Et[-225], the corresponding density of free electrons \ne is calculated for each sample by solving the above discussed integral \eqref{Ef-vonDopEff} of the product of \dosLong \dos and Fermi distribution \fFD. Thereby, the measured \Es is used to calculate the \EfLong $\Ef=\Et+\Es$. The results are presented in \figref{calc-constEtr-n-225}\,(a).
+
+For all four material combinations, the calculated \ne increases with \C until at high \C a saturation is observed. Samples of both air-sensitive dopants, \CrPd and \WPd, saturate around $\ne=\SI[per-mode=reciprocal]{E19}{\per\cubic\centi\meter}$ for \CLongs \mbox{$\C\geq\mr{0.040}$}. The same \ne is reached by \dmbi samples, but at higher \C, with the highest doped sample (\C[0.650]) showing a decrease by a factor of almost 1.5.
+\aob-doped samples saturate around lower $\ne=\SI[per-mode=reciprocal]{5E18}{\per\cubic\centi\meter}$ for \Cgr{0.100}.
+These values have to be seen in relation to the density of molecules of \CS of \mbox{$\nM{}_{\text{,C}_{60}}=\SI[per-mode=reciprocal]{1.36E+21}{\per\cubic\centi\meter}$} as discussed above.
+Overall, these trends seem to be more realistic than those derived with the assumption of constant mobility, compare \figrefPage{calc-CCDLL+neLL-n}\,(a), where a decrease of the lower limit of the \neLong \neLL is found at high \CLong for both air-sensitive dopants, \CrPd and \WPd as well.
+
+\cBild[p]
+{calc-constEtr-n-225}
+{Charge carrier density, doping efficiency and mobility for assuming a constant \Et}
+{Calculated values of (a) charge carrier density \ne, (b) doping efficiency \DopEff and (c) mobility \mob, for assuming a constant \Et[-225], using \gausswidth[100] and n-doped \CS data measured at \T[40].}
+
+Knowing \ne for a given \C, the doping efficiency \DopEff can be derived, which is depicted in \figref{calc-constEtr-n-225}\,(b). A maximum of \DopEff[62] is found for the sample of \C[0.0033] of \CrPd, which suggests that lower values of \Et might not be realistic, as these would result in an even larger value of \DopEff. Larger values of \Et on the other hand would lead to a violation of the derived lower limit \DopEffLL. Hence, \Et[-225] seems to be a good compromise. The doping efficiencies of \CrPd and \WPd samples decrease with \CLong and both series are in very good agreement for $\C\geq\mr{0.040}$. \aob-doped samples show a similar trend but at lower values, whereas \DopEff is almost constant for the samples doped by \dmbi.
+
+Combining the derived values of the \neLong \ne and the detected conductivity at \T[40], the mobility \mob is calculated from \eqnref{Cond-CCD-Mob-calc} and presented in \figref{calc-constEtr-n-225}\,(c). The calculated \mob is rather high, in agreement with the lower limit \mobLL, derived in \secref{rechMobLL}. Both air-sensitive dopants, \CrPd and \WPd, show an almost constant mobility at low and medium \C, followed by a decrease at high \C that might be attributed to changes in the morphology as discussed in chapter~\ref{chap:PaddleWheels}. Most of the mobilities derived for \WPd samples are lower than those for \CrPd.
+This can be interpreted as \WPd, with its extremely small \IE and thus strong tendency towards ionization, resulting in a reduction of the charge carrier mobility.
+%
+The samples doped by the air-stable dopants, \aob and \dmbi, show low mobilities at low \CLong and an increase in the medium doping regime. For \aob-doped samples, a decrease at high \C is observed, whereas for \dmbi the mobility rises further, up to a value above the expected limit of \mobUL[5]. This is due to a derived \DopEff below \DopEffLL, suggesting a smaller value of \Et for this sample.
+
+Overall, the results derived from this rather drastic assumption of a constant \EtLong \Et for all samples seem reasonable, as both, the values and the trends are in the expected range. In general, it is expected that \Et, which is defined by \eqnrefPage{DefEt} as the energy weighted by the differential conductivity,
+\begin{equation}
+\Et
+% = \frac
+%  { \int_{-\infty} ^{+\infty} E ~ \c'(E) ~ dE }
+%  { \int_{-\infty} ^{+\infty} \c'(E) ~ dE }
+= \frac{1}{\c} \int_{-\infty} ^{+\infty} E ~ \c'(E) ~ dE
+\tag{\ref{eq:DefEt}}
+\end{equation}
+shifts upon increasing \CLong towards the maximum of the Gaussian \dosLong, as the maximum of the differential conductivity $\c'(E)$ is expected to shift in this direction. This would result in an upward shift of the trend of \ne with \C and thus \DopEff, whereas the tendency observed for \mob would be shifted downwards. Modeling this trend would require detailed knowledge on the energetic distribution of the mobility $\mob(E)$ contributing to the differential conductivity $\c'(E)$.
+Furthermore, the \dosLong might be broadened upon doping due to disturbance of the layer morphology by the dopants.
+
+\section{Applying the Models to p-Doped Data}\label{sec:rechApplyForP}
+After developing and testing these models with n-doped data, in this section, similar calculations are performed for p-doped layers.
+The data of the dopants \FS and \CSF in the hosts \meo and \lili studied in chapter~\ref{chap:P-Doping} is chosen, as it allows for a comprehensive study.
+First, the lower limits of the mobilities \mobLL are derived from the conductivity data at \T[40] by setting the doping efficiency to the maximum of \DopEff[100], as discussed in \secref{rechMobLL} and the results are depicted in \figref{calc-Mob+CCDLL+neLL-p}\,(a).
+In both hosts high \CLongs of \FS lead to an almost steady gain of \mobLL with \C, approaching the measured mobilities in OFET geometry (compare \secref{MatHosts}) of \mob[2.3E-05] for \meo and \mob[5.7E-05] for \lili, as indicated by the dashed lines in the figure. The \mobLL of the two highest doped samples of \meo even exceeds the measured \mob, which is surprising, since OFET studies usually overestimate the mobility due to the high \nLong generated by the high applied fields, as discussed in \secref{rechDopEffLL}.
+This is an indication for the \nh of highly doped samples being even higher than the \nh generated in the OFET channel region.
+A similar trend is observed if \lili is doped by \FS, but up to the highest investigate \C, the \mobLL is still below the \mob of undoped \lili, which is higher than for \meo.
+Employing \CSF as dopant yields smaller values of the \mobLL in both hosts, with a saturation at high \C.
+
+\cBild[p]
+{calc-Mob+CCDLL+neLL-p}
+{Lower limits of mobility, \nhLong and doping efficiency for p-doped samples}
+{Lower limits of (a) mobility \mobLL, (b) \nhLong \nhLL and (c) doping efficiency \DopEffLL for p-doped samples, calculated via equations~\eqref{mobLL}, \eqref{nehLL} and \eqref{DopEffLL} from measured conductivity data probed at \T[40]. For \nhLL and \DopEffLL, an upper limit for the mobility is assumed to \mobUL[E-4], being greater than the OFET-measured mobility of the intrinsic hosts, indicated by the dashed lines in (a).
+}%
+
+In the following, an estimated upper limit of \mobUL[E-4], being larger than all calculated \mobLL values, is used to estimate the lower limits of the \nhLong \nhLL as well as for the doping efficiencies \DopEffLL, as discussed in \secref{rechDopEffLL}. The \nhLL (depicted in \figref{calc-Mob+CCDLL+neLL-p}\,(b)) rises steadily with \C for each material combination, reaching values above $\nhLL=\SI[per-mode=reciprocal]{E20}{\per\cubic\centi\meter}$ for both hosts when highly p-doped by \FS. Such a large \nhLL, being relatively close to the total density of molecules \mbox{$\nM=\SI[per-mode=reciprocal]{1.45E21}{\per\cubic\centi\meter}$} and $\SI[per-mode=reciprocal]{1.01E21}{\per\cubic\centi\meter}$ for \meo and \lili, respectively, indicate that the assumed \mobUL[E-4] might still be too low. Using \CSF, the highest observed value is one order of magnitude lower in \meo and even two orders of magnitude lower in \lili.
+
+The lower limits of the doping efficiencies (presented in \figref{calc-Mob+CCDLL+neLL-p}\,(c)) are almost constant for \Ckl{0.100} of three material combinations, excluding \lili doped by \CSF.
+The highest \DopEffLL are derived for samples of \meo doped by \FS, followed by samples of \CSF in the same host and finally \lili doped by \FS. Using \lili and \CSF, the smallest \DopEffLL are found, but an increase with \C is present.
+%
+Doping both hosts by \FS, the \DopEffLL is constant at low \C but raises strongly at elevated \C, whereas for \CSF no gain at high \C is observed.
+
+\cBild[b]
+{calc-ETr-von-Es+DopEff-p-200}
+{Calculated \EtLong position for measured \Es and varying \CLong and \DopEffLong for p-doped samples}%
+{Calculated \EtLong position \Et with respect to the maximum of the Gaussian \dosLong for measured \Es and varying \CLong and \DopEff for p-doped samples. Parameters used: \gausswidth[200] and \Tm[40]. The gray area corresponds to the physically allowed regime between lower and upper limit of the doping efficiency.
+}
+
+Assuming the real mobilities in the low doping regime not being affected by doping and being comparable for the similar structured hosts, the trends of the real \DopEff follow the tendencies of the \DopEffLL in this \C-regime, being almost constant for most material combinations. Their relative positions can than be used to derive the relation of the real \DopEff of the different materials.
+Doping \meo by \FS is hence 2 to 3~times more efficient than using \CSF and approximately 7~times more efficient than the doping of \lili by \FS, whereas \lili highly doped by \CSF saturates at a \DopEff approximately 20~times lower.
+
+As performed in \secref{rechConclSeebeck} for \CS, Seebeck data can be used to derive information about the \EtLongL. Since the two host materials used for the p-doping are expected to form amorphous layers, as discussed in \secref{Mat}, the \dosLong is expected to be broader. For simplicity, a value of \gausswidth[200], twice as wide as for \CS is assumed to calculate the position of the \Et from measured Seebeck data for varying \DopEff. The results are presented in \figref{calc-ETr-von-Es+DopEff-p-200}. As before, the gray areas indicate the physically allowed regime between lower and upper limit of the doping efficiency.
+This regime is narrowest for \meo doped by \FS and widest for the low conducting samples of \lili doped by \CSF. Following the trend of the superlinearly rising $\c(\C)$ for highly \FS-doped samples, the \DopEffLL strongly limits the allowed regime of \Et for these samples.
+While a constant \Et for all the n-doped samples is assumed in \secref{rechConstEt}, this assumption is not possible for the p-doped samples analyzed in this section due to the strongly limited \Et for the \FS samples. Hence, knowledge of the shift of \Et upon doping is required to calculate the mobility, the \nhLong and the doping efficiency for these p-doped samples.
+
+% \newpage
+\section{Conclusion}\label{sec:rechConclusion}
+The rather simple models presented here are powerful tools for deriving lower limits of the important parameters charge carrier mobility, \nLong and \DopEffLong from conductivity data of doped layers. These give an insight to the trends of the corresponding real values and allow to compare the relative values for different material combinations. Even without knowledge of the energetic dependency of the macroscopic mobility $\mob(E)$, it is possible to narrow down the physically possible regime for the \EtLong by combining Seebeck and conductivity studies.
+
+For the n-doped samples, the rather drastic assumption of a constant \EtLong position for all samples is used, which turned out to yield quite reasonable trends for \neLong, doping efficiency and mobility. This assumption however is not possible for the p-doped samples since the lower limit of the doping efficiency strongly reduces the allowed region of the \EtLong.
+
+A more sophisticated model would require profound knowledge of the shape of the density of states and the energetic distribution of the mobility, as well as of the influence of doping on these, which are pathways for future studies.
