@@ -1,0 +1,193 @@
+% äöüß
+\chapter*{Nomenclature} % List of Symbols
+\addcontentsline{toc}{section}{Nomenclature}
+\addcontentsline{lot}{chapter}{\thechapter\hspace*{1ex} Nomenclature}
+
+% \todo{sortieren}
+
+%All constants taken from ref.~\cite{CODATA06}.
+
+\begin{longtable}{%
+@{\hspace{0\textwidth}}%
+p{0.1\textwidth}@{\hspace{0.02\textwidth}}p{0.42\textwidth}@{\hspace{0.04\textwidth}}p{0.42\textwidth}%
+@{\hspace{0\textwidth}}%
+}
+\caption{Physical constants}
+\label{tab:PhysicalConstants}\\
+\toprule
+%{Header} & {Header} &{Header} \\
+%\midrule
+$e$
+ & elementary electric charge constant
+ & \SI[seperr=false]{1.602167487(40)e-19}{\coulomb}
+ \cite{CODATA06}\\
+$\kB$
+ & Boltzmann constant
+ & \SI[per=slash,seperr=false]{1.3806504(24)e-23}{\joule\per\kelvin}
+ \cite{CODATA06}\\
+ &
+ &
+ $=\SI[per=slash,seperr=false]{8.617343(15)e-5}{\electronvolt\per\kelvin}$
+ \cite{CODATA06}\\
+\avogadro
+ & Avogadro constant
+ &\SI[per=reciprocal,seperr=false]{6.02214179(30)e23}{\per\mole}
+ \cite{CODATA06}\\
+ %
+% \SI{0}{\celsius}
+%  & offset between Kelvin and Celsius scale
+%  & $\SI{0}{\celsius} = \SI{273.15}{\kelvin}$
+%  \\
+\bottomrule
+\end{longtable}
+% not used so far
+%$m_\text{u}$ atomic mass constant \SI{1.660538782(83)e-27}{\kilogram}\cite{CODATA06}
+
+\begin{longtable}{%
+@{\hspace{0\textwidth}}%
+p{0.1\textwidth}@{\hspace{0.02\textwidth}}p{0.88\textwidth}%
+@{\hspace{0\textwidth}}%
+}
+\caption{Abbreviations}
+\label{tab:Abbreviations}\\
+\toprule
+%{Symbol} & {Meaning} \\
+%\midrule
+a.u. & arbitrary unit \\
+AFM & atomic force microscope \\
+CAS & Chemical Abstracts Service \\
+CSC & conventional (inorganic) \SC \\ % \CSC -> conventional semiconductor ; \CSCs -> conventional semiconductors
+CV & cyclic voltammetry\\
+e  & electron\\
+EA & \EA \\
+h  & hole\\
+HOMO & \HOMO \\
+IAPP & Institut für Angewandte Photophysik der TU Dresden \\
+IE & \IE \\
+IPES & inverse photoemission spectroscopy \\
+LUMO & \LUMO \\ %
+OFET & organic field-effect transistor \\
+OLED & organic light-emitting diode \\
+OPV & organic photovoltaic cell \\
+OSC & \OSC \\% \OSC -> organic semiconductor ; \OSCs -> organic semiconductors
+rms & root-mean-square \\
+SC & \SC \\ % \SC -> semiconductor ; \SCs -> semiconductors
+SMU & \SMU \\
+UPS & ultraviolet photoelectron spectroscopy \\
+% AM1.5G & standard sun spectrum at the earth's surface, with 1.5 atmosphere thickness, used as standardized testing condition for photovoltaic cells, corresponding to a power of $\approx\SI{1000}{\watt\per\meter\squared}$\\
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\begin{longtable}{%
+@{\hspace{0\textwidth}}%
+p{0.18\textwidth}@{\hspace{0.02\textwidth}}p{0.80\textwidth}%
+@{\hspace{0\textwidth}}%
+}
+\caption[Investigated molecules]{Investigated molecules, details can be found in \secref{Mat} and in \tabrefPage{MatProp}.}
+\label{tab:MatNames}
+\\
+\toprule
+%\midrule
+\aob  & \aobLong \\
+\lili & \liliLong \\
+\CS   & fullerene consisting of 60 carbon atoms \\
+\CSF & fluorinated derivative of the fullerene \CS \\
+\CrPd & \CrPdLong \\
+\dmbiPOH & \dmbiPOHLong \\
+\FV & \FVLong \\
+\FS & \FSLong \\
+\meo  & \meoLong \\
+\meodmbiI & \meodmbiILong \\
+\pen  & \pen \\
+\WPd  & \WPdLong \\
+\bottomrule
+\end{longtable}
+
+% \vspace*{-1em}% sicherstellen dass alle Energien auf diese Seite passen
+\begin{longtable}{%
+@{\hspace{0\textwidth}}%
+p{0.18\textwidth}@{\hspace{0.02\textwidth}}p{0.70\textwidth}@{\hspace{0.02\textwidth}}p{0.08\textwidth}%
+@{\hspace{0\textwidth}}%
+}
+\caption{Symbols}
+\label{tab:Symbols}\\
+\toprule
+ & \textit{Densities} & \\
+\dos & \dosLong & \eqref{CCD-basic-integral}\\
+\n & \nLong & \eqref{CCD-basic-integral} \\
+% eigentlich nicht nötig
+% $\n'(E)$ & differential density of free charge carriers & \eqref{CCD-basic-integral-diff} \\ % \eqref{DiffCond}
+\ne & \neLong & \\
+\nh & \nhLong & \\
+\ni & intrinsic charge carrier density & \eqref{LawOfMassAction}\\
+\nD & \nDLong & \\
+\nH & \nHLong & \\
+\nM & \nMLong & \\
+\Na & concentration of acceptors & \\
+\Nai & concentration of ionized acceptors & \eqref{DefNai}\\
+\Nc & effective density of states in the conduction band & \\
+\Nd & concentration of donors & \\
+\Ndi & concentration of ionized donors & \eqref{DefNai}\\
+\Nv & effective density of states in the valence band & \\
+% \midrule
+ & \textit{Energies} & \\
+\Ea & acceptor energy level & \\
+\Eact & activation energy of the conductivity $\c(T)$ & \eqref{CondActivation} \\
+\Ec & \EcLong: minimum of conduction band & \\
+\Ed & donor energy level & \\
+\Ef & chemical potential / \EfLong & \eqref{fFD}\\
+\Egap & band gap $=\Ec-\Ev$ & \\
+\gausscenter & position of the maximum of Gaussian distribution & \eqref{DefGaussianDOS} \\
+\gausswidth & standard deviation of Gaussian distribution & \eqref{DefGaussianDOS} \\
+\Es & Seebeck energy = $\Ef-\Et$ & \eqref{S-Es-org} \\
+\Et & \EtLong & \eqref{DefEt}\\ % transport energy
+\Ev & \EvLong: maximum of valence band & \\
+% \Eoffset & distance between \gausscenter and \Et & \eqref{Eoffset} \\
+% \midrule
+ & \textit{Other Symbols} & \\
+$A$ & cross-section & \eqref{Cond-I-V-geo}\\
+\C & \CLong (in molar ratio \mr{}) & \eqref{C}\\ % Doping concentration
+\dc & distance between parallel contacts& \eqref{Cond-I-V-geo}\\
+$\varepsilon$ & dielectric constant & \\
+\EField & electric field & \eqref{Efield}\\
+\fB & \fBLong & \eqref{fB}\\
+\fFD & \fFDLong & \eqref{fFD}\\
+\ga & ground state degeneracy of the accepter level &  \eqref{DefNai} \\
+\gd & ground state degeneracy of the donor level & \eqref{DefNdi}\\
+\hl & layer thickness & \eqref{Cond-I-V-geo}\\
+\DopEff & doping efficiency & \eqref{DopEff}\\
+$I$ & electric current & \\
+$j$ & current density & \\
+\lc & contact length & \eqref{Cond-I-V-geo}\\
+\MM & molar mass & \\ % (in \si{\gram\per\mole})
+\mob & mobility & \eqref{Cond-CCD-Mob}\\
+\pKa & acid dissociation constant & \\
+\druck & pressure & \\
+\peltier & Peltier coefficient & \eqref{PeltierIntegral} \\
+$R$ & electric resistance & \\
+\rms & root-mean-square roughness (AFM) & \\
+\density & density of a material & \\ %  (in \si{\gram\per\centi\meter\cubed})
+\S & Seebeck coefficient & \eqref{DefSeebeck}\\
+\c & conductivity & \eqref{Cond-I-V-geo}\\
+% $\c'(E)$ & differential conductivity & \eqref{DiffCond} \\
+$t$ & time &\\
+$\tau$ & characteristic time constant & \eqref{LongTimeCond-exp}\\
+\T & temperature & \\
+\Td & temperature difference during Seebeck measurements & \\
+\Tdep & material deposition temperature & \\
+\Tg & glass transition temperature & \\
+\Tm & mean temperature during Seebeck measurements & \\
+\Tsub & substrate temperature & \\
+%\MolDensity & density of molecules & \\
+$v_\text{d}$ & drift velocity & \eqref{vdrift} \\
+\V & electric voltage & \\
+\Vs & thermoelectric/Seebeck voltage & \eqref{DefVs} \\
+$\chi$ & maximal relative change of \c & \eqref{LongTimeCond-exp}\\
+\bottomrule
+\end{longtable}
+%\end{table}
+
+% \newpage
+

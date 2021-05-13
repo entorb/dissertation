@@ -1,0 +1,229 @@
+\subsection[Leitfähigkeit]{Leitfähigkeitsdaten}
+\begin{frame}{Ansatz}
+\spalten[0.6\textwidth]{
+\begin{block}{}
+\vspace*{-3ex}
+\begin{align*}
+\onslide<1->{\c &= e \cdot \mob \cdot \n \\}
+\onslide<2->{\n &= \DopEff \cdot \nD \\}
+\onslide<3->{\n &= \DopEff \cdot \nM \cdot \frac{\C}{1+\C} \\}
+\onslide<4->{\Pfeil \textcolor{yellow}{\c} &= e \cdot \textcolor{yellow}{\mu} \cdot \textcolor{yellow}{\DopEff} \cdot \nM \cdot \frac{\C}{1+\C}}
+% \\ \Pfeil \c &\propto \mu \cdot \DopEff
+\end{align*} 
+\end{block}
+}{
+}
+%
+\begin{textblock*}{20ex}[1,0](118mm,25mm) % Seite: 128mm x 96mm
+\scriptsize
+%\vspace*{2cm}
+\begin{tabular}{r@{ : }l}
+$e$ & Elementarladung\\
+\mob & Beweglichkeit\\
+\n & Ladungsträgerdichte\\
+\DopEff & Dotiereffizienz\\
+\nD & Dotandendichte\\
+\nM & Moleküldichte\\
+\C & Dotierkonzentration (MR)\\
+\end{tabular} 
+\end{textblock*}
+%
+\ton{Annahme: Dotand Mol ersetzt Host, \mob oder \DopEff festhalten und über anderen lernen}
+\end{frame}
+
+% \subsection[\mobLL]{Untergrenze Beweglichkeit}
+\begin{frame}{Untergrenze Beweglichkeit}
+\spalten[0.43\textwidth]{
+\begin{block}{}
+\small
+\vspace*{-3ex}
+\begin{align*}
+% $\c = e \cdot \mu \cdot \DopEff \cdot \nM \cdot \frac{\C}{1+\C}$\par
+% \vspace*{.5cm}
+\DopEff[]{}_\text{,max} = \SI{100}{\percent} %\hspace*{4ex}
+\phantom{\cmVs{5} \fnSym{}}
+% phantom, damit genauso hoch wie auf nächster Seite
+% \par\vspace*{.5cm}
+\\
+% \Pfeil 
+\mobLL = \frac{\c}{e \cdot 100\,\percent \cdot \nM \cdot \frac{\C}{1+\C}}
+\end{align*}
+\end{block}
+\only<2->{
+\begin{itemize}
+\item $\mobLL \approx 0.01 \dots \cmVs{1}$\\~
+\item Für \C\pfeil 0 muss aber
+$\mob \pfeil \mob(\text{C}_{60})$ gelten
+\end{itemize}
+}
+}{
+\only<2->{\bildbox{plot/calc-mobLL-n.pdf}{6cm}}
+}
+\ton{Graphen nicht beschreiben, GrOrdnung reicht}
+\end{frame}
+
+\begin{frame}{Untergrenze Dotiereffizienz}
+\spalten[0.43\textwidth]{
+\begin{block}{}
+\small
+\vspace*{-3ex}
+\begin{align*}
+\mobUL(\text{C}_{60}) = \cmVs{5} \fnSym{}
+\hspace*{4ex}
+% \Pfeil
+\\
+\DopEffLL = \frac{\c}{e \cdot \mobUL \cdot \nM \cdot \frac{\C}{1+\C}}
+\end{align*}
+\end{block}
+\vspace*{-1ex}
+% \only<2->{
+\begin{itemize}
+\item <2-> \CrPd: \DopEff $>20\percent$
+\item <2-> \dmbi: \DopEffLL $\uparrow$
+\only <3>  {\item \Pd:\\ \DopEffLL $\downarrow$}
+\only <4-> {
+\item \Pd:\\ \DopEffLL $\downarrow$ \& \n{}$_\text{,min}$ $\downarrow$
+\\im Widerspruch zu Seebeckdaten
+\\\Pfeil Beweglichkeit $\downarrow$
+}
+\end{itemize}
+\fn{OFET by Itaka\etal AM 18, 1713 (2006)}
+% }
+
+}{
+\only<2-3>{\bildbox{plot/calc-nLL-n.pdf}{6cm}}
+\only<4->{\bildbox{plot/calc-nLL+effLL-n.pdf}{6cm}}
+% \only<4->{
+% \begin{textblock}{50}[0.0,0.0](17,78)% mm
+% \footnotesize \nM{}(\CS) $= 1.36\cdot10^{21}\,\text{cm}^{-3}$
+% \end{textblock}
+% }
+% \only<2->{
+% \begin{textblock}{20}[1.0,0.0](118,30)% mm
+% \includegraphics{pics/legende.pdf}
+% \end{textblock}
+% }
+}
+\todo{cite Mityashin\etal AM 24, 1535 (2012)}
+\ton{CrPd 1:5, DMBI Anstieg wohl echt, Da S monoton, wenn mob @ kl \C gleich \pfeil konst offset}
+\end{frame}
+
+\subsection[Seebeck]{Seebeckdaten}
+\begin{frame}{Ansatz}
+\vspace*{-3ex}
+\begin{equation}
+ \n = \int^\infty_{-\infty} \textcolor{WPd}{\fFD(E,\textcolor{yellow}{\Ef})} \cdot \textcolor{CrPd}{\dos(E)} dE \overset{!}{=} \DopEff\cdot\nD(\C) 
+\end{equation}
+\only<2->{
+\\\vspace*{4ex}
+\Pfeil Bestimmung von $\textcolor{yellow}{\Ef}(\DopEff,\C)$
+\\durch iterative numerische \\Integration bis (1) erfüllt ist
+%
+\begin{textblock*}{26ex}[0,1](10mm,86mm)
+\begin{block}{}
+\vspace*{-0.5ex}
+% \begin{align*}
+$\textcolor{WPd}{\fFD(E,\textcolor{yellow}{\Ef})} = \frac{1}{1+\exp{\left(\frac{E-\textcolor{yellow}{\Ef}}{\kT}\right)}}$
+\\\vspace*{1ex}{\small Annahme: gaußförmige $\dos(E)$}
+\\\vspace*{1ex}$\textcolor{CrPd}{\dos(E)}= \frac{\nH(\C)}{\sqrt{2 \pi} ~ \gausswidth} \exp{\left(-\frac{E^2}{2\gausswidth^2}\right)}$
+% \end{align*}
+\end{block}
+\end{textblock*}
+}
+\only<2->{
+\begin{textblock*}{20ex}[1,0](118mm,60mm) % Seite: 128mm x 96mm
+\scriptsize
+\begin{tabular}{r@{ : }l}
+\n & Ladungsträgerdichte\\
+\fFD & Fermi-Dirac Distribution\\
+\dos  & Zustandsdichte \\
+\DopEff & Dotiereffizienz\\
+\C & Dotierkonzentration (MR)\\
+\nD & Dotandendichte\\
+\nH & Wirtdichte\\
+\gausswidth & Breite d. gaußf. $\dos$\\
+% \mob & Beweglichkeit\\
+% \nM & Moleküldichte\\
+\end{tabular}
+% }
+\end{textblock*}
+% 
+\begin{textblock*}{4cm}[1,1](113mm,57mm) % Seite: 128mm x 96mm
+% \includegraphics[width=4cm]{plot/sim_Fermi-DOS-Es-org.pdf} %sim_Fermi-DOS-Es-org
+\bildbox[scaled]{plot/sim_Fermi-DOS-Es-org.pdf}{30mm}
+\end{textblock*}
+}
+% 
+\end{frame}
+
+\begin{frame}{Berechnung des Fermi-Niveaus} %\Ef (\C)
+\begin{center}
+~\bildbox{plot/calc-Ef-von-DopEff.pdf}{67mm}
+\\~für \gausswidth[100]\fnSym
+\end{center}
+\fn{OFET by Fishchuk\etal, PRB 81, 045202 (2010): $\gausswidth[](\text{C}_{60}) = \meV{88}$}
+\only<2->{
+\begin{textblock*}{13mm}[1,0.5](118mm,43mm) % Seite: 128mm x 96mm
+\bildbox{pics/skizze-Energien.pdf}{12.6mm}
+\end{textblock*}
+}
+% \ton{0 = Gaussmax}
+\end{frame}
+
+\begin{frame}{Abschätzung des Transport-Niveaus}
+% \centering
+\begin{center}
+\vspace*{-2ex}
+~Einbeziehung der Seebeck Daten: $\Ef + |\Es| = \Et$
+% \hspace*{2mm}
+\only<1>{~\bildbox[unscaled]{plot/calc-ETr-von-Es+DopEff.pdf}{65mm}}
+\only<2>{~\bildbox[unscaled]{plot/calc-ETr-von-Es+DopEff+linie.pdf}{65mm}}
+\end{center}
+\ton{\gausswidth[100]}
+\end{frame}
+
+\begin{frame}{Annahme konst. Transport-Niveau}
+\spalten[5.75cm]{
+Annahmen konstanter
+\begin{itemize}
+\item $\Et[-225]$
+\item $\gausswidth[100]$
+\item $\nM{} = 1.36\cdot10^{21}\,\text{cm}^{-3}$
+\end{itemize}
+% \\- konst. $\Et[-225]$
+% \\- konst. $\gausswidth[100]$
+% \\- konst. $\nM{} = 1.36\cdot10^{21}\,\text{cm}^{-3}$
+% \\\vspace*{1ex}
+\par
+\vspace*{2ex}ermöglichen Berechnung von 
+\begin{itemize}
+\item Ladungsträgerdichte $\n(\S)$
+\item Dotiereffizienz $\DopEff(\S)$
+\item Beweglichkeit $\mob(\S,\c)$
+\end{itemize}
+% 
+% \\- Ladungsträgerdichte $\n(\S)$
+% \\- Dotiereffizienz $\DopEff(\S)$
+% \\- Beweglichkeit $\mob(\S,\c)$
+}{
+\only<2->{
+\bildbox[unscaled]{plot/calc-constEtr-n-225.pdf}{5.0cm}
+}
+}
+% \hspace*{0mm}% wichtig weil sonst bildbox nicht mittig
+% \bildbox[scaled]{plot/calc-ETr-von-Es+DopEff.pdf}{100mm}
+% \end{center}
+% \ton{\gausswidth[100]}
+%
+\only<2->{
+\begin{textblock*}{19mm}[1,1](126mm,38mm) % Seite: 128mm x 96mm
+\includegraphics{pics/legende.pdf}%
+\end{textblock*}
+% \begin{textblock}{50}[0.0,0.0](17,78)% mm
+% \footnotesize \nM{}(\CS) $= 1.36\cdot10^{21}\,\text{cm}^{-3}$
+% \end{textblock}
+}
+%
+\todo{Text: Bilder beschreiben, Bilder einzeln?}
+\ton{\n Sät.@ E19, \DopEff $\downarrow$, \mob $\downarrow$ f. Pd}
+\end{frame}

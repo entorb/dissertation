@@ -1,0 +1,248 @@
+% äöüß
+% by Torben Menke  http:/entorb.net
+% date: 13.07.2019
+% Copyright: Everyone using this template owes me a beer!
+
+% PDF: 128 x 96 mm
+
+% 1pt ~ 0.353mm !!!
+% \paperwidth = 364.19536pt = 128.48003mm
+% \textwidth = 307.28987pt = 108.40504mm
+% \textheight = 219.85023pt = 77.558276 mm
+
+% Done
+% disable navigationsymbols on titlepage
+% include Gnuplot -> MetaPost terminal plot example
+
+\documentclass[
+%   draft,          % placeholders instead of images, gray layout, FAST compiling!
+  %handout,       % print-version without overlay-effects, problems when \only is used
+  t,              % t / c all colums are aligned at top / center (default is c)
+                  % can be set for each frame
+  compress,       % make mini frames (navigations) as small as possible
+  %11pt, % = default ?
+  xcolor=dvipsnames,
+  fragile, % for verbatim
+  ]
+  {beamer}
+
+% Printversion
+%\usepackage{pgfpages} \pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
+
+\usepackage[ngerman]{babel} % ngerman
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+
+% TU Fonts, taken from tudmathposter_20110707
+
+\pdfmapfile{=univers.map}
+\pdfmapfile{=dinbold.map}
+
+\usepackage[
+,heavyfont % \seriesdefault = m instead of l
+% ,serifmath % use serif font instead of CD font for math
+]{beamerfontthemetud}
+
+\usepackage{pgfpages} % for notes
+
+% %Custom Footnotesymols
+% \usepackage[perpage,symbol*]{footmisc} % perpage = reset counter on each page
+% % Latex Default = \DefineFNsymbols*{lamport}{*\dagger\ddagger\S\P|{**}{\dagger\dagger}{\ddagger\ddagger}}
+% \DefineFNsymbols*{TorbensFN}[math]{\ddagger\Sorg\P\dagger\ast{\dagger\dagger}{\ddagger\ddagger}{\ast\ast}{\Sorg\Sorg}{\P\P}}
+% % \|
+% % * wird nicht angezeigt und \S habe ich überschrieben, daher \Sorg
+% \setfnsymbol{TorbensFN}
+% % \setfnsymbol{wiley}
+% 
+
+% META DATA
+
+%title[kurztitel]{titel}
+% \title{Molecular Doping of Organic Semiconductors}
+% \subtitle{A Conductivity and Seebeck Study}
+\title[Molekulare Dotierung Organischer Halbleiter]{Molekulare Dotierung\\Organischer Halbleiter}
+\subtitle{Eine Leitfähgkeits- und Seebeck-Studie}
+\hypersetup{pdftitle={Molekulare Dotierung Organischer Halbleiter - Eine Leitfähgkeits- und Seebeck-Studie}}
+\hypersetup{pdfsubject={Disputation, TU Dresden}}
+
+\author[T. Menke]{Torben Menke}
+\hypersetup{pdfauthor={Torben Menke}}
+\date{19.07.2013}
+\hypersetup{
+pdfinfo={
+CreationDate={D:20130719144500},
+}
+}
+
+\newcommand*{\datecity}[1]{\renewcommand*{\insertdatecity}{#1}}
+\providecommand*{\insertdatecity}{Dresden}
+
+% \title[Title Kurzform]{Kompletter Titel}
+% \subtitle[Untertitel Kurzform]{Untertitel}
+% \author[T. Menke]{Torben Menke}
+% \date[18.11.2010]{\insertdatecity{}, 18.11.2010}
+% %\institute[IAPP - TU Dresden]{Institut für Angewandte Photophysik\\Technische Universität Dresden}
+% %\titlegraphic{\includegraphics[width=3cm]{logo-iapp_white.pdf}}
+
+% % PDF Stuff
+%\subject{10$^\text{th}$ and last OSOL Work Presentation}
+\keywords{Molecular Doping, Organic Semiconductors, Seebeck, Conductivity}
+\hypersetup{pdfkeywords={Molecular Doping, Organic Semiconductors, Seebeck, Conductivity, Vacuum Deposition}}
+
+\datecity{Disputation}
+
+\usepackage{xspace}
+
+\usepackage[
+abbreviations = false
+,noload={abbr} % \mm
+,load={prefix,named,physical,accepted,addn} % no linebreaks or spacing here!
+%prefix   \kilometer \milli
+%named    \celsius \ohm \siemens
+%physical \electronvolt
+%accepted \degree \liter \percent
+%addn     \BAR, \millibar, \angstrom
+%,tabautofit
+,tabnumalign=centredecimal % tabs: use S as collumn format -> center on '.'
+,expproduct=tightcdot % cdot tightcdot times tighttimes
+,per=frac,fraction=nice % \per now produces nice fractions
+%,obeyfamily=true
+%,obeyall=true
+%,obeyitalic=false
+%,obeybold=false
+%,mode=text
+,unitmode=text
+%,mathsrm=mathsf
+%,mathssf=mathsf
+%,mathstt=mathsf
+%,textrm=sffamily
+%,textsf=sffamily
+%,texttt=sffamily
+%,inlinebold=text
+]{siunitx} % Ubuntu 11.10 comes with version 1.3a (21.09.2009)
+
+% \sisetup{obeyfamily=false,mathrm=mathsf,textrm=sffamily}
+
+% \begin{textblock}{16}[0.0,0.0](10,78)
+% \tiny Bild: Wikipedia
+% \end{textblock}
+
+% \begin{textblock}{20}[1,1](105,80)
+% \includegraphics[page=3]{pics/Setup-ani-3D.pdf}%width=20mm
+% \end{textblock}}
+
+% \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
+% After that, all the placing specifications can be referred to \TPHorizModule and TPVertModule. A typical use of textpos would be:
+% 
+% \begin{textblock}{width}[xt,yt](X,Y)  the-text-goes-here  \end{textblock}
+% 
+% where width is the desired width of the text box (the height will be enough to place all the text specified), X and Y are the (x,y) placement of the text box, and xt and yt are the point inside the text box which will be placed at (X,Y). All the units refer to \TPHorizModule and TPVertModule. For example:
+% 
+% \begin{textblock}{0.6}[0.5,0.5](0.3,0.4)  hello world\end{textblock}
+% 
+% will print the text “hello world” in a box of width 60% of \TPHorizModule (in my example, this is 60% of the total page width). The center (0.5,0.5) of that box will be placed at a point 30% to the right of the left margin, and 40% below the top margin (in TPxxxModule units).
+
+\usepackage{ifthen}
+%\ifthenelse{\equal{\tmDraft}{True}}%
+%{}% True
+%{}% False
+
+%\usepackage[square,super,numbers,sort&compress]{natbib}     % needed by plainnat + dinat Bib Styls, square -> [] instead of () , numbers -> [1] etc
+
+\input{text/header-layout}
+\input{text/header-colors}
+
+% notes
+%\setbeameroption{show notes}
+%\setbeameroption{show notes on second screen=right}
+% notes:
+%/usr/share/texmf/tex/latex/beamer/base/beamerbasenotes.sty
+
+% % custom note page
+% % http://blog.hartwork.org/?p=1466
+% \setbeamertemplate{note page}{%
+% \insertnote%
+% }
+% \newlength{\parskipbackup}
+% \setlength{\parskipbackup}{\parskip}
+% \newlength{\parindentbackup}
+% \setlength{\parindentbackup}{\parindent}
+% \let\notebackup\note
+% \renewcommand{\note}[1]{\notebackup{%
+% \mode<handout>{\addtocounter{page}{-1}}%
+% \setlength{\parindent}{0ex}%
+% \setlength{\parskip}{10pt}%
+% \noindent%
+% {\normalsize{}#1}%
+% \setlength{\parskip}{\parskipbackup}%
+% \setlength{\parindent}{\parindentbackup}%
+% }%
+
+\hypersetup{
+pdfstartview={Fit}
+,pdfpagemode={UseNone} % UseOutlines, UseThumbs, UseNone, FullScreen
+,pdfpagelayout={SinglePage} % SinglePage, OneColumn, TwoPageLeft, TwoPageRight}
+}
+
+\usepackage[
+absolute
+,overlay
+% ,showboxes
+]{textpos}
+% set unit of mea
+\setlength{\TPHorizModule}{1mm} \setlength{\TPVertModule}{\TPHorizModule}
+
+\begin{document}
+\input{text/newcommands}
+\maketitle
+
+%\renewcommand{\todoframe}[1]{}
+%\renewcommand{\todo}[1]{}
+%\renewcommand{\ton}[1]{}
+
+
+\newcommand{\secbild}[0]{}
+\renewcommand{\todo}[1]{}
+\renewcommand{\ton}[1]{}
+
+\input{text/1-intro} % allgemein, InOrg Dot, Mol Dot, E-Niveaus, etc
+
+\begin{frame}[t]
+\frametitle{Gliederung}
+\vspace*{2ex}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Grundlagen}
+\setbeamertemplate{headline}[slides]
+
+\AtBeginSubsection[]% \AtBeginSection nicht nötig
+{%
+\begin{frame}[t]
+\frametitle{Gliederung}
+\vspace*{2ex}
+\tableofcontents[currentsection,subsectionstyle=show/shaded/hide] %,hideallsubsections
+\begin{textblock}{40}[1.0,0.5](118,43)% Bild ist 30 mm breit
+\centering\secbild{}
+\end{textblock}
+\end{frame}
+}
+
+\input{text/2-dotierung}
+\input{text/3-mat}
+\input{text/4-theoseebeck}
+\input{text/5-setup}
+\renewcommand{\secbild}[0]{\includegraphics[width=40mm]{pics/mat-n-white-secbild.pdf}}
+\section{Ergebnisse}\input{text/6-erg-n}
+\section{Interpretation}\input{text/8-interpretation}
+\einzeiler{Zusammenfassung}
+\section*{ZF}\input{text/9-concl}
+% \input{text/9-dank}
+\input{text/9-dank-ohne-Fotos}
+
+% \input{text/999anhang}
+
+\end{document}
+

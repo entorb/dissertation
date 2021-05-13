@@ -1,0 +1,9 @@
+to generate a custom bst file the ubuntu package 
+texlive-bibtex-extra
+is needed
+
+Just run
+ latex makebst
+and answer quite a lot of questions (help can be found here [http://www.medicalnerds.com/latex-bibliography-management-and-styles/]). This produces a batch (.dbj) file, that can be converted into a bibtex style if you say so at the last question, or by manually running latex FILENAME you chose)
+
+If you want to re-run it with only little changes, you might prefer to edit the batchfile insteat...

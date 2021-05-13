@@ -1,0 +1,309 @@
+%äöüß
+\chapter{Air-Stable n-Dopants in \CS}\label{chap:AirStables}
+\addcontentsline{lof}{chapter}{\thechapter\hspace*{1ex} Air-Stable n-Dopants in \CS}
+
+%
+\intro{%
+In this chapter, the doping mechanisms of two air-stable precursor n-dopants, \aob and \dmbi, are studied and compared to the air-sensitive dopants discussed in the previous chapter. Air-stable n-dopants are much easier to handle and thereby are promising candidates for replacing air-sensitive n-dopants in the future.
+In \secref{ResASCond}, the conductivity of differently doped samples is investigated. Directly after sample preparation, a strong gain over time is detected.
+Following a thermal annealing step, samples doped by \aob yield a linear, samples of \dmbi a superlinear relation of \cLong to \CLong and possible explanations are discussed.
+Temperature-dependent measurements are again indicating a thermally activated hopping process, allowing for deriving an \EactLong.
+%
+The second \secref{ResAS-S} presents thermoelectric (Seebeck) investigations
+for a variation of the temperature and the \CLong. The results are compared to the \EactLong and conclusions for the mobility are drawn.
+\Secref{ResASAFM} presents atomic force microscopy (AFM) studies, probing the surface roughness of differently doped samples for indications of clustering or agglomeration of dopants.
+The findings are summarized in \secref{ResASConclusion}.
+%
+Finally, in \secref{ResMeO-DMBI}, \dmbi is compared to a closely related compound, \meodmbiI, and a similar doping mechanism for both is proposed.
+}
+
+\newpage%\pagebreak
+
+In the previous chapter, two typical n-dopants with extremely low \IEs are investigated. As such n-dopants are usually unstable in air, handling in an inert atmosphere is required, complicating the fabrication process. In this chapter, the two n-dopants \aob and \dmbi which are air-stable prior to deposition are investigated. Both dopants are salt precursor compounds and form the active dopant compound \insitu during material deposition, as discussed in \secref{Matn}, where the materials' properties are summarized as well.
+Again, \CS is used as host material and the same set of experiments is also performed on the air-stable dopants. A selection of the results presented here is published in reference\cite{Menke2012a}.
+
+In general, it is expected that not all deposited air-stable precursor molecules undergo the transformation to the active dopant compounds, hence the doping efficiency of this class of dopants is likely to be lower compared to air-sensitive dopants, where the source material is already the active dopant compound.
+
+Sample preparation and measurements are performed in vacuum, as discussed in sections \ref{sec:ExpSamplePreparation} and \ref{sec:ExpMeasRoutine}.
+To ensure optimal preparation conditions for \aob, the chamber is illuminated using a halogen lamp, as proposed by Li\etal\cite{Li2006}. For calculating the \CLong of \dmbiPOH samples, the molar mass of \OHdmbi (\gMole{240.3}) is used, as this material is expected to be formed during deposition, as discussed in \secref{Matn} and later supported by \secref{AS-DMBIs-DopingMech}.
+
+As only small quantities of the rather expensive material \dmbi were available, thinner layers of \nm{20} thickness are produced for samples of high \CLong \Cgr{0.200} instead of the usual \nm{30}. This different layer thickness does not influence the thermoelectric properties and has only little influence on the conductivity via the surface roughness, as discussed in \secref{ExpLayerGroth}.
+
+\section{Conductivity}\label{sec:ResASCond}
+The conductivities of layers of \CS doped by various \CLongs of \aob or \dmbi are shown in \figref{MR-Cond-n-AS-evap}. Measurements are performed directly after fabrication of the samples at \T[25].
+%
+\cBild[t]
+{MR-Cond-n-AS-evap}
+{As-prepared \cLong \vs \CLong}
+{As-prepared \cLongL \vs \CLongL of samples of \CS doped by \aob or \dmbi, measured at \T[25]. Compare to undoped \CS with \mbox{$\c\approx\Scm{2e-8}$}\cite{Li2006}.}
+%
+As a linear and symmetric current-voltage relation is measured for all samples, and the literature value for the contact resistance between gold and \CS is low\cite{Kitamura2011}, the charge injection can be neglected.
+Both materials efficiently dope \CS as the conductivity of the doped layers is several orders of magnitude higher than for undoped \CS, which has been reported to be in the order of \c[2e-8]\cite{Li2006} and which would be below the resolution limit of the Seebeck setup of \c[8.3e-8] as discussed in \secref{ExpResLimit}.
+The \cLong can be tuned by doping over two orders of magnitude for each dopant.
+At high \C, \dmbi samples reach $\c>\Scm{1}$, whereas for \aob the \c is approximately 100~fold lower at each \C.
+Samples doped by \dmbi show a saturation at \Cgr{0.100}, whereas for \aob samples no distinct saturation is visible.
+This observation is in contrast to the results determined for high \CLongs of the air-sensitive dopants \CrPd and \WPd (compare \figrefPage{MR-Cond-n-Pd-evap}), as high \C of these materials lead to a decrease in \c.
+The result is even more surprising, since higher \CLong of \C[0.650] and \C[0.510] are used for \dmbi and \aob, respectively.
+%
+This finding suggests that the lighter dopants \aob and \dmbi do not disturb the morphology of \CS as strongly as the heavier and strongly electronegative dopants \CrPd and \WPd. The relation between conductivity and \CLong is discussed in more detail in \secref{ResASCondMR}. First, the change in \cLong directly after sample preparation and the influence of thermal annealing are discussed.
+
+\subsection{Conductivity Changes after Preparation}
+As for most sets of materials, prior to further measurements, the conductivity of each sample is continuously probed for 1~hour at a fixed temperature of \T[25]. A strong increase of \cLong with time is detected for both dopants at all \CLongs. In order to quantify the change in \c, the data are fitted according to \eqnrefPage{LongTimeCond-exp}. The resulting fitting parameters are shown in \figref{MR-LongTimeCond-n-AS-fitparameter}.
+
+The fitted maximal relative change $\chi$ is much larger for samples doped by \aob than for \dmbi, with a maximum of $\chi=+350\,\percent$ for \C[0.026] of \aob, compared to $\chi=+76\,\percent$ at a similar \CLong of \C[0.027] of \dmbi. The change $\chi$ detected for both materials is stronger than for \CrPd and \WPd. Furthermore, whereas for \CrPd and \WPd a decrease of \c at $C>\mr{0.040}$ is found, all samples doped by the two air-stable dopants show an increase of \c during the first hour after deposition.
+
+As it has been reported\cite{Li2006} that illumination during deposition can accelerate/enhance the doping process for \aob, it is possible that in this case during sample fabrication the illumination intensity was too low, or that \aob generally needs more time to deploy its full doping capability and therefore shows a much stronger change after preparation than \dmbi. The positive change observed for all \CLongs of both materials might be due to a molecular rearrangement, as the dopants are much smaller than \CS and might be able to diffuse until they find a suitable host molecule to donate their electron to.
+
+The time constant $\tau$ is smaller for almost all \dmbi samples than for the \aob samples, corresponding to a faster approach of saturation. While the values of the \dmbi samples scatter around $\tau=0.6\pm0.3$~hours, for \aob $\tau$ drops with rising \CLong from 1.7~hours at \C[0.007] to 0.2~hours at \C[0.510]. The reason for this difference is not clear at present.
+
+\cBild
+{MR-LongTimeCond-n-AS-fitparameter}
+{Conductivity change during first hour after preparation, fitting parameters}
+{Fitting parameters of conductivity change during the first hour after sample preparation, according to \eqnrefPage{LongTimeCond-exp}: (a) maximal relative change $\chi$ reached after $t\gg\tau$ (b) time constant $\tau$ describing the speed of the change.
+}
+
+\subsection{Relation of Conductivity to Doping Concentration} \label{sec:ResASCondMR}
+
+As discussed in \secref{ResPdCondMR}, all samples are thermally annealed prior to further measurements, in order to ensure stable measurement conditions. They are slowly heated from \T[25] to \grad{100} and kept at this temperature for 60~minutes. Afterwards, the samples are slowly cooled down and the measurement routine (compare \secref{ExpMeasRoutine}) is started with a conductivity measurement at \T[25], where no further change of \c over time is detected.
+
+\cBild
+{MR-Cond-n-AS-evapVS25}
+{Conductivity before and after thermal annealing}
+{Conductivity before (filled symbols) and after (empty symbols) thermal annealing (at \T[100]) for \CS doped by (a) \aob and (b) \dmbi. The dashed lines represent a slope of 1.0 for \aob and a slope of 2.0 for \dmbi.
+}
+
+In \figref{MR-Cond-n-AS-evapVS25}, the conductivity after thermal annealing is compared to the conductivity measured directly after sample preparation (compare \figref{MR-Cond-n-AS-evap}), both measured at \T[25]. After annealing, a strong increase by two to three orders of magnitude is observed for the \aob samples, demonstrating that illumination alone is not sufficient to deploy the full doping capability of \aob. The conductivity of the \dmbi samples increases to a lesser extent, by a factor of about 10.
+Thermal annealing seems to accelerate the effect responsible for the change of conductivity during the first hour after sample preparation. This observation is consistent with the results for the air-sensitive dopants \CrPd and \WPd, compare \secref{ResPdCondMR}.
+
+For the air-sensitive dopants, three different contributions to the change of conductivity are discussed in the previous chapter: Firstly, residual quantities of O\sub{2} and moisture, present in the vacuum chamber, could react with the n-doped layers and reduce the conductivity. Thermal annealing might remove these impurities and hence increase the conductivity. Secondly, small rearrangements of the molecules could lead to an increase in conductivity. Thirdly, a phase separation and demixing of host and dopant at high \CLong may reduce the conductivity due to shielding of dopants.
+As the observed changes of the conductivity are all positive and much stronger than for the air-sensitive dopants, the changes are most likely due to a major additional contribution. Most probably, the transformation which forms the active dopant compounds from the air-stable precursor molecules is not completed by all molecules during sample deposition. Instead, the process continues afterwards and can be accelerated by heating the doped layer.
+
+After the thermal annealing step, an increasing conductivity with \CLong is measured for both dopants.
+For \aob, a linear correlation between \CLong and conductivity, highlighted by the dashed line of slope 1.0 in \figref{MR-Cond-n-AS-evapVS25}\,(a), is found for over two orders of magnitude with no saturation visible in the data. Thus, each additional dopant molecule contributes identically to the increase of \c.
+At the highest \C[0.510] of \aob, \c[0.6] is measured at \T[25]. This value is higher than the previously reported data\cite{Li2006}, which is due to the higher \CLong and optimized preparation conditions, \eg illumination during evaporation and the thermal annealing step.
+
+The conductivity of almost all \dmbi samples is one order of magnitude higher than for \aob at corresponding \CLongs, when measured at \T[25] after the thermal annealing.
+A highest value of \c[5.3] is found at \C[0.650], which is even \Scm{1} higher than the record conductivity for the air-sensitive dopants (after thermal annealing), summarized in \figref{MR-Cond-n-PdvsAS}.
+The \dmbi samples show a different tendency than the samples doped by \aob, as for low \C the \c increases superlinearly with \C at a slope of 2.0, highlighted by the dashed line in \figref{MR-Cond-n-AS-evapVS25}\,(b). At \Cgr{0.150} the slope is reduced, first to a value in the range of 1.0 and later a saturation is detected.
+The reduced slope for \Cgr{0.150} of \dmbi, might be attributed to aggregation of dopant molecules, leading to a decreasing doping efficiency\cite{Mityashin2012a}, or to a disturbance of the morphology resulting in a lower mobility\cite{Kleemann2012a}. In \secref{ResASAFM}, AFM studies on doped layers are presented, showing peaks arising from the layer for \Cgr{0.150}, which makes both explanations plausible.
+
+\cBild
+{MR-Cond-n-PdvsAS}
+{Comparing the conductivity of \CS doped by air-stable and air-sensitive dopants}
+{Comparing the conductivity after thermal annealing of samples of \CS doped by air-stable (\aob and \dmbi, \T[25]) and air-sensitive (\CrPd and \WPd, \T[30]) dopants. The dashed lines of slopes 1.0 and 2.0 are guides to the eye.}
+
+In agreement with \aob, samples doped by the air-sensitive dopants \CrPd and \WPd show a linear relation of \c to \C as summarized in \figref{MR-Cond-n-PdvsAS}.
+The superlinear increase for \dmbi suggests that there may be a difference in the doping or transport mechanism when \CS is doped by \dmbi. A conductivity slope of more than 1.0 has been reported as well as predicted by various groups and models, as discussed below.
+
+Our collaborators from Stanford University observed a similar slope in the range of 2.0 for \PCBM\footnote{\PCBM is \PCBMLong} doped by the neutral dopant \Ndmbi\footnote {\Ndmbi is \NdmbiLong} which is closely related to \dmbi\cite{Wei2010}.
+Gregg\etal\cite{Gregg2004Review} expected a superlinear relation for all excitonic semiconductors, due to a decrease of exciton binding energy with increasing \CLong.
+Männig\etal\cite{Maennig2001} interpreted a superlinear increase of the conductivity upon doping as indication for shallow states in combination with percolative transport and a sublinear increase as indication for deep donors states.
+%
+Both of these models can be used to explain the mechanism of doping of \CS with \dmbi but they are at odds with the observations for the other three n-dopants (\aob, \CrPd and \WPd). However, the fact that the conductivity increase is not superlinear for the other dopants does not invalidate these models.
+
+According to Arkhipov\etal\cite{Arkhipov2005}, doping generates deep Coulombic traps in disordered organic semiconductors, which can reduce the mobility with increasing \CLong. These traps may be generated by changes of the energy levels due to the presence of ionized dopants or could be created by disturbances in the morphology. \OHdmbi, being the active dopant compound formed from \dmbi is the smallest of the investigated n-dopants (with a diameter of \nm{\approx1.0}, compare \figrefPage{mat}), thus it may cause small morphological disturbances of the \CS host molecules, leading to a superlinear increase of \c at \Ckl{0.100}. To validate this hypothesis, morphological analysis of the molecular arrangement by techniques like X-ray diffraction or refraction should be performed.
+%
+Since \aob is the least efficient dopant (with respect to the conductivity), it might have a deeper donor state compared to \dmbi resulting in generation of trap states and hence a decreasing mobility with rising \CLong. The presence of traps could be investigated \eg by methods like impedance spectroscopy (IS)\cite{Burtone2012} or thermally stimulated current (TSC)-based methods like charge-based deep level transient spectroscopy (Q-DLTS)\cite{Gaudin2001}. This however is beyond the scope of this thesis.
+
+A deep donor state for \aob agrees with the results of Harada\etal\cite{Harada2007} who demonstrated that the OFET-mobility of \aob-doped \CS decreases upon doping. Increasing \C from \mr{0.010} to \mr{0.075}, the mobility dropped by a factor of three, which corresponds to a slope of $-0.5$ in a logarithmic scale. The decreasing mobility was attributed to a scattering of charge carriers at ionized impurities, introduced by doping.
+Even if the \neLongL increased superlinearly with \C for \aob samples as well, a decreasing mobility would lead to a reduced slope of $\c(\C)$.
+
+Olthof\etal\cite{Olthof2012} have reported for the material system of \CS doped by [RuCp$^*$(mes)]$_2$%
+\footnote{[RuCp$^*$(mes)]$_2$ is ruthenium(pentamethylcyclopentadienyl)(1,3,5,-trimethylbenzene)}
+that at \Ckl{0.001}, a superlinear slope of $\c(\C)$ is attributed to filling of trap states. As the \CLongs investigated in this thesis are above \mr{0.001}, filling of host material trap states is not likely to be responsible for the superlinear slope.
+Olthof\etal furthermore reported on a gain in mobility upon doping, which they again attributed to filling of trap states. As they have assumed a concentration-independent doping efficiency of \DopEff[100] to calculate the \neLongL from \C, their approach is contrary to the model of a threshold doping concentration presented by Mityashin\etal\cite{Mityashin2012a}, as discussed in \secref{Theo-org-Doping-Mechanisms}. Up to now, it is not clear which model is correct for the material system presented here.
+
+Another considerable reason leading to a superlinear increase of conductivity for \dmbi compared to \aob would be that as in these systems charge carriers are transported along a manifold of states distributed in energy and space, a charge carrier density-dependent mobility is expected. Upon increasing the charge carrier density, the mobility may increase if the low-lying localized states are filled, leading to a transport dominantly along the denser part of the density of states. This phenomenon is observed in OFETs where these states are filled by the gate bias. It is possible that for efficient doping a similar effect may be present. In such a case the conductivity increases superlinearly with \C. However, dopants such as \CrPd and \WPd, which lead in \CS to conductivities similar to \dmbi, as summarized in \figref{MR-Cond-n-PdvsAS}, do not show such a behavior, suggesting that this phenomenon may not be dominant in this system.
+
+% \FloatBarrier
+\subsection{Temperature Dependence of the Conductivity}
+In analogy to the samples of \CS doped by the air-sensitive dopants in the previous chapters, the conductivity after thermal annealing is probed at different temperatures between \T[25] and \grad{100} and is found to rise with temperature. \Figref{T-Cond-n-AS} displays the measured data of all samples in Arrhenius plots. A linear relation is found, in agreement with the results for the air-sensitive dopants and the literature, indicating a thermally activated transport mechanism for which again an \EactLongL can be derived employing \eqnrefPage{CondActivation}.
+
+\cBild[b]
+{T-Cond-n-AS}
+{Temperature dependence of the conductivity}%
+{Temperature dependence of the conductivity of \CS doped by (a) \aob and (b) \dmbi. Lines are fits using \eqnrefPage{CondActivation}.}
+
+The resulting values of the differently doped samples range from \Eact[63] for low to \meV{241} for high \CLongs and are illustrated in \figref{MR-Eact-n-AS}. They are well below the previously reported value for undoped \CS of around \meV{640}\cite{Li2006}.
+The \Eact is higher for the \aob samples than for the \dmbi ones, excluding the lowest doped \dmbi sample.
+While for the \aob samples \Eact slowly drops with rising \CLong, the \dmbi samples yield a much stronger decrease and a saturation at \mbox{$\Eact\approx\meV{75}$} at \Cgr{0.150}. At the same \CLong, a reduction of the superlinear slope of $\c(\C)$ is observed in \figrefPage{MR-Cond-n-AS-evapVS25}.
+
+\cBild[t]
+{MR-Eact-n-AS}%
+{Activation energy of the conductivity}%
+{Activation energy of the conductivity \Eact, derived from the temperature dependence of the conductivity $\c(T)$ in the range of \T[25] to \grad{100} shown in \figref{T-Cond-n-AS}, using \eqnrefPage{CondActivation}.
+}%
+
+As discussed in \secref{ResPdCondEact}, the drop of \Eact with increasing \CLong is attributed to a shift of the \EfLong \Ef towards the \EtLong \Et of \CS. This shift leads to a reduction of the temperature dependence of the density of free electrons $\ne(T)$.
+
+%
+At high \CLongs of \aob, a rapid drop of \Eact is observed. This may be attributed to the fact that at high \C, \aob (which is not as efficient as \dmbi) is able to fill up the deeper states of the density of states and to contribute more to the shift of the \Ef. Such a process is similar to what is known as compensation in classic semiconductor theory. When compensation is the dominant effect, \Ef is pinned to the dopant level. If compensation is no longer the main effect, \Ef shifts towards the conduction band minimum \Ec (for n-doping).
+A higher dopant level of \dmbi would lead to a more efficient filling of the energetically lower lying low-mobility states of the hosts density of states, thus generating an overall higher mobility along with a lower \Eact.
+
+In case of \CS n-doped by the air-sensitive dopants \CrPd and \WPd, at high \CLongs an increase of \Eact along with a decrease of \c is found. This behavior is not observed for the lighter dopants \aob and \dmbi, even though the \CLongs are higher. Since this effect is attributed to a disturbance of the morphology of the host material by the large percentage of dopant molecules, \aob and \dmbi are understood to lead to less disturbance, which might be attributed to their smaller size. AFM investigations, presented in \secref{ResASAFM}, show that with rising \CLong more and more artifacts are arising on the samples' surfaces for \CS doped by each of the two air-stable dopants. These artifacts are an indication for agglomeration of dopants or charge-transfer complexes.
+
+% \newpage
+\section{Thermoelectric Measurements}\label{sec:ResAS-S}
+\subsection{Temperature Dependence of the Seebeck Coefficient}
+\label{sec:ResAS-S-T}
+%
+%
+Along with the conductivity investigations, thermoelectric (Seebeck) studies are performed. The probed Seebeck coefficients \S for layers of \CS doped by \aob or \dmbi are presented in \figref{T-S-n-AS}\,(a) and (c). As expected, they are negative in sign, thus, for all samples, electrons are the dominating charge carrier species and hole conduction along the dopant molecules is not observed. The resulting values range from \S[-120] to \uVK{-580} and a decrease of $|\S|$ with increasing \C is detected, similar to the results for the air-sensitive dopants in \secref{ResPd-S}.
+
+\cBild[b]
+{T-S-n-AS}%
+{Temperature dependence of the Seebeck coefficient}%
+{Temperature dependence of the Seebeck coefficient \S for \CS doped by \aob and \dmbi in (a) and (c). At the right side, in (b) and (d), the relative changes of \S are illustrated, normalized to the \Tm[40] measurements.
+}
+
+In order to investigate the influence of the mean temperature \Tm, the relative changes of \S, normalized to the measurements at \Tm[40], are depicted in \figref{T-S-n-AS}\,(b) and (d). A temperature of \grad{40} is chosen, as it is a device-relevant temperature and allows for more stable temperature control than \Tm[30]. In the investigated range of \Tm[30] to \grad{100} all \dmbi samples except the two lowest doped ones show a strong gain of $|\S|$ with \T, in the order of $+10\,\%$ to $+25\,\%$ (compare \figref{T-S-n-AS}\,(d)). There is no clear relation between \CLong and the magnitude of increase present in the data.
+In case of doping by \aob, even stronger increases by up to $+45\,\%$ are recorded, but on the other hand four of the nine samples yield a more or less temperature-independent \S. Thus, there is again no clear trend visible.
+
+As the temperature dependence of \S for samples doped by the air-sensitive dopants \CrPd and \WPd, discussed in \secref{ResPd-S-T}, is measured in a smaller temperature range of \Tm[30] to \grad{70}, the 4 dopants can only be compared in this range, where the relative changes are similar.
+It is not clear up to now why for \aob and \dmbi the strongest change is recorded at high \CLongs, whereas for \CrPd and \WPd the weakly doped samples show the strongest change.
+
+\subsection{Relation of Seebeck Coefficient to Doping Concentration}
+%
+\cBild[b]
+{MR-See+Es-n-AS}%
+{Seebeck coefficient and derived \EsLong}
+{Seebeck coefficient \S and derived \EsLongL at \Tm[40].}
+%
+Comparing the Seebeck coefficients at \Tm[40] for different \CLongs, a reduction of $|\S|$ with rising \C is found for both dopants, ranging from \S[-714] to \uVK{-124}, as illustrated in \figref{MR-See+Es-n-AS}.
+Using \eqnrefPage{S-Es-org}, again the energetic difference \Es between the \EfLong \Ef and the \EtLong \Et can be derived:
+\begin{align}
+ \Es =\S \cdot e \cdot \T \quad \text{ with } \quad\Es := \Ef - \Et
+\PUNKT
+\tag{\ref{eq:S-Es-org}}
+\end{align}
+This quantity is drawn as the right hand axis in \figref{MR-See+Es-n-AS}.
+A maximum of \Es[-183] is measured for the lowest \CLong of \C[0.0067] of \aob. Analogously, for \dmbi the largest \Es[-147] is measured for the lowest \CLong of \C[0.013].
+
+Following the trend of \S, the value of \Es drops with rising \C for both dopants, which corresponds to a shift of the \EfLong \Ef towards the \EtLong \Et and thus an increasing charge carrier density \ne, which is in agreement with the observations of the air-sensitive dopants.
+%
+At high \CLongs, a value of $\Es<\meV{65}$ is derived for both dopants. This saturation value is somewhat higher than observed for the air-sensitive dopants, where $\Es<\meV{50}$ was found in \secref{ResPd-S-MR}. Again, the saturation can be explained by a pinning of \Ef close to \Et via degenerate doping.
+
+\subsection{Comparison of Seebeck Energy and Activation Energy}
+\label{sec:ResAS-EsEact}
+
+%
+\cBild[b]
+{MR-Es+Eact-AS}
+{Comparison of \Es and \Eact}
+{Comparison of \EsLongL and \EactLongL. \Es is measured at \Tm[40], \Eact is fitted from the conductivity data presented in \figref{T-Cond-n-AS} in the range of \T[25] to \grad{100}.}
+
+In \figref{MR-Es+Eact-AS}, the \EsLongL is compared to the previously discussed \EactLongL, for \aob and \dmbi in part (a) and (b), respectively.
+The \dmbi samples show for almost all \CLongs a reasonable agreement of the two energies, whereas for all \aob samples a difference of \mbox{$\Eact\approx\Es+\meV{50}$} is observed.
+
+If the temperature dependence is Arrhenius-like, the difference between \Eact and \Es for the \aob samples is attributed to an activation of the mobility, as discussed in \secref{ResPd-EsEact}.
+For the air-sensitive dopants, a discrepancy between \Eact and \Es is observed only at high \C, which is attributed to a disturbance of the morphology by the large number of dopant molecules.
+Such a temperature-activated mobility is another indication that \aob introduces deep lying trap states.
+%
+However, the temperature dependence of the mobility may differ from a simple activated case%
+, as discussed in \secref{ResPd-EsEact}.
+
+Harada\etal\cite{Harada2007} have reported a temperature-independent OFET-mobility for \CS doped by \C[0.010] to \mr{0.075} of \aob in the range of \T[30] to \grad{100}. The reason for the difference in results might be the filling of the trap states by electrons accumulated within the OFET channel region by applying a gate-source potential. However, as discussed in \secref{ResPd-EsEact}, the high applied fields required for OFET experiments are expected to affect the occupation of the density of states and thus the resulting mobility.
+
+\section{Morphology}\label{sec:ResASAFM}
+%
+\cBildDraw[p]{afm-AS-images}%
+{AFM images}%
+{AFM images of a selection of Seebeck samples. \mbox{(a-c)}: \CS doped by \aob, \mbox{(d-f)}: \CS doped by \dmbi. Note the different height scales. Parameters: $\um{5}\times\um{5}$ scan area, \nm{30} layer thickness for \aob samples and \nm{20} for \dmbi, measurements performed in air after electrical investigations and thermal annealing.
+}
+
+\cBild[p]
+{MR-AFM-AS}%
+{AFM root-mean-square surface roughness \rms}
+{AFM root-mean-square surface roughness \rms of all studied samples, scanned on an area of $\um{5}\times\um{5}$, as depicted in \figref{afm-AS-images}.
+}
+
+Atomic force microscopy (AFM) investigations are performed on the same samples electrically investigated and discussed above to check for an influence of the presence of dopant molecules on the morphology of the layers.
+As AFM studies could only be performed in air, after the electrical investigations the samples are removed from the vacuum chamber and the Seebeck setup and stored in air for several hours before and during the AFM measurement.
+Therefore, the results might differ from freshly prepared samples, investigated in an inert atmosphere.
+The topographies of selected samples are depicted in \figref{afm-AS-images}, each scanned on an area of $\um{5}\times\um{5}$.
+As a figure of merit, the root-mean-square surface roughness \rms is written onto the images and summarized against the \CLong in \figref{MR-AFM-AS}.
+%
+The different layer thicknesses of the samples (mostly \nm{20} for \dmbi and \nm{30} for \aob samples, as discussed earlier), make the absolute numbers of the \rms not directly comparable, but the trends are reliable.
+Due to a larger scan area of $\um{5}\times\um{5}$, compared to $\um{2}\times\um{2}$ used for the measurements on the air-sensitive dopants, the \rms values are not directly comparable to these values either.
+
+At low to medium \CLongs, a smooth surface is detected for both dopants, in agreement with the findings for the air-sensitive dopants. With rising \CLong the roughness increases for both dopants and artifacts become visible on the surface. A similar trend is observed for both dopants: At \C[0.240] many small spikes are present, whereas at higher \CLongs fewer but much larger spikes are found, which lead to a saturation of the \rms value. The largest artifacts are observed for the \dmbi samples with peaks of up to \nm{75} reaching out of a layer with a nominal thickness of \nm{20}.
+These artifacts are an indication for agglomeration of dopants or charge-transfer complexes.
+Compared to the air-sensitive dopants, the increase of the roughness occurs at higher \CLongs, which can be explained by the smaller weight and size of the air-stable compounds. The rough surfaces found for \Cgr{0.100} suggest that for devices where smooth layers are required in order to prevent shortcuts, lower \CLongs should be used.
+It is not clear if the surface structures are generated by the thermal annealing step, as only annealed samples are investigated.
+
+Contrary to these results, the investigations of the air-sensitive dopants yield smooth surfaces at high \CLongs, which is interpreted as a measurement artifact due to the presence of a hydrogen film on the surface, attracted by the ionized dopants. As the topography is visible here, it is suggested that these dopants do not react as strongly with the ambient.
+%
+\nopagebreak[0] % ensure that no new page in started
+\section{Conclusion for \aob and \dmbi}\label{sec:ResASConclusion}
+Despite the expectation of a lower doping efficiency for the air-stable dopants compared to the air-sensitive dopants, due to the required transformation to form the active dopant compounds from the air-stable precursor, doping \CS by \dmbi leads to comparable results to \CrPd and \WPd, whereas \aob yields lower values. Even the values achieved using \aob should be sufficient for device application in photovoltaic cells, as \CS has a high charge carrier mobility.
+All doped \CS layers are stable up to \T[100], being above the evaporation temperature of the \aob precursor compound. A strong increase of conductivity over time is observed for \aob samples directly after sample processing, suggesting that the doping process is not completed during the deposition. Thermal annealing greatly enhances the conductivity of \aob samples and is required to ensure stable measurement conditions. A less pronounced effect is observed for \dmbi, yielding already high conductivities directly after sample fabrication. After annealing, \dmbi generates one order of magnitude higher conductivities in doped layers, with a maximum of \c[5.3], comparable to the values for the air-sensitive dopants \CrPd and \WPd.
+
+While for \aob layers, as well as for the air-sensitive compounds, a linear relation of $\c(\C)$, a superlinear relation is found for \dmbi.
+This could either be due to a difference in the doping mechanism or to a difference in the transport properties of the doped system.
+
+With increasing \CLong, the \EactLong for both dopants drops significantly. The Seebeck studies show the same tendency for the energetic difference between the \EfLong and the \EtLong. For \aob, the magnitude of this difference is smaller than the \EactLong. It is concluded that the mobility in the \aob layers is thermally activated and that the IE of \aob is expected to be larger than the IE of \OHdmbi, being the proposed active dopant formed from \dmbi.
+
+AFM surface scans yield a strong gain in surface roughness for \Cgr{0.100} of both dopants. This suggests that for devices, where smooth layers are required in order to prevent shortcuts, lower \CLongs should be used.
+
+Overall, the dopant \dmbi yields a better doping efficiency compared to \aob. The achieved conductivities are comparable to the results obtained for the air-sensitive dopants \CrPd and \WPd, making \dmbi a promising candidate for application in future devices, especially as \dmbi is air-stable prior to processing.
+
+In the next section, \dmbi is compared to a closely related novel dopant, namely \meodmbiI.
+
+\newpage
+\section{\texorpdfstring{\meodmbiI}{o-MeO-DMBI-I}}
+\label{sec:ResMeO-DMBI}
+Based on the experience with the commercially available n-dopant compounds \Ndmbi and \dmbi, our cooperation partners Peng Wei and Benjamin D. Naab from Professor Zhenan Bao's group of Stanford University started designing and synthesizing new dopants. One promising material they developed is \meodmbiI. Its structure is similar to \dmbi, as illustrated in \figref{mat}\,(b) on page~\pageref{fig:mat} and its key parameters are presented in \secref{Matn}. This material is stable during vacuum deposition, and first experiments performed in Stanford indicated excellent doping performance comparable to \dmbi. Consequently, further investigations were started in Dresden.
+A selection of the results presented here is published in reference\cite{Wei2012}.
+
+Obvious differences compared to \dmbi are that \meodmbiI is a white crystalline powder, whereas \dmbi is a yellow fuzzy structured material. The deposition temperature of \meodmbiI is found to be around \Tdep[185], being \K{75} higher than for \dmbi (compare \tabref{MatProp}). This allows more stable temperature control during layer deposition. The similarity of the chemical structures of both compounds suggests a similar doping mechanism.
+
+\subsection{Doping Mechanism}\label{sec:AS-DMBIs-DopingMech}
+A sudden increase of base pressure in the vacuum chamber by more than one order of magnitude is detected as soon as the deposition of \meodmbiI starts. At \T[100] the base pressure is \pa{7.3e-6} with no detectable deposition rate, whereas at \T[185] during layer deposition a pressure of \pa{1.6e-4} is observed. The pressure remains at this level until the temperature is decreased to a level where the deposition stopped. In order to investigate these observations, a mass spectrometer (Pfeiffer QMG220) is installed at the vacuum chamber.
+
+%
+\cBild[t]
+{massSpekDMBI}
+{Mass spectrum during \meodmbiI deposition}
+{Mass spectrum obtained during \meodmbiI deposition at a material temperature of around \grad{185} at $\druck=\pa{1.6e-4}$, probed at a scan speed of \SI{2}{\second\per\atomicmass}. Left inset: zoomed region of main structure. Right inset: high resolution measurement at \SI{20}{\second\per\atomicmass}.}
+%
+%
+In \figref{massSpekDMBI}, a wide mass spectrum scan from \u{0} to \u{300} performed at a rate of \SI{2}{\second\per\atomicmass} is presented, which is probed at a dopant source temperature of \grad{185}.
+Two dominant peaks around \u{127} and \u{142} are present, each having several side peaks. The relative heights of the peaks are found to vary between different measurements, probably related to changes in pressure during the long scan time.
+The left inset of \figref{massSpekDMBI} is a zoom into the area of these two main peaks, displaying the substructure.
+The peak at \u{127} is assigned to ionized iodine I$^-$ (\u{126.9}), the smaller one next to it to HI (\u{127.9}). Iodine has a boiling point of \grad{184.3} at atmospheric pressure, hence the freed iodine is expected to turn into the gas phase at \grad{185} in vacuum. The second large peak around \u{142} is attributed to CH$_3$I (\u{141.9}). These findings suggest that the material \meodmbiI loses its iodine atom upon deposition, forming \meodmbi as active dopant compound.
+
+A high resolution mass spectrum obtained at a $10\times$ slower scan speed of \SI{20}{\second\per\atomicmass}, presented as right inset of \figref{massSpekDMBI}, resolved a peak at \u{254.3} that nicely fits to the expected dopant compound \meodmbi and is above the value expected for I$_2$ at \u{253.8}.
+As no mass peak for a neutral radical at \u{253.3} is observed, it is hypothesized that the doping mechanism is the following: \meodmbiI is reduced during evaporation under high vacuum to form \meodmbi (compare \figref{mat}\,(e1) on page~\pageref{fig:mat}), which then transfers an electron to a \CS molecule.
+Therefore, in order to calculate the \CLong of samples doped by \meodmbiI, the molar mass of \meodmbi ($\MM=\gMole{254.3}$) has to be used.
+
+Further investigations on the doping mechanism were performed by our partners at Stanford University. X-ray photoelectron spectroscopy (XPS) measurements on pure \meodmbiI layers fabricated by vacuum deposition yielded no iodide peak, indicating that \meodmbiI is reduced and lost I$^-$ during the evaporation. Furthermore, this suggests that the lost I$^-$ does not contaminate the deposited layers.\cite{Wei2012}
+
+Due to the structural similarity of \meodmbiI and \dmbi (compare \figref{mat}\,(b) on page~\pageref{fig:mat}) it is expected that \dmbi undergoes a similar transition to form the active dopant compound \OHdmbi during deposition of the material. The proposed reaction is illustrated in \figref{mat}\,(e2).
+Thus, in order to calculate the \CLong of samples doped by \dmbi, the molar mass of \OHdmbi ($\MM=\gMole{240.3}$) has to be used.
+
+\subsection{Comparison to \dmbi}%\texorpdfstring{\dmbi}{DMBI-POH}
+
+\cBild[b]
+{MR-Cond-n-DMBIs}
+{\meodmbiI \vs \dmbi: conductivity}
+{Conductivity of \CS doped by \meodmbiI and \dmbi, before (filled symbols) and after (empty symbols) thermal annealing (at \T[100]), measured at \T[25]. Note the two samples of identical \C[0.246] of \meodmbiI proving the reproducibility. The dashed line represents a slope of 2.0.}
+
+\Figref{MR-Cond-n-DMBIs} compares the conductivities of \CS layers doped by \meodmbiI to the data for \dmbi, presented in \secref{ResASCondMR}.
+For the new compound \meodmbiI, the conductivity after thermal annealing (empty symbols) is in the same range as for the \dmbi samples. The lowest doped sample of \C[0.027] of \meodmbiI has an almost identical value of \c[0.174] to the corresponding sample of \dmbi with \c[0.162] at \C[0.027]. A maximum of \c[10.9] is measured for \C[0.310], being more than twice as high as the record value observed for \dmbi as well as for \CrPd and \WPd. At even higher \CLongs of \meodmbiI, the \cLong decreases, in contrast to \dmbi, where a saturation is observed.
+The relation of the conductivity to the \CLong follows the same trend for both materials. Samples doped by \meodmbiI show as well a superlinear increase of $\c(\C)$, as the dashed line in \figref{MR-Cond-n-DMBIs}, possessing a slope of 2.0, indicates. Reproducibility is proven by two samples of \C[0.246] of \meodmbiI showing almost identical values.
+
+The most interesting difference between the two dopants is that for the new compound, the thermal annealing after preparation has only little effect on the conductivity. While for most \dmbi samples a gain on almost one order of magnitude is found, the strongest change observed for the \meodmbiI samples is an increase by a factor of 3.6, found for the lowest doped sample. Hence, for \meodmbiI thermal annealing is not necessary to achieve high conductivities.
+
+Surprisingly, reproducing the samples in our group's multi chamber vacuum tool was not successful. The conductivities of 5 samples with \CLongs from \C[0.150] up to \mr{0.700} were between \Scm{0.03} and \Scm{0.3} with no clear relation between \c and \C. Thermal annealing made it possible to reach comparable conductivities to the samples fabricated in the Seebeck setup. The main differences between the chambers is that in the multi chamber tool, the base pressure is one order of magnitude lower, in the range of \pa{8E-7}. During deposition a pressure in the range of \pa{2E-6} is measured, being almost a factor of 100 lower than the increased pressure recorded during fabrication in the Seebeck setup.
+Hence, most probably the Seebeck chamber with the worse base pressure has more leakage gas flow through the chamber towards the pumps. It might be possible that this material flow transports the iodine gas (produced by formation of \meodmbi from \meodmbiI) away from the deposited layer, whereas in the multi chamber tool iodine might reach the substrate, leading to a reformation of \meodmbiI.
+Another difference of the multi chamber tool compared to the Seebeck setup is a different pressure sensor that generates an electric arc, illuminating the chamber and maybe affecting the materials during deposition. However, deactivating the sensor had no affect on the samples.
+
+\cBild[t]
+{MR-Es+Eact-DMBIs}
+{\meodmbiI \vs \dmbi: comparing \Es and \Eact}
+{Comparing \EsLongL (empty symbols) and \EactLongL (filled symbols) of \CS doped by \meodmbiI and \dmbi. \Es is measured at \Tm[40], \Eact is derived from the range of \T[25] to \grad{100}.}
+
+Temperature-dependent conductivity and Seebeck measurements are performed on the \meodmbiI samples as well. A comparison to \dmbi is shown in \figref{MR-Es+Eact-DMBIs}. Seebeck measurements (empty symbols) of the two compounds are in reasonable agreement, leading to the assumption that the doping efficiency of \meodmbiI is comparable to \dmbi. The \EactLong \Eact (filled symbols) is somewhat lower for most \meodmbiI samples and closer to \Es, indicating a smaller contribution of the mobility to \Eact.
+
+In conclusion, there are several indications for \meodmbiI and \dmbi having a similar doping mechanism. Comparable values of \c, \Es and \Eact, as well as a superlinear increase of $\c(\C)$ are observed. The high maximum of \c[10.9] for \meodmbiI is the record value measured for all material combinations during this thesis. Its deposition temperature in the range of \Tdep[185] makes the rate better controllable than for \dmbi, which is deposited as \Tdep[110]. Furthermore,  for this compound thermal annealing is not necessary to achieve high conductivities, at least not in the Seebeck setup. Hence, \meodmbiI is a promising new dopant that should be tested in devices.
+
