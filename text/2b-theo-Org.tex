@@ -1,0 +1,259 @@
+%äöüß
+
+\newpage
+\section{Organic Semiconductors}\label{sec:TheoOrganicSemiconductors}
+In this section, molecular organic \SCs (OSCs) are introduced and the main differences to \CSCs (CSCs) are discussed. For more general properties of \OSCs, the reader is referred to the textbooks~\cite{PopeSwenberg,SchwoererWolf}.
+
+Organic, \ie hydrocarbon-based, chemistry allows for the synthesis of a large variety of molecules. Despite most of the organic molecules being electrical isolators, in the last century semiconducting\cite{Bolto1963}, metallic\cite{Ferraris1973,Coleman1973} and even superconducting\cite{Jerome1980} organic molecules have been discovered.
+As shown in \figrefPage{oled+opv-pub+eff}, in recent years, the topic of conducting organic compounds gained more and more attention and in 2000, Heeger, MacDiarmid, and Shirakawa were awarded with the Nobel Prize in chemistry for their work on highly conducting conjugated polymers\cite{NobelChem2000}.
+Since this thesis focuses on semiconductor physics, only this class of materials will be discussed in the following.
+
+When atoms form molecules, the atomic orbitals (being solutions to the Schrödinger\entdecker[Schrodinger1926]{Erwin Rudolf Josef Alexander Schrödinger}{Austrian}{1887--1961} %
+equation and describing the probability of an electron to be located in a specific spatial region) are combined to molecular orbitals, whereby the number of molecular valence orbitals equaling the total number of atomic valence orbitals prior to the formation of the molecule.
+Since electrons are fermions and hence are subject to the Pauli\entdecker[Pauli1925]{Wolfgang Pauli}{Austrian}{1887--1961} exclusion principle, each orbital can only be occupied by two electrons of opposite spin.
+Orbitals are populated by electrons according to their energy levels.
+
+\cBildDraw[t]
+{molPhys}%
+{Formation of hybrid orbitals and delocalized $\pi$-electron-system}%
+{%
+(a)~Orbitals and bonds for two sp$^2$-hybridised carbon atoms, as in ethylene.
+(b)~Delocalized $\pi$-electron-system in a benzene ring consisting of six sp$^2$-hybridised carbon atoms. Images taken from reference\cite{OW} and modified.
+}%
+
+Carbon, being the building block of organic molecules, has six electrons: two core electrons and four valence electrons.
+The first and second s-orbitals are populated each by two electrons and the remaining two electrons are located in two of three degenerate 2p-orbitals. This configuration is abbreviated as 1s$^2$2s$^2$2p$^2$. Whereas s-orbitals are symmetric around the nucleus, the three 2p-orbitals are dumbbell-shaped\cite{Upper1974}, as drawn in \figref{molPhys}\,(a).
+%
+Upon formation of molecules, for carbon atoms it is energetically favorable that the valence orbitals rearrange and form hybrid orbitals. Depending on the number of contributing atomic p-orbitals these hybrids are called sp, sp$^2$ or sp$^3$. In case of sp$^2$ configuration, the four valence electrons populate three degenerate hybrid sp$^2$-orbitals and one remaining p-orbital. The sp$^2$-orbitals align in one plane, perpendicular to the remaining p-orbital. Adjacent carbon atoms form covalent $\sigma$-bonds with their hybrid orbitals, which are located between the atoms. The remaining p-orbitals form a second so-called $\pi$-bond parallel to the plane of the sp$^2$-orbitals, as sketched in \figref{molPhys}\,(a).
+This $\pi$-bond leads to delocalization of the $\pi$-electrons, which can extend over many atoms, as drawn in \figref{molPhys}\,(b) for the case of six carbon atoms forming a benzene ring. Hence, the electrons in the delocalized $\pi$-system are no longer constrained to single atoms and owing to this delocalization, electron transport through the molecule is significantly improved. Inter-molecular electron transport is enabled via interactions between the $\pi$-systems of adjacent molecules and tunneling of electrons, so-called hopping.
+%
+For more information on the fundamental physics of molecules, the reader is referred to the textbooks~\cite{HakenWolf,DemtroederExp3}.
+
+The energetic difference between the highest occupied and the lowest unoccupied $\pi$-orbital is smaller compared to the hybrid sp$^2$-orbitals. Thus, in a molecule with delocalized $\pi$-system, the highest occupied molecular orbital (HOMO) and the lowest unoccupied molecular orbital (LUMO) are typically delocalized $\pi$-orbitals.
+Since the energetic difference between HOMO and LUMO typically decreases with increasing the delocalization over more atoms, the design of molecules with desired energy levels is possible.
+If the energetic difference between HOMO and LUMO is small enough, the molecule can show semiconducting properties.
+Consequently, the HOMO level of a molecular semiconductor can roughly be compared to the valence band minimum of a \CSC and analogously the LUMO level to the conduction band minimum.
+
+Organic \SCs can be divided into two major categories: small molecules and polymers.
+Semiconducting small molecules include aromatic hydrocarbon compounds like anthracene and pentacene; as well as pyrenes, perylens, oligothiophenes and phtalocyanines. Polymeric \OSCs include aromatic compounds like polythiophenes, polyacetylene and their derivatives.
+While layers of small molecular \SCs are usually deposited by thermal evaporation in vacuum, the heavier polymers are commonly processed from solution.
+In this work, only thermally deposited small molecules are investigated.
+
+The main difference between OSCs and CSCs is that instead of covalently bound atoms, the molecules interact via the weaker van der Waals%
+\entdecker[VanderWaals1873]{Johannes Diderik van der Waals}{Dutch}{1837--1923}
+forces. As a result, OSCs are usually amorphous or polycrystalline and have lower dielectric constants in the order of $\varepsilon\approx3$ to 5 compared to CSCs with $\varepsilon\approx10$ to 15\cite{RiedeLuessemLeo2011}. The lower $\varepsilon$ results in a lower shielding of charges and thus to a stronger Coulomb interaction between them, compared to CSCs.
+
+One advantage of the weak van der Waals interaction between the molecules and the disordered structure of OSCs is that they are less sensitive to impurities and structural defects than CSCs. They can inherit impurity levels of up to a fraction of percent and still work well\cite{RiedeLuessemLeo2011}, whereas such high concentrations would render CSCs completely useless. As a consequence, intentional doping concentrations have to be considerably higher for OSCs, which is discussed in \secref{TheoDopingOrg}.
+
+\subsection{Charge Carrier Transport}
+Due to the weak inter-molecular interaction, non-crystalline OSCs usually do not form a band structure of allowed and forbidden energy regions (compare \secref{Theo-inorg-Bandstructure}). Instead, the charge transport occurs via hopping processes from one molecule to the other.
+One characteristic attribute for hopping transport is its temperature dependence. While for CSCs the mobility decreases at elevated temperatures due to scattering of the charges at lattice vibrations (compare \secref{TheoDriftCurrent}), for OSCs the hopping probability and hence the mobility increase with temperature. Usually, the conductivity \c is found to be thermally activated as
+\begin{equation}\label{eq:CondActivation}
+\c(T) = \c_0 \exp{-\frac{\Eact}{\kT}}
+\KOMMA
+\end{equation}
+where \kB is Boltzmann's constant, $\c_0$ is interpreted as theoretical maximum of the conductivity and \Eact is the \EactLong.
+
+The temperature dependence of the mobility may differ from a simple activated case to a model where hopping along a manifold of states is assumed\cite{Bassler1982, Vissenberg1998}. Besides the temperature, the mobility is influenced by the \nLong and applied external fields as well, but this interaction is not completely understood at present. For further information on charge transport in organic molecules, the reader is referred to the review articles~\cite{Tessler2009,Troisi2011}. An overview about traps in \OSCs is given in reference\cite{Schmechel2004}.
+
+\subsection{Density of States}\label{sec:TheoOrgDOS}
+%
+\cBild{sim_gauss-malen}%
+{Normalized Gaussian distributed \dosLong}%
+{Sketch of a normalized Gaussian distributed \dosLong, following \eqnref{DefGaussianDOS} and arbitrary positioned at \mbox{$\gausscenter=0$}.}%
+%
+The \dosLong of \OSCs has a different distribution than for \CSCs. While for CSCs a square root shaped \dos can be approximated near the band edges, compare \secref{TheoConventionalSemiconductors}, for OSCs usually a Gaussian\entdecker{Johann Carl Friedrich Gauß}{German}{1777--1855} distribution is assumed \cite{Schmechel2003, Tietze2012}, which accounts for the energetic broadening of molecular energy levels due to the disorder as well as intra- and inter-molecular interactions and orientations.
+The \dos of OSCs can be modeled by the following equation, which is drawn in \figref{sim_gauss-malen}:
+\begin{equation} \label{eq:DefGaussianDOS}
+\dos(E) = \frac{\nH}{\sqrt{2 \pi} ~ \gausswidth} \exp{-\frac{(E-\gausscenter)^2}{2\gausswidth^2}}
+\PUNKT
+\end{equation}
+Here, \gausscenter is the position of the maximum of the distribution and \gausswidth is the standard deviation, being a measure for the width of the Gaussian distribution. At \mbox{$E=\gausscenter\pm\sqrt{2}~\gausswidth$} the distribution is reduced to the maximum divided by Euler's\entdecker{Leonhard Euler}{Swiss}{1707--1783} number. As each molecule is assumed to be able to contribute one state, integration of $\dos(E)$ over all energies yields the total density of (host) molecules \nH.
+
+Similar to a square root shaped \dosLong, for a Gaussian shaped \dos it is possible to solve \eqnrefPage{CCD-basic-integral} for the \nLong \neh analytically, when using the Boltzmann approximation for the \fFDLong\cite{Tietze2012}. For clarity, additional steps not included in the original publication are shown here, as well as the adoption of this approach for electrons instead of holes:
+\begin{align}
+\ne &=\int_{-\infty}^{+\infty}
+ \overbrace{ \frac{\nH}{\sqrt{2 \pi} ~ \gausswidth} \exp{-\frac{(E-\gausscenter)^2}{2\gausswidth^2}} }^{\dos(E)}
+ ~ \cdot ~
+ \overbrace{ \exp{-\frac{E-\Ef}{\kT}} } ^{\fB(E)}
+ dE
+% \KOMMA hier nicht
+\\
+\intertext{
+with $x:=E-\gausscenter$ , $C_1:=\frac{\nH}{\sqrt{2 \pi} \gausswidth}$ and $C_2 := \frac{\gausswidth^2}{\kT}$ this becomes
+}
+\ne &= C_1 \int_{-\infty}^{+\infty} dx
+ \exp{-\frac{1}{2\gausswidth^2}
+   \left(
+     x^2 + 2 x C_2 + 2 C_2 \left( \gausscenter-\Ef \right)
+   \right)
+ }
+\\
+\intertext {
+  with $\left( x + C_2 \right)^2 = x^2 + 2xC_2 + C_2^2 $ this simplifies to
+}
+\ne &= C_1 \int_{-\infty}^{+\infty} dx
+ \exp{-\frac{1}{2\gausswidth^2}
+   \left(
+     \left( x + C_2 \right)^2 - C_2^2 + 2 C_2 \left( \gausscenter-\Ef \right)
+   \right)
+ }
+\\
+&= C_1
+\exp{-\frac{- C_2^2 + 2 C_2 \left( \gausscenter-\Ef \right)}{2\gausswidth^2} }
+ \int_{-\infty}^{+\infty} dx
+ \exp{-\frac{( x + C_2 )^2}{2\gausswidth^2}
+ }
+\\
+%&= C_1
+%\exp{+\frac{C_2^2}{2\gausswidth^2} - \frac{2 C_2 \left( \gausscenter-\Ef \right)}{2\gausswidth^2} }
+% \int_{-\infty}^{+\infty} dx
+% \exp{-\frac{( x + C_2 )^2}{2\gausswidth^2}
+% }
+%\\
+&= C_1
+  \exp{+\frac{\gausswidth^2}{2(\kT)^2} - \frac{ \gausscenter-\Ef }{\kT} }
+    \int_{-\infty}^{+\infty} dx
+    \underbrace{
+      \exp{-\frac{\left( x + \frac{\gausswidth^2}{\kT} \right)^2}{2\gausswidth^2}
+      }
+    } _ { \text{= definition of Gaussian, compare \eqref{DefGaussianDOS}}}
+\\
+&= \nH\frac{1}{\sqrt{2 \pi} \gausswidth}
+  \exp{+\frac{\gausswidth^2}{2(\kT)^2} - \frac{ \gausscenter-\Ef }{\kT} } \quad \cdot \sqrt{2\pi}~\gausswidth
+\\
+\ne &= \nH
+  \exp{-\frac{ \left(\gausscenter - \frac{\gausswidth^2}{2\kT} \right) -\Ef }{\kT} } \label{eq:ne-org-solved} 
+\PUNKT
+\intertext{An analogous calculation\cite{Mayer2010} can be performed for p-doping to obtain the \nhLong \nh, when a corresponding \dosLong is used, (having its maximum below \Ef)} \nh &= \nH
+  \exp{-\frac{ \Ef - \left(\gausscenter + \frac{\gausswidth^2}{2\kT}\right)}{\kT}}
+\label{eq:nh-org-solved}
+\PUNKT
+\end{align}
+These terms are similar to the equations for CSCs:
+\begin{align*}
+\ne &=\Nc\exp{-\frac{\Ec-\Ef}{\kT}} \quad\quad\text{\eqref{ne-InOrg-via-Boltzmann}}&  \nh &=\Nv\exp{-\frac{\Ef-\Ev}{\kT}} \tag{\ref{eq:nh-InOrg-via-Boltzmann}}
+\PUNKT
+\end{align*}
+In case of a Gaussian distributed \dosLong, the prefactors \Nc and \Nv are replaced by the density of molecules \nH and the energy level of the conduction band is replaced by a term that depends on the position of the maximum \gausscenter and the width \gausswidth of the Gaussian distribution.
+
+If \Ef is close to \gausscenter and hence \fB is strongly overlapping with the \dosLong, the Boltzmann approximation is not valid. Here, the \fFDLong $\fFD(E)$ has to be used and the integral \eqref{CCD-basic-integral} solved numerically. Both functions, \fFD and \fB, are drawn in \figref{sim_Fermi-DOS-Es-org-Fermi-vs-Boltzmann} together with a Gaussian \dos, where \Ef is arbitrary placed at a distance of $4 \cdot \gausswidth$ from the \gausscenter. The product of distribution function and \dos is the differential \neLong $\ne'(E)$ and is shown as inset. The area under that curve corresponds to \neLong \ne, analogously to \figrefPage{sim_Fermi-DOS-n-inorg}. It can clearly be seen that using \fB, \ne would be overestimated as the contribution for $E<\Ef$ is strongly overrated. Therefore, in the following all calculations of \neh are performed numerically, using \fFD.
+
+\cBild
+{sim_Fermi-DOS-Es-org-Fermi-vs-Boltzmann}
+{Overestimation of \ne by using \fB instead of \fFD in a Gaussian \dos}
+{Comparing the influence of Boltzmann \fB and Fermi-Dirac \fFD distribution functions on the \neLong \ne for the case of \Ef close to \gausscenter, here at a distance of $4\,\gausswidth$. Inset: product of \dos and $f$, being the differential \neLong $\ne'(E)$, calculated for \fFD (light gray) and overestimation via \fB (dark gray). Parameters: \mbox{$\gausswidth=\meV{100}$}, \mbox{$\Ef=Eg-4 \cdot \gausswidth$}, \T[25].
+}
+
+\subsection{Doping of Organic Semiconductors}\label{sec:TheoDopingOrg}
+Doping of \CSCs was the key element that led to the breakthrough of semiconductor technology, as it allows for control of the majority charge carriers and hence the design of p-n-junctions, the building block for most modern electronic devices. Furthermore, doping allows for adjusting the conductivity as well as the position of the \EfLong position in a layer, enhancing device design freedom and performance.
+Similar to \CSCs, it is possible to dope \OSCs by adding electron acceptors or electron donors to the layer, which drastically increases the \nLong.
+Hence, doping of \OSCs raises the \cLong by several orders of magnitude and furthermore allows to overcome contact limitations between metal contacts and organic layers and thus improves charge injection and extraction, which are crucial for efficient devices. Besides increasing the \nLong, doping can also effect the charge carrier mobility by either filling of traps or by generation of additional traps\cite{Schmechel2004,Arkhipov2005}.
+In the following, a brief overview about history and different approaches for doping of organic layers is given. For more details, the reader is referred to the textbook chapters~\cite{RiedeLuessemLeo2011,LuessemRiedeLeo2012,HummertLeo2013} and the review articles~\cite{Walzer2007,LuessemRiedeLeo2013-PSS}.
+
+\subsubsection{History of Doping Experiments}
+First attempts of p-doping of \OSCs have been reported as early as 1954 when Akamatu\etal\cite{Akamatu1954} used the halogen bromine as acceptor in perylenes. Later, extensive studies on p-doping using halogen gases have been performed\cite{Curry1962,Yamamoto1979}. 
+Oxygen-exposure can lead to p-doping as well\cite{Vaterlein1996,Hamed1993}.
+Successful n-doping has first been reported\cite{Ramsey1990,Haddon1991} in 1990, when alkali metals like cesium % BE: Caesium, AE: Cesium
+were used as donors and have recently been theoretically described\cite{Mityashin2012}.
+
+A common problem of using atoms to dope an OSC is the diffusion of atoms through the device that leads to a lowering of device efficiency and lifetimes\cite{Walzer2007}. This issue can be overcome by using larger or heavier compounds, like organic molecules. A molecular n-dopant donates an electron from its HOMO to the LUMO of the host material, whereas a molecular p-dopant accepts an electron from the HOMO of the host into its LUMO, creating a hole at the host. Thus, for successful doping suitable energy levels of host and dopant are required. 
+
+The first successful p-doping of an OSC using an organic dopant has been shown by Kearns\etal\cite{Kearns1960} in 1960. Molecular p-dopants are strong electron accepting molecules with a deep lying LUMO level. They typically contain fluorine, the most electronegative element in the periodic table.
+In recent years, heavy metal oxides like MoO$_3$ or WO$_3$ have gained attention as these molecules have been reported to be less diffusive\cite{Chang2006} and are able to dope materials with HOMO levels as deep as \eV{6}\cite{Meyer2009,Kroger2009}.
+
+It took 40 more years until the first organic n-dopant has been reported by Nollau\etal\cite{Nollau2000} in 2000. The reason is that n-dopants need to have shallow HOMO levels (with respect to the vacuum level) in order to donate an electron into the LUMO of the host. Therefore, they are highly reactive materials that are usually unstable in air and hence require handling in an inert atmosphere.
+
+The n-dopants reactivity to air can be alleviated by using stable precursor compounds which form the active dopant compound \insitu during depositing of the doped layer in vacuum. This approach has been first presented by Werner\etal\cite{Werner2003} using the cationic salt % cation = pos charged dopant
+pyronin B chloride which upon vacuum deposition separates from its chloride anion. Recently, a different approach has been presented by Guo\etal\cite{Guo2012}, who used dimers that were cleaved during deposition, yielding the advantage of less unintended side products that could interfere with the doping process.
+
+\subsubsection{Doping Mechanisms}\label{sec:Theo-org-Doping-Mechanisms}
+Doping is usually described as a two-step process. First, the dopant is ionized, transferring an electron (or hole) to the host and leaving a hole (electron) on the dopant molecule behind. Afterwards, the electron (hole) has to dissociate against the Coulomb attraction of the hole (electron) left on the dopant. This principle holds for conventional and organic \SCs.
+
+In case of molecular doping of an organic host, a suitable dopant molecule is required for the first step.
+The \IE (IE) corresponds to the difference between the HOMO and the vacuum level, compare \figref{Skizze-Doping-org}\,(a), and is a measure of the energy it takes to remove the least bound electron from the molecule.
+On the other hand, the difference between the LUMO and the vacuum level is referred to as \EA (EA).
+A molecule with a low IE is likely to donate electrons and can therefore be used as n-dopant, whereas p-dopants typically have high EA to allow for electron accepting, as sketched in \figref{Skizze-Doping-org}\,(b) and (c).
+The IE can be measured using ultraviolet photoelectron spectroscopy (UPS) in vacuum with a typical accuracy of $\pm\eV{0.13}$\cite{SelinaOlthofDiss}. The EA on the other hand can be studied by inverse photoemission spectroscopy (IPES) in vacuum, which due to a smaller cross-section has a lower accuracy, typically around $\pm\eV{0.30}$. Recently, a high resolution IPES setup has been presented\cite{Yoshida2012} that uses electrons of kinetic energies below \eV{4} and is a promising method for measuring the EA with higher accuracy.
+Soluble compounds can be probed by the wet chemical method of cyclic voltammetry (CV), which allows for an estimation of HOMO and LUMO levels, but as the energy levels usually differ between solutions and deposited layers, for the samples investigated in this thesis, values determined by UPS and IPES are preferred.
+%
+As it is difficult to measure the molecular energy levels of dopants deposited into a layer of host molecules, today it is not clear if the energy levels of the dopants are affected by the surrounding host molecules. Therefore, in this work the energy levels of dopant molecules deposited into layers of hosts molecules are assumed to remain at the levels determined for pure dopant layers.
+%
+Besides suitable energy levels, overlap of orbitals between host and dopant, as well as morphological properties are essential for charge-transfer.
+
+%
+\cBildDraw[t]
+{Skizze-Doping-org}
+{Sketch of doping principle for OSCs}
+{Sketch of doping principle for OSCs. (a) Relation of HOMO and LUMO to vacuum level via \IE (IE) and \EA (EA). (b) n-doping: an electron is transfered from the HOMO of the dopant to the LUMO of the host. (c) p-doping: an electron is transfered from the HOMO of the host to the LUMO of the dopant, generating a hole at the host.
+}
+
+The second step of doping, the dissociation of the generated charge pair, is easier to achieve for CSCs, as their dielectric constants ($\varepsilon\approx10$ to 15) are higher than for OSCs ($\varepsilon\approx3$ to 5)\cite{RiedeLuessemLeo2011}. Therefore, the Coulomb interaction between charges is much stronger in case of OSCs, requiring a larger distance between the charges to overcome the attraction.
+
+Mityashin\etal\cite{Mityashin2012a} calculated the potential landscape around an ionized dopant for the model system of \pen doped by \FV\footnote{compare \secref{Mat} for details on the materials}, as these molecules have a similar size as well as suitable energy levels. Varying the concentration of dopants in the system, they found that a certain minimum concentration of dopants is required in order to change the potential landscape sufficiently to allow for dissociation and hence generation of free charges. This finding is different to CSCs, where no fundamental lower limit of doping concentration is known.
+Their results explain the much higher doping concentrations needed for OSCs, compared to CSCs.
+
+Salzmann\etal\cite{Salzmann2012} introduced an alternative model for the doping process of OSCs, suggesting the formation of a hybrid of host and dopant by a hybridization of their orbitals. They conclude that due to an offset of the energy levels of host and hybrid state, only a fraction of the hybrids can be ionized at finite temperature and thus the maximum \nLong is limited.
+
+\subsubsection{Units of Doping Concentration}\label{sec:TheoDopingUnits}
+While in CSCs typically doping concentrations are in the part per million (ppm) range, for OSCs much higher concentrations, typically in the range of several percent are required. The reasons are the disordered structure that leads to the lower charge carrier mobilities and the high density of traps, which has to be overcome by doping, as well as the above discussed required change in potential landscape.
+In OSCs, the \CLong \C is usually expressed either in terms of weight (\eg \wt{}) or in terms of molecule numbers (\eg mol\%). Using terms of weight is more technically oriented, as during sample fabrication typically the weight of the materials is directly controlled. Expressing \C in terms of numbers of molecules, on the other hand, is physically easier to interpret but requires the knowledge of the molar mass \MM of each compound, which for proprietary materials or compounds that transform during deposition may not be available. As the structures of all materials used in this thesis are known, the \CLong can be expressed in terms of numbers of molecules.
+Thereby, it is assumed that the dopant molecules substitute host molecules and therefore adopt the density of the host. The unit molar ratio (\mr{}), being the ratio of dopant to host molecules, is a relevant figure for quantitative evaluations and hence chosen as unit for all \CLongs in the following:
+\begin{align}
+\C \text{ in } \mr{} &= \frac{\nD}{\nH}
+\KOMMA
+\intertext{with \nHLong \nH and \nDLong \nD. Besides \mr{}, in literature frequently the unit molar percent (mol\%) is found, being defined as the relative number/density of dopant molecules to the total number/density of molecules}
+\text{mol}\% &= 100\% \cdot \frac{\nD}{\nH+\nD}
+\PUNKT
+\intertext{Analogously to mol\%, the unit weight percent (\wt{}) is defined as ratio of the mass of dopant material to the total mass}
+\wt{} &= 100\% \cdot \frac{m_\text{D}}{m_\text{H}+m_\text{D}}
+\PUNKT
+\end{align}
+Conversion between the different units can be performed via
+\begin{align}
+\mr{} &= \frac{\text{mol}\%}{100\%-\text{mol}\%}
+&% \quad \text{and} \quad
+\text{mol}\% &= 100\% \cdot \frac{\mr{}}{\mr{}+1}
+\\
+\mr{} &= \frac{\MM{}_\text{H}}{\MM{}_\text{D}} \cdot \frac{\wt{}}{100\%-\wt{}}
+&% \quad \text{and} \quad
+\wt{} &= 100\%\cdot \left(1+\frac{\MM{}_\text{H}}{\MM{}_\text{D}}\cdot\frac{1}{\mr{}}\right)^{-1}
+\label{eq:MRtoWT}
+% \KOMMA
+\end{align}
+with the molar masses of host and dopant, $\MM{}_\text{H}$ and $\MM{}_\text{D}$, respectively.
+
+\subsubsection{Calculating Molecular Densities}
+In an undoped layer, the density of molecules \nM can be calculated from the molar mass \MM and the density \density of the material, using the Avogadro\entdecker{Lorenzo Romano Amedeo Carlo Avogadro, Conte di Quaregna e Cerreto}{Italian}{1776--1856} constant \avogadro:
+\begin{equation}
+ \nM = \frac{\avogadro \cdot \density}{\MM}
+\label{eq:nM-from-MatPara}
+\PUNKT
+\end{equation}
+In a doped layer, \nM is the sum of partial densities of host \nH and dopant \nD molecules. Assuming dopant molecules to neatly replace host molecules one by one, the total density of molecules \nM is unchanged upon doping. Expressing the doping concentration \C in terms of molar ratio \mr{}, the following expressions for \nH and \nD can be derived:
+% , which are plotted in \figref{sim_H+D-vs-MR}:
+\begin{align}
+ \nM &= \nH + \nD \label{eq:nMHD}\\
+ \C  &= \frac{\nD}{\nH}\label{eq:C} \\
+% \nD &= \C \cdot \nH  \\
+ \nH = \frac{\nM}{1+\C}
+ \quad \quad &\text{and} \quad \quad
+ \nD = \frac{\nM\cdot\C}{1+\C}
+\label{eq:nHD}
+\PUNKT\\
+%\end{align}
+\intertext{%
+For dopant densities much greater than the intrinsic charge carrier density \ni, the doping efficiency \DopEff is defined as the ratio of the density of free charge carriers (electrons or holes) \neh to the \nDLong \nD, analogously to \eqnref{DepEff-inorg} for CSCs:}
+%\begin{align}
+\DopEff &= \frac{\neh}{\nD} = \neh \cdot \frac{1+\C}{\nM\cdot\C}
+\label{eq:DopEff}
+% = \frac{\neh}{\C \cdot \nH}
+\\
+\Rightarrow \neh &= %\DopEff \cdot \nD = \DopEff \cdot \C \cdot \nH %\\
+%= \frac{\neh \cdot (1+\C)}{\C \cdot \nM}
+%&= \frac{\neh}{\nM} \cdot \frac{1+\C}{\C}
+\DopEff \cdot \nM \cdot \frac{\C}{1+\C}
+\label{eq:CCD-from-DopEff}
+\PUNKT
+\end{align}
+

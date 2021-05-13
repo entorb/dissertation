@@ -1,0 +1,489 @@
+%äöüß
+
+% Shortcuts:
+% STRG + Shift + V = Verbatim
+% STRG + Shift + E = Equation
+
+% === to do markup ===
+\newcommand{\todocite}  [0] {%
+\todof{Reference to be added}
+}
+\newcommand{\todo}[1]{%
+\textcolor{red}{TODO: #1}\xspace%
+}
+\newcommand{\todof}[1]{%
+\textcolor{red}{\footnote{\textcolor{red}{TODO: #1}}}%
+}%
+\newcommand{\note}[1]{%
+\textcolor{red}{\footnote{\textcolor{green}{NOTE: #1}}}%
+}
+\newcommand{\wort}[1]{%
+\textcolor{violet}{#1}%
+}
+\newcommand{\klau}[1]{\textcolor{blue}{#1}}
+\newcommand{\klauPd}[1]{\textcolor{magenta}{#1}}
+
+% param1 = label
+% param2 = caption
+\newcommand{\todoplot}[2]{%
+\begin{figure}%
+\centering%
+\includegraphics{fig/dummy.pdf}%
+\caption{\todo{#2}}%
+\label{fig:#1}%
+\end{figure}%
+}
+\renewcommand{\todoplot}[2]{\todo{Plot #2}}
+
+\newcommand{\was}[1]{%
+\textbf{#1}\\%
+}
+
+% === TEXT ===
+
+\newcommand{\intro}[1]{%
+%\emph{#1}%
+\textit{#1}%
+}
+
+\newcommand{\entdecker}[4][\empty]%
+{\footnote{%
+after #3 scientist \name{#2}%
+\ifthenelse{\equal{#1}{\empty}}%
+{}%
+{\cite{#1}}%
+\,(#4)%(1900-1950)
+}}
+
+\newcommand{\name}[1] {#1}% \textsc
+
+% bei Verwendung von TU Schriften wird im mathemodos ein falsches % zeichen verwendet
+% \renewcommand{\percent}{
+% \ifmmode%
+% \text{{\%}}%\textsl\textit
+% \else%
+% \%%
+% \fi%
+% }
+
+% von http://www.mrunix.de/forums/showthread.php?t=45035
+\let\exporg\exp % damit keine endlosschleife erzeugt wird
+\renewcommand{\exp}[1]{\exporg{\left(#1\right)}}
+
+% Torbens "draft" mode: newpage at each (sub)section
+% \let\sectionorg\section % damit keine endlosschleife erzeugt wird
+% \renewcommand{\section}[1]{\newpage\sectionorg{#1}}
+% \let\subsectionorg\subsection
+% \renewcommand{\subsection}[1]{\newpage\subsectionorg{#1}}
+
+% === UNITS ===
+
+% [per=frac,fraction=nice,valuesep=thick]
+\newcommand{\K}[1] {\SI{#1}{\kelvin}}
+\newcommand{\grad}[1] {\SI{#1}{\celsius}}
+\newcommand{\nm}  [1] {\SI{#1}{\nano\meter}}
+\newcommand{\cmVs}  [1] {\SI{#1}{\centi\meter\squared\per\volt\per\second}}
+\newcommand{\um}  [1] {\SI{#1}{\micro\meter}}
+\newcommand{\mm}  [1] {\SI{#1}{\milli\meter}}
+\newcommand{\meV} [1] {\SI{#1}{\milli\electronvolt}}
+\newcommand{\eV}  [1] {\SI{#1}{\electronvolt}}
+\newcommand{\mV}  [1] {\SI{#1}{\milli\volt}}
+%\newcommand{\mbar}[1] {\SI{#1}{\milli\bbar}}
+\newcommand{\pa}[1] {\SI{#1}{\pascal}} % E-7 mbar = E-5 Pa
+\newcommand{\uVK} [1] {\SI{#1}{\micro\volt\per\kelvin}} % \micro -> Font eurm10 at 10pt not found
+\newcommand{\Scm} [1] {\SI{#1}{\siemens\per\centi\meter}}
+\newcommand{\mr}[1] {\SI{#1}{MR}}
+\newcommand{\wt}[1] {\SI{#1}{wt\percent}}
+\newcommand{\sek}[1] {\SI{#1}{\second}}
+%\newcommand{\minute}[1] {\SI{#1}{\minute}}
+\newcommand{\gMole}[1] {\SI{#1}{\gram\per\mole}}
+% \newcommand{\As}  [1] {\SI{#1}{\angstrom\per\second}}
+
+\let\uorg\u
+\renewcommand{\u}[1] {\SI{#1}{\atomicmass}}
+
+% === VARIABLES+UNITS ===
+
+% T or T=50 C
+\newcommand{\T} [1][\empty]%
+{%
+\ifthenelse{\equal{#1}{\empty}}%
+{\ensuremath{T}\xspace}%
+{\mbox{\ensuremath{T=\grad{#1}}}}%
+}
+
+\newcommand{\Tm} [1][\empty]%
+{%
+\ifthenelse{\equal{#1}{\empty}}%
+{\ensuremath{T_\text{m}}\xspace}%
+{\mbox{\ensuremath{T_\text{m}=\grad{#1}}}}%
+}
+
+% glass transition Temp
+\newcommand{\Tg} [1][\empty]%
+{%
+\ifthenelse{\equal{#1}{\empty}}%
+{\ensuremath{T_\text{g}}\xspace}%
+{\mbox{\ensuremath{T_\text{g}=\grad{#1}}}}%
+}
+% deposition Temp
+\newcommand{\Tdep} [1][\empty]%
+{%
+\ifthenelse{\equal{#1}{\empty}}%
+{\ensuremath{T_\text{dep}}\xspace}%
+{\mbox{\ensuremath{T_\text{dep}=\grad{#1}}}}%
+}
+% substrate Temp
+\newcommand{\Tsub} [1][\empty]%
+{%
+\ifthenelse{\equal{#1}{\empty}}%
+{\ensuremath{T_\text{sub}}\xspace}%
+{\mbox{\ensuremath{T_\text{sub}=\grad{#1}}}}%
+}
+\newcommand{\V} [1][\empty]%
+{%
+\ifthenelse{\equal{#1}{\empty}}%
+{\ensuremath{V}\xspace}%
+{\mbox{\ensuremath{V=\SI{#1}{\volt}}}}%
+}
+
+\newcommand{\cLong} [0]{conductivity\xspace}
+\newcommand{\cLongL} [0]{conductivity \ensuremath{\sigma}\xspace}
+\newcommand{\cLongs} [0]{conductivities\xspace}
+\newcommand{\cLongsL} [0]{conductivities \ensuremath{\sigma}\xspace}
+\let\corg\c % Backup
+\renewcommand{\c} [1][\empty]%
+{%
+\ifthenelse{\equal{#1}{\empty}}%
+{\ensuremath{\sigma}\xspace}%
+{\mbox{\ensuremath{\sigma=\Scm{#1}}}}%
+}
+% \newcommand{\cond} [1][\empty]%
+% {%
+% \ifthenelse{\equal{#1}{\empty}}%
+% {\c}%
+% {\c[#1]}%
+% }
+
+\newcommand{\CLong} [0]{doping concentration\xspace}
+\newcommand{\CLongL} [0]{doping concentration \ensuremath{C}\xspace}
+\newcommand{\CLongs} [0]{doping concentrations\xspace}
+\let\Corg\C % Backup
+\renewcommand{\C} [1][\empty]%
+{%
+\ifthenelse{\equal{#1}{\empty}}%
+{\ensuremath{C}\xspace}%
+{\mbox{\ensuremath{C=\mr{#1}}}}%
+}
+\newcommand{\Ckl} [1]{\mbox{\ensuremath{C<\mr{#1}}}}
+\newcommand{\Cgr} [1]{\mbox{\ensuremath{C>\mr{#1}}}}
+
+% === WORDS ===
+\newcommand{\SC}  [0] {semiconductor\xspace}
+\newcommand{\SCs} [0] {semiconductors\xspace}
+\newcommand{\CSC} [0] {conventional semiconductor\xspace}
+\newcommand{\CSCs}[0] {conventional semiconductors\xspace}
+\newcommand{\OSC} [0] {organic semiconductor\xspace}
+\newcommand{\OSCs}[0] {organic semiconductors\xspace}
+\newcommand{\SMU} [0] {source measure unit\xspace}
+
+\newcommand{\IE}  [0] {ionization energy\xspace}
+\newcommand{\EA}  [0] {electron affinity\xspace}
+\newcommand{\IEs}  [0] {ionization energies\xspace}
+\newcommand{\EAs}  [0] {electron affinities\xspace}
+\newcommand{\HOMO}[0] {highest occupied molecular orbital\xspace}
+\newcommand{\LUMO}[0] {lowest unoccupied molecular orbital\xspace}
+
+\newcommand{\insitu}[0] {in-situ\xspace}
+\newcommand{\etal}[0] { et~al.\xspace}
+% \xspace oder '\ ' weil sonst zuviel Leer  nach Punkt
+\newcommand{\eg}[0]  {\mbox{e.g.}\xspace} % lat: exempli gratia: "zum Beispiel → z.B." (for example)
+\newcommand{\ie}[0]  {\mbox{i.e.}\xspace} % lat: id est: "das heißt → d.h." (that is)
+\renewcommand{\etc}[0] {\mbox{etc.}\xspace} % lat: et cetera, "und so" (and so on)
+\newcommand{\vs}[0] {vs.\ }
+
+% \newcommand{\linesGuides}[0] {Lines are guides to the eye.\xspace}
+
+\newcommand{\mphOFET}[0]{\footnote{measured by Moritz Philipp Hein (IAPP) in an OFET geometry on SiO$_2$ substrate}\xspace}
+
+% WIKI: in der Physik bezeichnet In-situ-Probenpräparation, dass eine Probe unter Ultrahochvakuumbedingungen hergestellt wurde und auch sofort gemessen wird, ohne dass sie das Vakuum verlässt
+
+% === VARIABLES ===
+\newcommand{\fFD}     [0] {\ensuremath{f_\text{FD}}\xspace}
+\newcommand{\fFDLong} [0] {Fermi-Dirac distribution function\xspace}
+\newcommand{\fB}      [0] {\ensuremath{f_\text{B}}\xspace}
+\newcommand{\fBLong}  [0] {Boltzmann distribution function\xspace}
+\newcommand{\dos}     [0] {\ensuremath{DOS}\xspace}
+\newcommand{\dosLong} [0] {density of states\xspace}
+\newcommand{\dosLongL} [0] {density of states \ensuremath{DOS}\xspace}
+\newcommand{\dosLongs} [0] {densities of states\xspace}
+\newcommand{\dosLongsL} [0] {densities of states \ensuremath{DOS}\xspace}
+
+\newcommand{\Td}  [0] {\ensuremath{T_\text{d}}\xspace}
+\newcommand{\n} [0] {\ensuremath{n}\xspace}
+\newcommand{\nLong} [0] {density of free charge carriers\xspace}
+\let\notequal\ne % \notequal -> != /usually \ne, but I need \ne for n_e
+\renewcommand{\ne} [0] {\ensuremath{n_\text{e}}\xspace}
+\newcommand{\neLL} [0] {\ensuremath{n_\text{e,LL}}\xspace}
+\newcommand{\neLong} [0] {density of free electrons\xspace}
+\newcommand{\neLongL} [0] {\neLong \ensuremath{n_\text{e}}\xspace}
+\newcommand{\neLongs} [0] {densities of free electrons\xspace}
+\newcommand{\neLongsL} [0] {\neLongs \ensuremath{n_\text{e}}\xspace}
+\newcommand{\nh} [0] {\ensuremath{n_\text{h}}\xspace}
+\newcommand{\nhLL} [0] {\ensuremath{n_\text{h,LL}}\xspace}
+\newcommand{\nhLong} [0] {density of free holes\xspace}
+\newcommand{\nhLongL} [0] {\nhLong \ensuremath{n_\text{h}}\xspace}
+\newcommand{\nhLongs} [0] {densities of free holes\xspace}
+\newcommand{\nhLongsL} [0] {\nhLongs \ensuremath{n_\text{h}}\xspace}
+\newcommand{\neh} [0] {\ensuremath{n_\text{e/h}}\xspace}
+\newcommand{\nehLL} [0] {\ensuremath{n_\text{e/h,LL}}\xspace}
+
+\newcommand{\nM} [0] {\ensuremath{n_\text{Mol}}\xspace}
+\newcommand{\nMLong} [0] {total density of molecules\xspace}
+\newcommand{\nH} [0] {\ensuremath{n_\text{H}}\xspace}
+\newcommand{\nHLong} [0] {density of host molecules\xspace}
+\newcommand{\nD} [0] {\ensuremath{n_\text{D}}\xspace}
+\newcommand{\nDLong} [0] {density of dopant molecules\xspace}
+\newcommand{\nDLongL} [0] {density of dopant molecules \ensuremath{n_\text{D}}\xspace}
+
+\newcommand{\DopEff} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\eta_\text{dop}}\xspace}%
+ {\mbox{\ensuremath{\eta_\text{dop}=\SI{#1}{\percent}}}}%
+}
+\newcommand{\DopEffLL} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\eta_\text{dop,LL}}\xspace}%
+ {\mbox{\ensuremath{\eta_\text{dop,LL}=\SI{#1}{\percent}}}}%
+}
+\newcommand{\DopEffLong} [0] {doping efficiency\xspace}
+\newcommand{\DopEffLongs} [0] {doping efficiencies\xspace}
+\newcommand{\DopEffLongL} [0] {\DopEffLong \ensuremath{\eta_\text{dop}}\xspace}
+
+\let\weg\ni % was some math symbol
+\renewcommand{\ni}[0]{\ensuremath{n_\text{i}}\xspace}
+
+\newcommand{\EvLong} [0] {valence energy\xspace}
+\newcommand{\Ev} [0] {\ensuremath{E_\text{V}}\xspace}
+\newcommand{\EcLong} [0] {conduction energy\xspace}
+\newcommand{\Ec} [0] {\ensuremath{E_\text{C}}\xspace}
+\newcommand{\Egap} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{E_\text{gap}}\xspace}%
+ {\mbox{\ensuremath{E_\text{gap}=\eV{#1}}}}% eV!!!
+}
+\newcommand{\Ed} [0] {\ensuremath{E_\text{D}}\xspace}
+\newcommand{\Ea} [0] {\ensuremath{E_\text{A}}\xspace}
+\newcommand{\EtLong} [0] {transport level\xspace}
+\newcommand{\EtLongL} [0] {\EtLong \ensuremath{E_\text{Tr}}\xspace}
+\newcommand{\Et} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{E_\text{Tr}}\xspace}%
+ {\mbox{\ensuremath{E_\text{Tr}=\meV{#1}}}}%
+}
+
+\newcommand{\EfLong} [0] {Fermi level\xspace}
+\newcommand{\EfLongL} [0] {\EfLong \ensuremath{E_\text{F}}\xspace}
+\newcommand{\Ef} [0] {\ensuremath{E_\text{F}}\xspace}
+
+\newcommand{\EsLong} [0] {Seebeck energy\xspace}
+\newcommand{\EsLongL} [0] {\EsLong \ensuremath{E_\text{S}}\xspace}
+\newcommand{\Es} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{E_\text{S}}\xspace}%
+ {\mbox{\ensuremath{E_\text{S}=\meV{#1}}}}%
+}
+
+\newcommand{\EactLong} [0]{activation energy of the conductivity\xspace}
+\newcommand{\EactLongL} [0]{\EactLong \ensuremath{E_{\text{act,}\c}}\xspace}
+\newcommand{\EactLongs} [0]{activation energies of the conductivity\xspace}
+\newcommand{\Eact} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{E_{\text{act,}\c}}\xspace}%
+ {\mbox{\ensuremath{E_{\text{act,}\c}=\meV{#1}}}}%
+}
+
+% \newcommand{\Eoffset} [0] {\ensuremath{E_{\text{offset}}}\xspace}
+
+\newcommand{\Nv} [0] {\ensuremath{N_\text{V}}\xspace}
+\newcommand{\Nc} [0] {\ensuremath{N_\text{C}}\xspace}
+\newcommand{\Nd} [0] {\ensuremath{N_\text{D}}\xspace}
+\newcommand{\Ndi}[0] {\ensuremath{N_\text{D}^+}\xspace}
+\newcommand{\Na} [0] {\ensuremath{N_\text{A}}\xspace}
+\newcommand{\Nai}[0] {\ensuremath{N_\text{A}^-}\xspace}
+\newcommand{\gd} [0] {\ensuremath{g_\text{D}}\xspace}
+\newcommand{\ga} [0] {\ensuremath{g_\text{A}}\xspace}
+
+\newcommand{\kB} [0] {\ensuremath{k_\text{B}}\xspace}
+\newcommand{\kT} [0] {\ensuremath{k_\text{B}T}\xspace}
+
+\newcommand{\EField} [0] {\ensuremath{\mathcal{E}}\xspace}
+
+\newcommand{\dc} [0] {\ensuremath{d_\text{c}}\xspace} % contact distance
+\newcommand{\lc} [0] {\ensuremath{l_\text{c}}\xspace} % contact length
+\newcommand{\hl} [0] {\ensuremath{h_\text{l}}\xspace} % layer height / thickness
+
+%\newcommand{\mob}  [0] {\ensuremath{\mu}\xspace}
+\newcommand{\mob}  [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\mu}\xspace}%
+ {\mbox{\ensuremath{\mu=\cmVs{#1}}}}%
+}
+\newcommand{\mobLL}  [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\mu_\text{LL}}\xspace}%
+ {\mbox{\ensuremath{\mu_\text{LL}=\cmVs{#1}}}}%
+}
+\newcommand{\mobUL}  [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\mu_\text{UL}}\xspace}%
+ {\mbox{\ensuremath{\mu_\text{UL}=\cmVs{#1}}}}%
+}
+\newcommand{\mobe} [0] {\ensuremath{\mob_\text{e}}\xspace}
+\newcommand{\mobh} [0] {\ensuremath{\mob_\text{h}}\xspace}
+\newcommand{\mobeh} [0] {\ensuremath{\mob_\text{e/h}}\xspace}
+
+\newcommand{\Vs} [0] {\ensuremath{V_\text{S}}\xspace} % Seebeck Voltage
+\let\Sorg\S % \S was §
+\newcommand{\SLong}[0]{Seebeck coefficient\xspace}
+\newcommand{\SLongL}[0]{\SLong \ensuremath{S}\xspace}
+\newcommand{\SLongs}[0]{Seebeck coefficients\xspace}
+\renewcommand{\S} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{S}\xspace}%
+ {\mbox{\ensuremath{S=\uVK{#1}}}}%
+}
+%\newcommand{\MolDensity}  [0] {\ensuremath{\rho_\text{Mol}}\xspace}
+% \MolDensity -> \nM
+\newcommand{\MM}  [0] {\ensuremath{M}\xspace} % Molar Mass
+\newcommand{\density}  [0] {\ensuremath{\rho}\xspace}
+
+\newcommand{\gausswidth} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\sigma_\text{G}}\xspace}%
+ {\mbox{\ensuremath{\sigma_\text{G}=\meV{#1}}}}%
+}
+
+\newcommand{\gausscenter} [0] {\ensuremath{E_\text{G}}\xspace}
+\newcommand{\peltier}     [0] {\ensuremath{\Pi}\xspace}
+\newcommand{\avogadro}    [0] {\ensuremath{N_\text{Avo}}\xspace}
+\newcommand{\rms}         [0] {\ensuremath{R_\text{rms}}\xspace}
+\newcommand{\pKa}         [0] {pKa\xspace}
+\newcommand{\druck}       [0] {\ensuremath{P}\xspace} % in Bildern verwendet, z.B. killing+reanimating-C60-2-evap
+
+%\newcommand{\MR} [0] {\mr{}\xspace}
+
+% === MATERIALS ===
+% p
+\newcommand{\meo} [0] {\mbox{MeO-TPD}\xspace}
+\newcommand{\meoLong} [0] {N,N,N',N'-tetrakis 4-methoxyphenyl-benzidine\xspace}
+\newcommand{\lili} [0] {\mbox{BF-DPB}\xspace}
+\newcommand{\liliLong} [0] {N,N'-Bis(9,9-dimethyl-fluoren-2-yl)-N,N'-diphenyl-benzidine\xspace}
+\newcommand{\pen} [0] {pentacene\xspace}
+\newcommand{\bphenLong}[0]{4,7-diphenyl-1,10-phenanthroline\xspace}
+\newcommand{\znpc} [0] {ZnPc\xspace}
+\newcommand{\CSF} [0] {\texorpdfstring{C$_{60}$F$_{36}$}{C60F36}\xspace}
+\newcommand{\FS} [0] {\texorpdfstring{\mbox{F$_{6}$-TCNNQ}}{F6-TCNNQ}\xspace}
+\newcommand{\FSLong}[0] {1,3,4,5,7,8-hexafluorotetracyanonaphthoquinodimethane\xspace}
+\newcommand{\FV} [0] {\texorpdfstring{\mbox{F$_{4}$-TCNQ}}{F4-TCNQ}\xspace}
+\newcommand{\FVLong}[0] {tetrafluoro-tetracyanoquinodimethane\xspace}
+% n
+\newcommand{\CS} [0] {\texorpdfstring{C$_{60}$}{C60}\xspace}
+\newcommand{\CrPd}[0] {\texorpdfstring{Cr$_2$(hpp)$_4$}{Cr2(hpp)4)}\xspace}
+\newcommand{\WPd}[0] {\texorpdfstring{W$_2$(hpp)$_4$}{W2(hpp)4)}\xspace}
+\newcommand{\CrPdLong}[0] {tetrakis(1,3,4,6,7,8-hexahydro-2H-pyrimido[1,2-a]pyrimidinato)\-dichromium (II)\xspace}
+\newcommand{\WPdLong}[0]  {tetrakis(1,3,4,6,7,8-hexahydro-2H-pyrimido[1,2-a]pyrimidinato)\-ditungsten (II)\xspace}
+\newcommand{\aob} [0] {AOB\xspace}
+\newcommand{\aobLong} [0] {3,6-bis(dimethylamino)acridine\xspace}
+\newcommand{\dmbiPOH}[0] {\mbox{DMBI-POH}\xspace}
+\newcommand{\dmbi}[0] {\dmbiPOH}
+\newcommand{\dmbiPOHLong}[0] {2-(1,3-dimethyl-1\textsl{H}-benzoimidazol-3-ium-2-yl)phenolatehydrate\xspace}
+\newcommand{\OHdmbi}[0] {\mbox{OH-DMBI}\xspace}
+\newcommand{\OHdmbiLong}[0]  {2-(1,3-dimethyl-2,3-dihydro-1\textsl{H}-benzoimidazol-2-yl)phenol\xspace}
+\newcommand{\meodmbiI}[0] {\mbox{\textsl{o}-MeO-DMBI-I}\xspace}
+\newcommand{\meodmbiILong}[0] {2-(2-methoxyphenyl)-1,3-dimethyl-1\textsl{H}-benzoimidazol-3-ium iodide\xspace}
+\newcommand{\meodmbi}[0] {\mbox{\textsl{o}-MeO-DMBI}\xspace}
+\newcommand{\meodmbiLong}[0] {2-(2-methoxyphenyl)-1,3-dimethyl-2,3-dihydro-1\textsl{H}-benzoimidazol\xspace}
+\newcommand{\Ndmbi}[0] {\mbox{N-DMBI}\xspace}
+\newcommand{\NdmbiLong}[0]  {(4-(1,3-dimethyl-2,3-dihydro-1\textsl{H}-benzoimidazol-2-yl)phenyl)dimethylamine\xspace}
+\newcommand{\PCBM}[0]  {PCBM\xspace}
+\newcommand{\PCBMLong}[0]  {[6,6]-phenyl-C$_{61}$-butyric acid methyl ester\xspace}
+
+\newcommand{\cBild}[4][tb]{
+\begin{figure}[#1]% not h at first place!
+\centering%
+\includegraphics{plot/#2.pdf}%  the '%' is important!!! , removed width [width=#3]
+\setcapwidth[c]{\tmCapWidth}%
+\caption[#3]{#4}% \caption[shortcaption]{caption}
+\label{fig:#2}%
+\end{figure}%
+}
+
+\newcommand{\cBildDraw}[4][tb]{
+\begin{figure}[#1] % not h at first place!
+\centering
+\includegraphics{draw/#2.pdf}%  the '%' is important!!! , removed width [width=#3]
+\setcapwidth[c]{\tmCapWidth}%
+\caption[#3]{#4}% \caption[shortcaption]{caption}
+\label{fig:#2}
+\end{figure}
+}
+
+% === Special Commands ===
+% in equations
+\newcommand{\PUNKT}[0]{\ensuremath{~.}}
+\newcommand{\KOMMA}[0]{\ensuremath{~,}}
+
+\newcommand{\sub}  [1] {\ensuremath{_\text{#1}}}
+
+% % Uppercase
+% \let\Uorg\U
+% \renewcommand{\U}[1]{% Thanks to steven.b.segletes.civ@mail.mil
+% \encodetoken\xspace%
+% \capitalize[e]{#1}\retokenize[v]{\thestring}%
+% \decodetoken\xspace%
+% }
+
+% === Refs ===
+\newcommand{\Eqnref}[1] {Equation~(\ref{eq:#1})}
+\newcommand{\eqnref}[1] {equation~(\ref{eq:#1})}
+\newcommand{\eqnrefPage}[1] {\eqnref{#1} on page~\pageref{eq:#1}}
+\renewcommand{\eqref}[1] {(\ref{eq:#1})}
+\newcommand{\Figref}[1] {Figure~\ref{fig:#1}}
+\newcommand{\figref}[1] {figure~\ref{fig:#1}}
+\newcommand{\figrefPage}[1] {figure~\ref{fig:#1} on page~\pageref{fig:#1}}
+%\newcommand{\figref}[1] {Fig.~\ref{fig:#1}}
+\newcommand{\secref}[1] {section~\ref{sec:#1}}
+\newcommand{\Secref}[1] {Section~\ref{sec:#1}}
+% \newcommand{\secrefPage}[1] {section~\ref{sec:#1} on page \pageref{sec:#1}}
+\newcommand{\tabref}[1] {table~\ref{tab:#1}}
+\newcommand{\tabrefPage}[1] {table~\ref{tab:#1} on page~\pageref{tab:#1}}
+\newcommand{\todosecref}[0] {section~\textcolor{red}X}
+
+% % print the number of the last equation
+% \lasteqn[n] -> (n+1)th last; (n = optional)
+\newcommand{\lasteq}[1][0]{%
+(%
+\arabic{chapter}%
+.%
+%
+\addtocounter{equation}{-#1}\arabic{equation}\addtocounter{equation}{#1}%
+)\xspace%
+}
+\newcommand{\lasteqn}[1][0]{% same + word equation
+equation~(%
+\arabic{chapter}%
+.%
+%
+\addtocounter{equation}{-#1}\arabic{equation}\addtocounter{equation}{#1}%
+)\xspace%
+}
+
+% a counter I use temporary at some points
+\newcounter{tempCounter}
+\let\theequationBackup\theequation
+
+% Alternative to \cleardoublepage, but for 'left' pages
+\newcommand*\cleartoleftpage{%
+  \clearpage
+  \ifodd\value{page}\hbox{}\thispagestyle{empty}\newpage\fi
+}
+
+% % print the number of the next equation
+% % \nexteqn[n] -> last + n (n = optional)
+% \newcommand{\nexteqn}[1][1]{
+% (\arabic{section}.\addtocounter{equation}{#1}\arabic{equation}\addtocounter{equation}{-#1})
+% }
+
+%\renewcommand{\was}{}
+%\renewcommand{\name}[1]{#1}
+%\renewcommand{\word}[1]{#1}

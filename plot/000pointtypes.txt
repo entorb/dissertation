@@ -1,0 +1,16 @@
+n-Doping
+mat	ls	pointtype
+n1\dmbi	1	8/9
+n2\aob	2	10/11
+n3\WPd	3	4/5
+n4\CrPd	4	12/13
+
+n1b\oMeOdmbi	5	6/7
+
+mat	ls	pointtype
+p1\meo:\FS	1	8
+p2\meo:\CSF	2	9
+p3\lili:\FS	3	4
+p4\lili:\CSF	5
+
+p5\pen:FV 5	6/7

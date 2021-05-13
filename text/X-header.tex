@@ -1,0 +1,379 @@
+%äöüß
+
+% compress PDF, already default, so not needed any more
+\pdfminorversion=5
+\pdfobjcompresslevel=3 
+\pdfcompresslevel=9
+
+% Deutsche Sprache:
+%\usepackage{ngerman} % ngerman, german
+% Englische Sprache mit Deutschen Abschnitten: %
+\usepackage[ngerman,american]{babel} % american , british
+% Englische Sprache: %
+% \usepackage[american]{babel} % american , british
+
+% nun via \usepackage{tud-font-tm}
+% Schriften von Hand wählen: Bsp= Palatino
+% \renewcommand{\rmdefault}{ppl}
+% \renewcommand{\sfdefault}{phv}
+% \renewcommand{\ttdefault}{pcr}
+% Sans Serif statt roman als default:
+% \renewcommand*\familydefault{\sfdefault}
+
+% Definitions
+% =================
+% Seperate paragraphs by an empty line instead of intending the line
+% old:
+%\setlength{\parskip}{2ex plus0.5ex minus0.3ex}
+%\setlength{\parindent}{0pt}
+% nun via KoMa Option parskip in DocClass
+
+% put subsubsections in toc
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% layout of Captions in Tables and Figures (Bildunterschriften)
+% \setkomafont{caption}{\small\sffamily}    % Font of the Caption \itshape
+\setkomafont{caption}{\small\itshape}    % Font of the Caption \itshape
+\setkomafont{captionlabel}{\bfseries}     % Font of the Label 'Figure' etc
+\setcapindent{0em}                        % decrease intention of following lines
+% \setcapwidth[c]{0.9\textwidth}            % NOTE: makes problems with package sidecap
+% hence done manually in each figure using the following width:
+
+\renewcommand{\topfraction}{.80} % up to 80% of page (from top) are allowed to be covered by a float until a float[t] page [p] is generated.
+
+\renewcommand{\bottomfraction}{.80}% up to 40% of page (from bottom) are allowed to be covered by a float[b] until a float page [p] is generated.
+
+% \renewcommand{\textfraction}{.2} %-> soviel muss text sein
+
+\usepackage{amsmath}     % reqno: equation numbers right hand side of the eq
+%\usepackage{amssymb} % \mathfrak does not word here :-( (font eufm10 missing)
+%\usepackage{mathrsfs} % for \mathscr{ASDF}
+
+\usepackage{geometry}           % Pagesettings
+% Print: left=4cm
+% online: left=3cm
+% TODO: Print: Verlag Dr. Hut: left=2.7cm
+% \geometry{left=2.7cm,textwidth=15cm,top=3cm,textheight=23.5cm}
+\geometry{left=3.0cm,textwidth=15cm,top=3cm,textheight=23.5cm}
+
+\newdimen\tmCapWidth
+\advance\tmCapWidth by 1.0\textwidth
+
+\usepackage[automark]{scrpage2}
+%Clear
+\ofoot[]{}
+\cfoot[]{}
+\ifoot[]{}
+\ohead[]{}
+\chead[]{}
+\ihead[]{}
+
+\setkomafont{pageheadfoot}{\small\sffamily}%\itshape
+
+% \setkomafont{pageheadfoot}{\itshape} % klappt nicht, daher siehe unten
+\setkomafont{pagenumber}{\small\sffamily}% aktivieren, falls die Seitenzahl kursiv soll
+
+% \pagemark \headmark
+\ihead[]{\headmark} % \itshape
+\ohead[\pagemark]{\pagemark}
+
+% \chead%
+% [\footnotesize Stand: \the\day.\the\month.\the\year]
+% {\footnotesize Stand: \the\day.\the\month.\the\year}
+% \today -> EN format :-(
+
+\pagestyle{scrheadings}
+
+% Set Footnote symbols to symbols instead of numbers
+\usepackage[perpage,symbol*]{footmisc} % perpage = reset counter on each page
+% Latex Default = \DefineFNsymbols*{lamport}{*\dagger\ddagger\S\P|{**}{\dagger\dagger}{\ddagger\ddagger}}
+\DefineFNsymbols*{TorbensFN}[math]{\ddagger\Sorg\P\dagger\ast{\dagger\dagger}{\ddagger\ddagger}{\ast\ast}{\Sorg\Sorg}{\P\P}}
+% \|
+% * wird nicht angezeigt und \S habe ich überschrieben, daher \Sorg
+\setfnsymbol{TorbensFN}
+% \setfnsymbol{wiley}
+
+% http://web.slzm.de/blog/latex/schone-kapiteltitelseiten-in-latex/
+\usepackage[table,dvipsnames,svgnames]{xcolor}
+% \usepackage{blindtext}
+% \usepackage{fix-cm}
+\usepackage{titlesec}
+% Style 1
+%\renewcommand{\thechapter}{\Roman{chapter}}
+\titleformat{\chapter}[display]
+{\sffamily\bfseries}%\Large
+{ %\Huge\textsc{\chaptertitlename}
+\selectfont\color{gray}\hfill %lightgray
+\begin{rotate}{90}
+%\hspace{0.4cm}
+\Large\selectfont \chaptertitlename
+\end{rotate}
+% \chaptertitlename \hspace*{0.0ex}
+\fontsize{90}{70}\sffamily\textbf{\thechapter}}
+{-2ex}%{-2ex}
+{
+\filleft\fontsize{30}{30}\selectfont\sffamily%\scshape
+% \phantom{l}\phantom{g}invisible chars for fixing jumping of chapter name
+}
+[\vspace{0ex}\phantom{l}]
+
+\usepackage[section]{placeins}
+% defines the command \FloatBarrier: the name is program
+% [section] : floats are not allowed to travel into another section
+
+\usepackage[pdftex]{graphicx}
+\usepackage{wrapfig}
+% \begin{wrapfigure}{r}{21mm}%
+% {\includegraphics{}\caption{}\label{}}%
+% \end{wrapfigure}%
+\usepackage[outercaption] {sidecap} % Caption besides the figure
+
+\usepackage{pdfpages}
+% \includepdf[pages=1-4,pagecommand={\thispagestyle{headings}}]{Meindoku.pdf}
+
+% ===FONTS=== (vor siunitx laden!)
+
+% %=== Variante 1: TUD CD ====
+% % nicht VERGESSEN: set \sffamily after \begin{Document}
+% \pdfmapfile{=univers.map} % von Hand laden, wenn map nicht registriert, muss in diesem Ordner liegen
+% \usepackage[
+% tudcd % TUD CD Universe
+% %cm % Computer Modern
+% %cmbright % CM-Bright fonts
+% %helvet % Helvetiva
+% %tx % Postscript txfonts
+% %px % Postscript pxfonts
+% %%lm % Latin Modern DOES NOT WORK WITHOUT FURTHER PACKAGES
+% %,slantedGreek % -> slanted \ohm :-(
+% %,T1experimental % = ???
+% ]{tud-font-tm}
+% % 2. Font DinBold manuell für Sections etc via \dinBold im Titel
+% \pdfmapfile{=dinbold.map}
+% \newcommand*{\dinBold}{\fontencoding{T1}\fontfamily{din}\fontseries{b}\upshape\selectfont}
+% !!!TODO!!! for TU Font Universe
+% \sisetup{obeyfamily=false,mathrm=mathsf,textrm=sffamily}
+%\sisetup{detect-family = true} % for new versions of siunitx
+
+%==== Variante 2: Charter + BeraSans====
+% \usepackage{berasans} % = \renewcommand{\sfdefault}{fvs}
+\usepackage{charter} % Bitstream Charter, mdbch
+\usepackage[charter]{mathdesign} % replaces mathrsfs
+\usepackage{beramono}
+% Classico a.k.a. Optima as non-serif font
+\pdfmapfile{=uop.map}
+\renewcommand{\sfdefault}{uop} % Classico a.k.a. Optima
+
+%==== Variante 3: Garamond & Classico Optima====
+% \renewcommand{\rmdefault}{ugm} % Garamond
+% \pdfmapfile{=uop.map}
+% \renewcommand{\sfdefault}{uop} % Classico a.k.a. Optima
+% \usepackage[garamond]{mathdesign}
+% installed via
+% http://my.opera.com/freedo/blog/2008/09/04/wie-kommt-die-garamond-ins-latex
+% 1. getnonfreefonts -l
+% 2. getnonfreefonts -d classico garamond
+% 3. updmap
+
+% === select font for headings
+% \addtokomafont{title}        {\fontfamily{uop}}
+% \addtokomafont{subtitle}     {\fontfamily{uop}}
+% \addtokomafont{chapter}      {\fontfamily{uop}}
+% \addtokomafont{section}      {\fontfamily{uop}}
+% \addtokomafont{subsection}   {\fontfamily{uop}}
+% \addtokomafont{subsubsection}{\fontfamily{uop}}
+% könnte Probleme machen, weil umdefinierungen...
+% besser nur sowas wie \normalfont \sffamily \mdseries
+
+% Fonts VOR siunitx laden!
+%\usepackage{textcomp} % Symbols like (C) etc, allows wring of °C and µ in text
+
+% % http://www.mrunix.de/forums/archive/index.php/t-47484.html
+% % mag diesen Satz + luximono statt courier
+% \usepackage{berasans} % = \renewcommand{\sfdefault}{fvs}
+% \usepackage{charter} % Bitstream Charter, mdbch
+% \usepackage[charter]{mathdesign} % replaces mathrsfs
+% \usepackage[scaled=1.1]{beramono}
+
+% \usepackage{courier} % typewriter font
+% % \usepackage{beraserif}
+% % \usepackage{luximono} % typewriter font
+
+%\usepackage{eulervm}
+
+% % Palatino
+% \usepackage{mathpazo}
+% \usepackage[scaled=.95]{helvet}
+% \usepackage{courier}
+
+% % Times
+% \usepackage{mathptmx}
+% \usepackage[scaled=.92]{helvet}
+% \usepackage{courier}
+
+% \usepackage{bookman}
+
+% \usepackage{newcent}
+
+% http://my.opera.com/freedo/blog/2008/09/04/wie-kommt-die-garamond-ins-latex
+% 1. getnonfreefonts -l
+% 2. getnonfreefonts -d classico garamond
+% 3. updmap
+
+% \renewcommand{\rmdefault}{ugm} % Garamond
+% \pdfmapfile{=uop.map}
+% \renewcommand{\sfdefault}{uop} % Classico a.k.a. Optima
+% \usepackage[garamond]{mathdesign}
+% %\renewcommand{\ttdefault}{pcr}
+
+%\usepackage{garamond}
+
+% %\usepackage{dinbold}
+% % \dinbold
+% %\renewcommand*{\seriesdefault}{b}
+% \pdfmapfile{=dinbold.map}
+% \renewcommand{\sfdefault}{din}
+% % \renewcommand{\bfdefault}{b}
+% %\renewcommand{\rmdefault}{din}
+% % \renewcommand{\ttdefault}{pcr}
+% %\renewcommand{\mddefault}{l}
+
+\usepackage{xfrac} % load before siunitx to allow for sfrac
+
+\usepackage[
+abbreviations = false
+,noload={abbr} % \mm
+,load={prefix,named,physical,accepted,addn} % no linebreaks or spacing here!
+%prefix   \kilometer \milli
+%named    \celsius \ohm \siemens
+%physical \electronvolt
+%accepted \degree \liter \percent
+%addn     \BAR, \millibar, \angstrom
+%,tabautofit
+,tabnumalign=centredecimal % tabs: use S as collumn format -> center on '.'
+,expproduct=tightcdot % cdot tightcdot times tighttimes
+,per-mode=fraction
+,fraction=sfrac
+%,per=frac,fraction=nice % \per now produces nice fractions
+%,fraction-function = \sfrac
+,seperr=true
+%,obeyfamily=true
+% ,obeyall=true
+% ,obeyitalic=true % for units in captions
+%,obeybold=false
+%,mathsrm=mathsf
+%,mathssf=mathsf
+%,mathstt=mathsf
+% ,textrm=sffamily
+% ,textsf=sffamily
+%,texttt=sffamily
+%,inlinebold=text
+%,obeyfamily=true
+,mode=text
+% ,unitmode=text
+% ,detect-display-math = true
+% ,detect-family = true
+% ,detect-mode = true
+,detect-shape = true
+% ,detect-weight = true 
+% ,detect-all
+]{siunitx} % Ubuntu 11.10 comes with version 1.3a (21.09.2009)
+
+% \usepackage[obeyall]{siunitx}
+% 
+% \sisetup{
+% %   detect-all
+%   detect-family = true,
+%   detect-inline-family = math
+% % mode = math,
+% % math-rm = \ensuremath
+% }
+
+% $ x = \SI{1.2e3}{\kg} $
+% \SI{2.6(1)}{\meter} % error via ()
+
+% \usepackage{nicefrac} % \nicefrac[]{1}{2} -> 1/2 in one symbol
+% \nicefrac[]{1}{2} ---->  \sfrac{1}{2}
+
+% \usepackage{stringstrings} \uppercase conversion etc
+
+% \usepackage{oldgerm} % \textgoth, \textswab, \textfrak ; \gothfamily, \swabfamily, \frakfamily
+\usepackage{yfonts} % \yinipar{L}etter
+\usepackage{color}              % Support for colors :\textcolor{red}{Text}
+% red, blue, white, green, cyan, magenta, yellow
+\usepackage{xspace}             % \xspace can be used in newcommands without parameters to ensure whitespace after it
+
+% \usepackage{setspace} % -> \singlespacing , \onehalfspacing , \doublespacing
+
+% BibTeX
+% =================
+\usepackage[square,super,numbers,sort&compress]{natbib}     % needed by plainnat + dinat Bib Styls, square -> [] instead of () , numbers -> [1] etc
+
+% Tables
+% ===================
+%\usepackage{float} % defines placement option H = exactly here
+% generates scrbook Warning: \float@addtolists
+
+\usepackage{booktabs} % -> \toprule \midrule \bottomrule
+%\usepackage{array}              % nicer \hlines
+\usepackage{longtable}
+
+\usepackage{rotating} % for sidewaystable
+
+% \usepackage{verbatim} %only for \verbatiminput ;-)
+
+% load hyperref last solves the warning about Hfootnote:
+% pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist , replaced by a fixed one
+\usepackage[
+pdftex % hypertex (default), pdftex
+,unicode % Unicode encoded pdf strings
+,final, % final, draft, debug -> more text in log file
+% ,pdfauthor={\Verfasser}
+% ,pdftitle={\Titel}
+% ,pdfsubject={Dissertation, TU Dresden}
+%,pdfcreator={}
+%,pdfproducer={}
+% ,pdfkeywords={Molecular Doping, Organic Semiconductors, Conductivity, Seebeck, Vacuum Deposition}
+,pdfdisplaydoctitle={true} % title instead of filename
+% ,pdfpagemode={UseOutlines} % UseOutlines, UseThumbs, UseNone, FullScreen
+,pdfstartview={Fit}
+,pdfpagelayout={SinglePage} % SinglePage, OneColumn, TwoPageLeft, TwoPageRight
+%,pdfpagetransition={Blinds /Dm /V} % does not work in Linux
+% ,pdftoolbar={false}
+% ,pdfwindowui={false}
+,bookmarks={true} % generate bookmarks
+,bookmarksopen={true} % open bookmarks tree with depth=<bookmarksopenlevel>
+,bookmarksopenlevel=1
+,bookmarksnumbered={true}
+,plainpages=false % behebt den Fehler "destination with the same identifier"
+,citebordercolor={0 1 0}
+,filebordercolor={0 0.5 0.5}
+,linkbordercolor={1 1 0} % 1 1 0 = yellow
+,urlbordercolor ={0 0 1}
+,pdfborder={0 0 0}, % 0 0 0: no colorful frames around links, comment out if wanted
+,colorlinks={false} % color for text of links (replaces link border frames)
+,linkcolor={blue}
+,anchorcolor={black}
+,citecolor={green}
+%,filecolor={black}
+,urlcolor={blue}
+]{hyperref}
+
+% Symbols instead of numbers for footnotes
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% this is taken from l2tabu.pdf:
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty=10000
+\vfuzz \hfuzz
+\raggedbottom
+
+%\hyphenpenalty=500               % penalty for words split on two lines
+
+\usepackage{ifthen}
+%\ifthenelse{\equal{\tmDraft}{True}}%
+%{}% True
+%{}% False

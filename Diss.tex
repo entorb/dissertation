@@ -1,0 +1,175 @@
+%äöüß
+
+\documentclass[                 % Koma: scrartcl, srcreprt, srcbook, scrlttr2
+12pt                           % 10pt, 11pt, 12pt
+% ,draft                         % draft/final
+%TODO
+,twoside                        % one/two: different layout for left/right pages
+%
+,onecolumn                      % one/two
+%,fleqn                          % equations aligned left
+,english                        %
+,titlepage                      % titlepage / notitlepage = title on a page of its own
+%,noonelinecaption              % table + figure captions of only one line are not treated different
+% to multiline-ones
+,openany                        % openright : new chapters only on right pages, openany: do not care
+% only for scrreprt and scrbook, not scrartcl
+,headsepline=true
+,headings=big % big normal small
+,toc=listof % LOF + LOT
+%,toc=listofnumbered
+,toc=bibliography
+%,toc=bibliographynumbered
+%,toc=index  % Fügt das Stichwortverzeichnis ins Inhaltsverzeichnis ein.
+,parskip=half- % false, full, half, with -+* behind as modifier
+]{scrbook}
+
+\usepackage[utf8]{inputenc}     % Umlaute (Linux)
+%\usepackage[latin1]{inputenc}  % Umlaute (Windows)
+\usepackage[T1]{fontenc}        % Worttrennung von Worten mit Umlauten möglich
+
+\newcommand{\Verfasser}{Torben Menke}
+\newcommand{\Titel}{Molecular Doping of Organic Semiconductors - A Conductivity and Seebeck Study}
+\input{text/X-header}
+\input{text/X-newcommands}
+
+% \dedication{für meine Eltern Renate und Hans-Hermann}
+
+\hypersetup{
+pdfauthor={\Verfasser}
+,pdftitle={\Titel}
+,pdfsubject={Dissertation, TU Dresden, ISBN 978-3-8439-1177-1}
+,pdfkeywords={Molecular Doping, Organic Semiconductors, Seebeck, Conductivity, Vacuum Deposition}
+,pdfinfo={
+CreationDate={D:20130326110000},
+}
+}
+
+% \usepackage{draftwatermark}
+% \SetWatermarkText{Unpublished Draft}
+% \SetWatermarkScale{0.4}
+
+% include vs. input:
+% http://web.science.mq.edu.au/~rdale/resources/writingnotes/latexstruct.html
+% include makes new page, but allows for \includeonly{file1,file2}
+
+% \includeonly{text/2a-theo,text/2b-theo-Org,text/2c-theo-seebeck}
+
+% \includeonly{text/4-n-doping-1-Pd}
+
+\begin{document}
+% % \frontmatter
+% \renewcommand{\thepage}{F\arabic{page}} \setcounter{page}{1}
+\pagestyle{empty}
+\renewcommand{\thepage}{\roman{page}} %\setcounter{page}{1}
+
+% richtige Reihenfolge!
+\nocite{Menke2012} \nocite{Menke2012a}
+\nocite{Arkhipov2005} \nocite{Arkhipov2005a}
+\nocite{He2004} \nocite{He2004a}
+\nocite{Mityashin2012} \nocite{Mityashin2012a}
+\nocite{Riede2011} \nocite{RiedeLuessemLeo2011}
+
+% === PDF to Text ===
+% \input{text/X-pdf2text}
+% pdftotext -raw -nopgbrk Diss.pdf
+%
+
+\input{text/X-trennungen} % hyphenation
+
+\input{text/0-title} % TITELSEITE
+
+% \cleartoleftpage % damit Abstracts auf eine Doppelseite kommen
+\ohead[\pagemark]{\pagemark} % Page numbers
+\pagestyle{plain}
+\include{text/1-abstract}
+
+\cleardoublepage\tableofcontents\newpage
+%
+%
+\include{text/0-publications}
+\cleardoublepage
+\include{text/0-abbreviations}
+\cleardoublepage
+
+\pagestyle{scrheadings}
+% % \mainmatter % normal pagenumbering
+\newpage\renewcommand{\thepage}{\arabic{page}} \setcounter{page}{1}
+
+
+\include{text/1-intro}
+\cleardoublepage
+\include{text/2a-theo}
+\include{text/2b-theo-Org}
+\include{text/2c-theo-seebeck}
+\cleardoublepage
+\include{text/3a-setup}
+\include{text/3b-materials}
+\cleardoublepage
+\include{text/4-n-doping-1-Pd}
+\cleardoublepage
+\include{text/5-n-doping-2-AS}
+\cleardoublepage
+\include{text/6-p-doping}
+\cleardoublepage
+\include{text/7-P5}
+\cleardoublepage
+\include{text/8-rechnungen}
+\cleardoublepage
+\include{text/9a-conclusion}
+
+%
+\backmatter
+% % \appendix
+% \pagestyle{plain}
+% \ohead[\pagemark]{\pagemark} % Page numbers
+% \ihead[]{} % empty
+% % \renewcommand{\thepage}{A\arabic{page}} \setcounter{page}{1}
+%
+
+% \chapter*{TO INCLUDE Acknowledgments / Danksagung}
+% \addcontentsline{toc}{chapter}{Acknowledgments / Danksagung}
+
+%  \@ifpackageloaded{lineno}{\nolinenumbers}{}
+%\pagenumbering{Alph} %resets the pagecounter
+
+% \newpage\addcontentsline{toc}{chapter}{Appendix}
+
+\nocite{Menke2012}
+\bibliographystyle{./bibstyle/TM-DDD-URL}
+\cleardoublepage
+% \cleartoleftpage % besser als cleardoublepage, aber mag DrHut nicht :-(
+%\bibliography{./Diss-lit}
+\bibliography{./Diss-lit-fixed}
+
+% LOF und LOT nach Bib, weil dann so weit wie möglich hinten zum nachschlagen
+
+% % \newpage
+% % % lof + lot auf eine Seite
+% % \begingroup
+% % \let\newpage=\relax
+% % %\let\clearpage=\relax% evtl. auch noch...
+% % \listoffigures
+% % \listoftables
+% % \endgroup
+
+\listoftables
+\cleardoublepage
+\listoffigures
+% neue Doppelseite, da andere Schrift, etc
+% \cleardoublepage
+\pagestyle{empty} % will nicht, also von Hand...
+\cleartoleftpage
+\ofoot[]{}
+\cfoot[]{}
+\ifoot[]{}
+\ohead[]{}
+\chead[]{}
+\ihead[]{}
+\cleardoublepage
+\include{text/9b-danksagung}
+\cleardoublepage
+\include{text/9c-erklaerung}
+
+
+\end{document}

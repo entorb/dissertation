@@ -1,0 +1,166 @@
+% äöüß
+\chapter{Experimental}\label{chap:Exp}
+\addcontentsline{lof}{chapter}{\thechapter\hspace*{1ex} Experimental}
+\addcontentsline{lot}{chapter}{\thechapter\hspace*{1ex} Experimental}
+%
+\intro{This chapter presents the experimental setup and introduces the investigated materials. In \secref{Exp}, changes and improvements to the setup performed during this thesis are highlighted and the resolution limit is estimated.
+\Secref{Mat} gives an overview of all investigate materials and summarizes their key parameters.}
+%
+%
+\newpage
+% \cleardoublepage
+
+\section{Seebeck Setup}\label{sec:Exp}
+
+\subsection{Technical Details}\label{sec:ExpTechDetails}
+% {History}
+Most samples investigated in this thesis are fabricated and measured \insitu in the same vacuum chamber. This chamber had been originally designed by Wolfgang Böhm\cite{WolfgangBoehmDiss} to be suitable for \insitu Seebeck measurements and has been used and modified by several people in this institute\cite{AndreBeyerDiplom,MartinPfeifferDiss,BirgPloenningsDiplom,BertMaennigDiss,JanBlochwitzDiss,AndreasNollauDiss,AnsgarWernerDiss,FenghongLiDiss,KentaroHaradaDiss}.
+
+% {vol, pressure, p-sensors}
+During this thesis, several major changes to the setup are performed that improved the measurement accuracy and reproducibility. The old rotary vane pre-pump of the vacuum chamber is replaced by an oil-free scroll pump (Anest Iwata ISP 250), in order to avoid contamination of the samples by oil vapor, which is essential for reproducible experiments.
+Furthermore, the new pump increased the evacuation speed.
+This scroll pump in combination with a turbo pump (Leybold TurboVac 151) is used to evacuate the vacuum chamber of $\approx\SI{15}{\liter}$ volume. 12~hours after sample insertion a base pressure of \pa{3E-5} \mbox{$(=\SI{3E-7}{\milli\bbar})$} suitable for sample fabrication is reached.
+Pumping for several days, a pressure of \pa{5E-6} can be reached. Sensing of the pressure is performed by two vacuum sensors, Leybold TR 211 for the range of \pa{e5} to \pa{0.1} and Leybold PR 37 for \pa{0.1} to \pa{E-8}. Both sensors are connected to a controller unit (Combivac CM 31).
+
+\cBildDraw
+{setup+co-evap}
+{Experimental setup}
+{Experimental setup: Sketches of (a) vacuum chamber during co-deposition with substrate at the top; (b) sample holder with substrate mounted onto electrically heated copper blocks which are water-cooled from the backside and placed at the top of (a); (c) sample layout and measurement geometry.}
+% chamber volume:
+%  height 52.5cm, diameter 15.5cm
+%  side arms: diameter 10.5 cm
+%  volume of full chamber (incl. side chambers) approx 15 L
+
+% {Overview}
+% \subsubsection{Devices}
+The structure of the vacuum chamber is sketched in \figref{setup+co-evap}\,(a). At the bottom there are flanges for up to three material sources (CreaPhys DE-FR/2.2) which evaporate organic material onto a substrate placed at the top of the chamber. The deposition rates are detected separately for each material by rate monitors positioned above the sources.
+
+% {Material Sources}
+In each material source the organic material is filled into a crucible, which in vacuum can be heated to the materials' sublimation temperature via a copper coil, surrounding the crucible. A type K thermocouple temperature sensor (employing the Seebeck effect of a chromel\footnote{Chromel: Alloy of approximately 90\,\% nickel and 10\,\% chromium}--alumel\footnote{Alumel: Alloy of approximately 95\,\% nickel, 2\,\% manganese, 2\,\% aluminium and 1\,\% silicon} junction) is placed at the bottom of the crucible and connected to a PID controller (Eurotherm 2208e) that controls the heating current through the copper coil.
+In this work, always two sources are used in parallel that allow for co-deposition of host and dopant material, compare \figref{setup+co-evap}\,(a). The material consumption of the setup is quite low, as \SI{100}{\milli\gram} of an organic host material typically is sufficient to produce 10 samples of \nm{30} to \nm{40} layer thickness.
+
+% {Rate Monitors}
+During deposition, the evaporation rates of host and dopant, and thus the doping concentration, are monitored independently using two quartz crystal monitors, positioned above the material sources, compare \figref{setup+co-evap}\,(a), and connected to two rate monitors (Sycon STM-100/MF). When material is deposited onto these quartz crystals, their resonance frequency changes. By detecting this change, the mass increase is measured, which can be related to a layer thickness via the material's density. For each material, the geometrical correlation between the position of the corresponding quartz crystal and the sample position is measured, as the materials usually differ in angular dependency of deposition rate. This is done by placing a third quartz crystal at the position of the sample and comparing its detected mass increase with the mass increase measured by the other monitoring quartzes.
+Water-cooling is applied to the rate monitor of the host material, to compensate for heating during deposition of host material onto the crystal. It turned out that for the high sensitivity of the dopant source required by the low dopant deposition rates, temperature fluctuations of the cooling water led to fake rates displayed by the rate monitor. Therefore, no water-cooling is applied for the dopant rate monitor, which is possible due to the low deposition rates of the dopants and hence low heat transport to the sensor. The lowest controllable \CLong of this setup is in the range of \wt{0.5} (compare \secref{TheoDopingUnits} for definitions of different units for the \CLong).
+
+%  {New Sample Holder Design}
+The key component of the setup is the sample holder, as it allows for temperature-dependent conductivity and Seebeck measurements. In this work, the sample holder is redesigned to improve the measurement resolution. The sample holder consists of two copper blocks on which the sample's substrate is mounted and positioned above the material sources. These copper blocks can be heated independently via electric heaters placed inside them and thus allow for applying different temperatures at each side of the sample, compare \figref{setup+co-evap}\,(b) and (c). The copper blocks are mounted onto a water-cooled panel, to allow faster cooling and stable temperature control close to room temperature.
+
+% {Temp Range, N2}
+This setup allows for substrate temperatures in the range of \Tsub[20] to \grad{120}. By replacing the cooling water with liquid nitrogen, the range was extended down to \Tsub[-120]. As the temperature control turned to be too unstable for reliable Seebeck measurements, liquid nitrogen cooling is not used for the data presented in this thesis, but might in future be used for low temperature conductivity investigations.
+
+% % {Mounting in air}
+As the sample holder is mounted onto the top flange of the vacuum chamber, the substrate has to be mounted in ambient atmosphere. The substrate is glued onto the copper blocks by liquid silver ink, which is heated and dried prior to insertion of the sample holder into the vacuum chamber. During evacuation of the vacuum chamber and prior to layer deposition, the substrate is heated to \Tsub[120] to remove particles condensed onto the substrate.
+
+% \subsubsection{Sample Layout}
+The substrates used are square sheets of glass with a size of \mbox{$\mm{25}\times\mm{25}$} and \mm{1} thickness. They are pre-structured with two parallel gold contacts with \mbox{$\dc=\mm{5}$} inter-finger distance, \mbox{$\lc=\mm{20}$} length and a thickness of \nm{40}, compare \figref{setup+co-evap}\,(c). Gold is chosen as it does not oxidize in air and is known for having good injection properties suitable for many organic materials\cite{Kitamura2011}. Below the gold, \nm{3} of chromium is deposited as a coupling agent between glass and gold.
+A \SMU (SMU) that is able to measure a current while applying a voltage and vice versa, is connected to the gold contacts.
+
+% {SMU}
+A new high resolution \SMU (Keithley SMU 236) is used to increase the resolution of voltage and current measurement. In order to employ the full potential of this device and to allow for voltage measurements in the \mV{}-regime, the electrical shielding, grounding and wiring of the setup are completely upgraded. The former BNC coaxial cables for the electrical measurements are replaced by twofold shielded triaxial cables. The length of all cables are reduced to minimize electrical disturbances. Note: It is conventional for Seebeck measurements to contact the \emph{high} input of the SMU to the \emph{cold} side of the sample, as this leads to a positive sign of the thermovoltage if holes are the dominating charge carriers, compare \secref{TheoSeeDefAndMeas}.
+% http://en.wikipedia.org/wiki/Triaxial_cable
+% BNC connector (Bayonet Neill–Concelman)
+% http://en.wikipedia.org/wiki/BNC_connector
+
+% {TempSensors ET3504}
+The temperature of the sample is measured at thermally equivalent positions to the contacts, insulated from the organic layer, compare \figref{setup+co-evap}\,(c). The previously used sensors of type K thermocouples, are replaced by platinum resistance based sensors (Pt1000), as they provide higher accuracy and mechanical stability. Sensors of accuracy class B/5 were chosen that had been verified at \T[0] and \grad{100}. The nominal accuracy is $\pm\K{0.06}$ at \T[0] and $\pm\K{0.16}$ at \T[100]. As these resistance based sensors have \SI{1000}{\ohm} at \T[0], the influence of the cables between sensor and controller can be neglected.
+The sensors are glued onto the substrate by liquid silver ink during mounting of the substrate on the sample holder. A two channel PID controller (Eurotherm 3504N) is used to read the sensors and to control two power supplies (Elektro-Automatik EA-PS 3032-10) for heating the copper blocks. The model Eurotherm 3508N that was tried first turned out to strongly interfere with the voltage measurement, as it introduced an AC voltage of \SI{3}{\mega\hertz} with \SI{3.5}{\volt} peak to peak amplitude onto the sample holder inside the vacuum chamber. This happened because the first measurement channel of the device misses a galvanic isolation. Therefore, the model 3504N with two galvanically isolated channel modules was installed instead.
+
+% {Software}
+During this thesis, all measurement devices (SMU, 3 PID controllers, 2 pressure sensors and 2 rate monitors) were attached to and controlled by a computer and the corresponding software was developed.
+A graphical user interface\footnote{written in Python and QT} for the sample deposition process allowed for precise control of the deposition rates and hence the homogeneity. Logging of all important parameters during the fabrication process turned out to be very helpful for diagnostics.
+Furthermore, the computer control enables automation and remote control of measurements, allowing for longer measurement time and more stable temperature control without electrical disturbances by people operating the setup. This enhanced the accuracy (see \secref{ExpResLimit} below) and reproducibility of the measurements which are the basis for the data presented in this thesis. As a side effect, it increases the measurement comfort and saves a lot of time for the operator.
+
+\subsection{Sample Preparation}%
+\label{sec:ExpSamplePreparation}%
+Molecular doping is performed by co-evaporation of host and dopant material, as shown in \figref{setup+co-evap}\,(a). Thereby, it is assumed that each dopant molecule substitutes a host molecule and therefore adopts the density of the host material. The \CLong \C is typically expressed in terms of weight (\eg \wt{}) for proprietary materials, whereas for known structures it can be converted into physically more relevant terms of molecule numbers. In this thesis, the latter is used, as all material structures are published and the unit molar ratio (MR) is chosen, as defined as \secref{TheoDopingUnits}. A conversion between \wt{} and MR for the materials used in this thesis is given in \tabrefPage{Dotierumrechnungen}, which is calculated via \eqnrefPage{MRtoWT}.
+
+The substrate temperature during material deposition is controlled to \Tsub[25] in order to ensure the same layer growth condition for all samples. Most samples investigated in this thesis are deposited at slow rates of \SI{0.01}{\nano\meter\per\second} to \SI{0.02}{\nano\meter\per\second}, to allow for precise control of the rates and hence the homogeneity of the doping concentration throughout the layer.
+The layer thickness of most samples is chosen to $\hl=\nm{30}$, as this thickness is a compromise between material consumption and layer homogeneity. As the gold contacts on the substrate are produced at a height of \nm{40}, no geometrical injection problems are expected for this layer thickness.
+
+% {Logging homogeneity}
+During sample fabrication the rate monitors of host and dopant materials are continuously logged by a computer, allowing to monitor the homogeneity of the doping concentration by comparing the amount of material deposited. Ideally, the amount of deposited dopant material increases linearly with the amount of deposited host material and hence total layer thickness, corresponding to a constant doping ratio. As a second measurement of the homogeneity, the conductivity of the deposited layer is continuously probed by applying a voltage of \V[10] and measuring the current. The layer thickness is calculated as the sum of thicknesses measured by host and dopant rate monitors, assuming the dopant molecules to adopt the density of the host molecules.
+
+\subsection{Monitoring the Layer Growth}\label{sec:ExpLayerGroth}
+\cBild[b]
+{evap-n-Pd-2wt-current}
+{Current increase during co-deposition}
+{Current (left axis) and amount of dopant material deposited (right axis) during co-deposition of host and dopant. Sample: \C[0.022] of \CrPd in \CS, compare \secref{Mat} for details on the materials. Inset: Onset of current flow in logarithmic scale.}
+%
+\Figref{evap-n-Pd-2wt-current} shows the current flow through a layer as well as the amount of dopant material deposited versus the total layer thickness during fabrication of a typical sample.
+The doping concentration is the same throughout this sample as the amount of dopant material increases linearly with the layer thickness. The current measured during fabrication, depicted on the left axis in \figref{evap-n-Pd-2wt-current}, shows a typical behavior, similar for all samples: During deposition of the first nanometer, no current above detection limit could be detected. Between \nm{1} and \nm{3}, there is a rapid increase over several orders of magnitude, as highlighted by the inset of \figref{evap-n-Pd-2wt-current}. After \nm{15}, the current increase is linear with increasing layer thickness.
+
+This trend can be understood from the fact that the materials do not grow monolayer by monolayer, but in a disordered island-like growth.
+Therefore, it takes a certain minimum amount of material until first continuous pathways between the electrodes are formed. After deposition of more material, the first completely closed layer is formed. The linear increase after approximately \nm{15} suggests that the surface roughness stays at a constant level and that the thickness of the closed layer increases linearly with the amount of material.
+
+In this regime, the data are fitted linearly (dashed line) and extrapolated to an interception with the x-axis, which is found at approximately \nm{2}. This suggests that a part of the deposited material forms surface structures that do not contribute to the lateral conductivity. Therefore, the thickness of closed layers is expected to be less than the nominal value, calculated from the rate monitors. The interception depends on the materials used, as well as on the homogeneity of the doping concentration throughout the layer and for most samples it is found to be in the order of \nm{4}.
+
+\cBild[b]
+{evap-n-Pd-2wt-cond}
+{Conductivity and homogeneity of doping \vs layer thickness}
+{Conductivity \vs layer thickness for a sample of \C[0.022] of \CrPd in \CS.}
+
+Combining the measured current and nominal layer thickness, the conductivity during deposition can be derived, as shown in \figref{evap-n-Pd-2wt-cond}. In case of the sample discussed above, for low thicknesses up to \nm{16}, the calculated value of the conductivity increases strongly with the layer thickness. This can be explained by an overestimation of the thickness of closed layers as discussed above. Most samples investigated reach saturation at \nm{10} to \nm{15}. The higher value for this sample is attributed to a variation of doping concentration around a thickness of \nm{10}, visible as a slight kink in the plotted amount of dopant material.
+
+Assuming that the thickness of the closed layer is \nm{2} less than the nominal thickness, as indicated by the interception of the extrapolated fit line with the x-axis in \figref{evap-n-Pd-2wt-current}, a closed layer conductivity can be estimated using this reduced thickness. The estimated closed layer conductivity is larger than the conductivity derived using the nominal thickness, as can be seen in \figref{evap-n-Pd-2wt-cond}. This estimated conductivity might be more realistic, as the sample roughness is taken into account. Nevertheless, as the homogeneity of the doping and the
+roughness of the samples might be altered by the following measurements (\eg by heating) and be different for different samples, it is decided to use for all samples the nominal thickness instead of an estimated one in the following.
+The underestimation of the conductivity at a sample with \nm{30} nominal thickness and closed layer thickness of \nm{2} less, would be 6.7\,\%. Ideally this underestimation would be the same for all samples and can therefore be neglected when comparing the samples.
+
+\subsection{Measurement Routine}\label{sec:ExpMeasRoutine}
+% {IV}
+After sample fabrication, prior to the Seebeck and conductivity measurements, for each sample the current--voltage relation is probed to ensure ohmic injection. With a step size of 1\,V the voltage is varied between \SI{-10}{\volt} and \SI{+10}{\volt}. A linear and symmetric correlation is found for all samples investigated in this thesis, suggesting ohmic injection from the contacts into the layer for the conductivity measurement at \V[1].
+
+% {cycle, loop}
+The setup allows for temperature-dependent conductivity and Seebeck measurements though varying the temperature of the two copper blocks and hence of the contacts on the sample.
+At each mean temperature \Tm, the conductivity is probed first. Afterwards, the Seebeck coefficient (compare \secref{TheoSeeDefAndMeas}) is measured. Finally, the conductivity is probed again to check if the layer was affected by the temperature. This procedure is repeated for different mean temperatures \Tm.
+
+ % {Conductivity Meas}
+The conductivity at a temperature \T is determined by heating both contacts to \mbox{$T_1=T_2=\T$}, compare \figrefPage{setup+co-evap}\,(c), and applying a voltage \V while measuring the current flow $I$ through the layer. Knowing the layer thickness \hl and the contact geometry (distance \dc and length \lc) the conductivity is calculated using \eqnrefPage{Cond-I-V-geo}:
+\begin{align}
+\c = \frac{I}{V} \cdot \frac{\dc}{\lc\cdot\hl}
+\tag{\ref{eq:Cond-I-V-geo}}
+\PUNKT
+\end{align}
+A low voltage of \V[1] is used to prevent heating and charging of the layer. This voltage is applied for 10~seconds before the current measurement is started. During 2~minutes the measured currents are averaged to compensate for noise. After the current measurement, the opposite voltage of \V[-1] is applied for 20~seconds, to reduce charging effects of the layer and ensure reproducible conditions for the next measurement.
+
+% {Seebeck}
+The Seebeck measurement at a mean temperature \Tm is performed by applying a temperature difference \Td to the contacts and hence inducing a temperature gradient on the sample and measuring the generated thermovoltage \Vs.
+The contacts are heated to $T_1=\Tm+\frac{\Td}{2}$ and $T_2=\Tm-\frac{\Td}{2}$, respectively. All Seebeck measurements are performed with a temperature difference of $\Td=\K{5}$, as this value has been successfully used in earlier works using the same setup.
+\Vs is measured continuously for 20~minutes for most samples and data of the last 15~minutes are averaged.
+Each measurement of the thermovoltage is followed by a measurement at swapped temperatures to exclude systematic errors. The resulting Seebeck coefficient \mbox{$\S=\frac{\Vs}{\Td}$}, compare \eqnrefPage{SeebeckMeasured}, is the average of the two measurements
+\begin{align}
+% \S{}_1 &= \frac{\Vs{}_1}{\Td} & \S{}_2=\frac{\Vs{}_2}{-\Td} \\
+\S &= \frac{\S{}_++\S{}_-}{2}
+\PUNKT
+\end{align}
+
+% {Stable Temperature}
+As a stable temperature is the key to reliable Seebeck measurements, strict waiting conditions are introduced in the measurement routine that are required to be fulfilled for at least 2~minutes before the Seebeck measurement is started. Firstly, the temperature measured at each of the two sensors has to be as close as \K{0.2} to the setpoint. Secondly, the slope of the change of the temperatures has to be below \SI{0.2}{\kelvin\per\minute}. Finally, the current measured at \V[0] is required to be below \SI{0.2}{\pico\ampere}. The last condition is introduced to ensure that charges, which might have build up in the layer during conductivity measurements, are removed and do not affect the Seebeck measurements. The same requirements are used for conductivity measurements, but the minimal waiting time is reduced to 1~minute, as these measurements are less sensitive towards small variations of the temperature.
+
+\subsection{Electrical Resolution Limit}\label{sec:ExpResLimit}%
+The Keithley SMU 236 has a scale step of \SI{0.01}{\pico\ampere} in the smallest measurement range.
+In its data sheet, an accuracy of $\pm(0.3\,\%+\SI{0.1}{\pico\ampere})$ for new devices is given. It is found that the device displays an offset of \SI{0.4}{\pico\ampere} at \V[10] at open circuit conditions prior to sample deposition in the vacuum chamber. Therefore, it is assumed that \SI{1}{\pico\ampere} is the lowest reliably measured current.
+Applying \V[1] to a sample, as used for the conductivity measurements, this leads to a resolution limit of \SI{E12}{\ohm} or \c[8.3E-8] for a \nm{30} thick layer in the given sample geometry, compare \figref{setup+co-evap}\,(c). This limit could in principle be pushed down to \c[2.3E-10] by applying the maximum voltage of the SMU of \V[110] and using a layer thickness of \nm{100}. As the conductivities of undoped organic \SCs are typically even lower, it is not possible to measure such layers in the given sample geometry. An optimized sample geometry for conductivity measurements of low conductivities should have a large ratio of contact length \lc to contact distance \dc, which can be achieved by serpentine shaped contacts, similar to typical (O)FET structures for material research. This however would make Seebeck measurements impossible, as no constant temperature gradient can be applied between serpentine shaped contacts.
+
+Seebeck measurements are also limited by the resolution of the current measurement, as internally the device performs a measurement of a voltage by measuring the current flow through an internal resistor.
+Thus, for thermovoltage \Vs (Seebeck) measurements a lower limit of the layer conductivity can roughly be estimated, assuming that the conductivity of the layer limits the current generated by the temperature gradient.
+Using the typical temperature gradient of $\Td=\K{5}$ to investigate a doped sample of \S[700], a value of $\Vs=\SI{3.5}{\milli\volt}$ is expected. Together with the above derived minimal detectable current of \SI{1}{\pico\ampere} this leads to a requirement for the conductivity to be at least \c[2.4E-5] for the given sample geometry.
+This rather high limit is reduced by averaging two measurements of opposite temperature gradient \Td, as this cancels out constant device offsets. Furthermore, by averaging the measured thermovoltages for several minutes, the accuracy is increased further, but systematic errors persist. It is therefore estimated that the minimal current for Seebeck measurements is in the range of \SI{0.1}{\pico\ampere}, leading to a lower limit of \c[2.4E-6]. This value is in agreement with the limit found in the data, compare \secref{ResP-S-MR}, where for samples of lower conductivities it was not possible to perform reliable Seebeck measurements.
+
+\subsection{Leakage Current}\label{sec:ExpLeakageCurrent}
+Applying a voltage of \V[10] to the contacts of the glass substrate prior to layer deposition in vacuum, a leakage current between \SI{0.3}{\pico\ampere} and \SI{1.0}{\pico\ampere} is detected at a substrate temperature of \Tsub[25]. This current is found to increase with \Tsub and hence is not a measurement artifact of the \SMU.
+As scratching the glass surface had no effect on the current, contamination of the substrate surface during metal contact preparation or by condensation can be excluded. It has been reported that most glasses are not perfect isolators, but show an ionic conductivity\cite{Ingram1989}. Therefore, it must be assumed that a current flows through the glass into the copper sample holder and on the other side back through the glass. This allows for conversion of a current into a conductivity using \eqnrefPage{Cond-I-V-geo} with a contact distance of \mm{2}, being twice the glass thickness, and neglecting the contribution of the highly conducting metal sample holder.
+
+\Figref{T-LeakCurrent} shows the current at temperatures between \Tsub[25] and \grad{110} in an Arrhenius\entdecker[Arrhenius1884]{Svante August Arrhenius}{Swedish}{1859--1927} plot, displaying the current and the corresponding conductivity in a logarithmic scale against the inverse of the temperature. In this temperature range the observed glass conductivity ranges from \Scm{8E-14} to \Scm{5E-11}. At temperatures above \grad{50} a linear correlation between the logarithm of the current and the inverse of the temperature is found, as highlighted by the dashed fit line. At lower temperatures the resolution of the SMU affects the measurement and leads to a deviation from the linear trend.
+
+%
+\cBild[b]
+{T-LeakCurrent}
+{Leakage current}
+{Leakage current at \V[10] prior to layer deposition. The dashed line corresponds to a linear fit.}
+%
+
+The temperature dependence indicates a thermally activated transport, as expected for ionic glass conductivity\cite{Ingram1989} and allows for deriving a thermal \EactLong \Eact, using \eqnrefPage{CondActivation}. Different glass substrates are found to vary in \Eact, with a mean value of \Eact[926].
+A measurement of a glass substrate on a heating plate in air showed a continuation of this tendency up to \grad{300}.
+
+These findings show that leakage currents through the glass substrate can be neglected at temperatures below \grad{50}. At higher temperatures and measured currents in the sub-\si{\nano\ampere} regime, leakage currents might influence the measurement. In the used sample geometry a current of \SI{0.1}{\nano\ampere} at \V[10] through a \nm{30} thick layer corresponds to a conductivity of \Scm{8.3E-07}. Consequently, as a rule of thumb samples of conductivities below \Scm{E-6} at \T[50] are not measured reliably at elevated temperatures.

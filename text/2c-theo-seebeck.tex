@@ -1,0 +1,326 @@
+%äöüß
+\newpage
+\section{Seebeck Effect}
+The Seebeck effect is of great interest for semiconductor physics, as it allows for determination of the type of the majority charge carriers as well as the relative position of the \EfLong with respect to the \EtLong.
+
+%
+\subsection{Phenomenological Description}%
+\label{sec:TheoSeePhenomenological}
+%\was{discovery, earth mag field}
+In 1821, the Estonian-German physicist \name{Thomas Johann Seebeck} discovered\cite{Seebeck1823} that a magnetic force arises when junctions of two different metal wires are heated to different temperatures. He detected the force by a compass needle and therefore named his finding the \emph{thermomagnetic} effect.
+Seebeck interpreted this effect to be the origin of the earth's magnetic field, due to the veins of metals and ores in the ground\cite{Seebeck1823}.
+Nowadays we know that his conclusion is wrong since the earth's magnetic field is explained by the motion of molten iron alloys in the earth's core. Furthermore, today it is proven that in Seebeck's discovery not a magnetic force is generated in the first place, but a voltage gradient that drives charges along the wires, which leads to the magnetic field he detected. Hence, his discovery is now called \emph{thermoelectric} or Seebeck effect.
+%\was{metals and semiconductors, but not supercond.}
+This effect is observed for both, metals and semiconductors, but not for superconducting materials (at temperatures below their critical temperature), as a resistance free material cannot hold a voltage gradient.
+
+%\was{origin of S}
+Phenomenologically, the Seebeck effect can be understood as follows: In a metal or semiconductor, the energetic distribution of the free charge carriers is shifted to higher energy states upon heating (compare \secref{TheoConventionalSemiconductors}). Thus, if one side of the material is hotter than the other, the charge carriers on the hotter side have higher energies on average.
+This leads to a displacement diffusion current (compare \secref{TheoDiffusionCurrent}) towards the cold side, resulting in a charging of the two sides of the material. With increasing charge accumulation at the sides, an electric field opposite to the diffusion current builds up, limiting the total voltage being generated.
+If electrons are the dominating charge carriers, the cold side will be charged negatively, whereas for hole dominated materials the cold side is charged positively. Therefore, the Seebeck effect can be used to identify the type of dominating charge carriers in the material.
+
+%\subsection{Applications}
+Different devices employ the Seebeck effect. Examples are a prominent class of thermometers, the thermocouples (used in our setup to measure the temperatures of the material sources, as discussed in \secref{ExpTechDetails}), as well as thermoelectric generators, which generate electricity from temperature gradients.
+% Thermoelectric generators are used to harvest waste heat of engines to supply independent small devices.
+Future applications in space flight might be possible, as the large temperature difference between space and the inside of the shuttle are beneficial for this kind of power supply. Recently, Kraemer\etal published\cite{Kraemer2011} a design for a solar driven thermoelectric generator as alternative to photovoltaic cells with a peak efficiency of \SI{4.6}{\percent}. % under illumination conditions of AM1.5G
+Requirements for materials for thermoelectric generators are a strong Seebeck effect and high electrical conductivity combined with low thermal conductivity.
+Insects utilize the Seebeck effect is as well: The cuticle of hornets for example, has been reported\cite{Shimony1981,Barron2009} to show positive and negative values, for the yellow-colored and brown-colored cuticle, respectively. It is speculated that the hornets use this for temperature detection.
+Recently, the spin Seebeck effect has been reported, which should allow for spin-voltage generators, being crucial for driving spintronic devices\cite{Uchida2008}.
+
+\subsection{Definition and Measurement of the Seebeck Coefficient}\label{sec:TheoSeeDefAndMeas}
+If two sides of a material are held at different temperatures, a voltage \V is generated, which is proportional to the temperature difference $\Delta T$ for small $\Delta T$. The proportionality is given by a material property called Seebeck coefficient \S, which is defined for spatial steps of infinitesimally small temperature differences along the material, as
+\begin{equation}
+ \S(\Tm) := \lim_{\Delta T\to0} \frac{\Delta \V}{\Delta T}
+\label{eq:DefSeebeck}
+ \PUNKT
+\end{equation}
+The total voltage difference \Vs between the ends of the material is given by the path integral along the material\cite{WagnerDiss2007}:
+\begin{equation}
+\Vs = \int_{x_1}^{x_2} S(T) ~ \partial_x T ~ dx
+= \int_{T_1}^{T_2} S(T) ~ \partial_x T ~ dT
+\label{eq:DefVs}%TheoVs
+\PUNKT
+\end{equation}
+Choosing $T_2-T_1$ to be small enough that the Seebeck coefficient $S(T)$ can be considered constant in the range of $T_1$ to $T_2$ and additionally assuming a linear temperature gradient, \lasteqn can be simplified to
+\begin{equation}
+\Vs = \S \int_{T_1}^{T_2} ~ \partial_x T ~ dT = \S \cdot (T_2-T_1)
+\PUNKT
+\end{equation}
+In general, the Seebeck coefficient is temperature-dependent and will therefore be written as $\S(\Tm)$ in the following, with \Tm being the mean temperature of $T_1$ and $T_2$ and the applied temperature difference is $\Td=T_2-T_1$.
+
+\begin{wrapfigure}[4]{r}[0mm]{21mm}%
+{\vspace*{-1.5em}\includegraphics{draw/Seebeck-Zuleitungskizze.pdf}}%
+\end{wrapfigure}%
+%\was{Measuring, neglecting metal wires}
+In order to measure the thermoelectric voltage \Vs along a material A (with a Seebeck coefficient $S_\text{A}$), two points with temperatures $T_1$ and $T_2$ have to be connected by wires of a material B (with Seebeck coefficient $S_\text{B}$) to a voltmeter that is at a temperature $T_3$. It is conventional to contact the \emph{high} input of the voltmeter to the \emph{cold} side. Consequently, a positive sign of the voltage is obtained if holes are the dominating charge carriers.
+The total measured thermoelectric voltage is the sum of the individual contributions:
+\begin{align}
+\Vs &= S_\text{B} \cdot (T_3-T_1) + S_\text{A} \cdot (T_1-T_2) + S_\text{B} \cdot (T_2-T_3) \nonumber\\
+&= (S_\text{A}-S_\text{B}) \cdot (T_1-T_2)
+\KOMMA
+\end{align}
+which is independent of the temperature $T_3$ at the voltmeter, but affected by the Seebeck coefficients of the connecting wires $S_\text{B}$.
+
+The Seebeck coefficients of semiconductors are in the range of several hundred to thousand \si{\micro\volt\per\kelvin}, whereas for metals only few \si{\micro\volt\per\kelvin} are measured ($\S{}_\text{SC}\gg\S{}_\text{metal}$). Copper, for example, has $\S\approx\uVK{2}$ at room temperature\cite{DemtroederExp2}. %\cite{Kasap}
+Hence, if a metal is used to contact a voltmeter to the ends of an investigated semiconductor, the contribution of the wires in \lasteqn can be neglected and the Seebeck coefficient is
+\begin{equation}
+% \Vs\approx S_\text{A}\cdot (T_1-T_2) \Rightarrow S_\text{A} = \frac{\Vs}{T_1-T_2}
+S_\text{A} \approx \frac{\Vs}{T_1-T_2}
+\label{eq:SeebeckMeasured}
+\PUNKT
+\end{equation}
+
+%\newpage
+\subsection{Correlation to Semiconductor Energy Levels}
+\subsubsection{Conventional Semiconductors}%
+\label{sec:TheoFritzsche}
+In 1971 Fritzsche published a correlation of the Seebeck coefficient and the energy levels of a semiconductor\cite{Fritzsche1971}. He started with the Peltier\entdecker[Peltier1834]{Jean Charles Athanase Peltier}{French}{1785--1845}
+coefficient \peltier, which correlates to the Seebeck coefficient via the Thomson\entdecker{William Thomson, later 1$^\text{st}$ Lord Kelvin}{British}{1824--1907}
+relation
+\begin{equation}
+\peltier = \S \cdot T
+\label{eq:PeltierSeebeck}
+\PUNKT
+\end{equation}
+\peltier, on the other hand, is defined as the energy carried by the electrons per unit charge, whereas the energy is measured with respect to the \EfLong \Ef. The contribution of each electron to \peltier is proportional to its relative contribution to the total conductivity, so \peltier can be written as\cite{Fritzsche1971}
+\begin{equation}
+\peltier = - \frac{1}{e} ~ \int_{-\infty} ^{+\infty} (E-\Ef) ~ \frac{\c'(E)}{\c} ~ dE
+\label{eq:PeltierIntegral}
+\KOMMA
+\end{equation}
+with the differential conductivity $\c'(E)$ that can be defined by equations~\eqref{Cond-CCD-Mob} and \eqref{CCD-basic-integral-diff}, introducing the energetic distribution of the mobility $\mob(E)$:
+\begin{equation}
+ \c'(E) dE = e \cdot n'(E) \cdot \mob(E) ~dE = e \cdot \dos(E) \cdot \fFD(E) \cdot \mob(E) ~dE
+\label{eq:DiffCond}
+\PUNKT
+\end{equation}
+Integration gives the total conductivity
+\begin{equation}
+ \c(E) = \int_{-\infty} ^{+\infty} \c'(E) dE
+\PUNKT
+\end{equation}
+Using \eqnref{PeltierSeebeck}, the Seebeck coefficient can be written as
+\begin{equation}\label{eq:SeebeckIntFritzsche}
+\S = \frac{\peltier}{T}=  - \frac{\kB}{e} ~ \int_{-\infty} ^{+\infty} \frac{E-\Ef}{\kT} \cdot \frac{\c'(E)}{\c} ~ dE
+\PUNKT
+\end{equation}
+
+Fritzsche found that in case of one band only conduction with no states below the conduction band edge \Ec (electron (e) conduction) or above the valence band edge \Ev (hole (h) conduction), \eqnref{SeebeckIntFritzsche} can be simplified to
+\begin{align}
+\S &= -\frac{\kB}{e} \left( \frac{\Ec-\Ef}{\kT} + A_\text{C}\right) & \text{for e-conduction} \label{eq:Fritzsche-e} \\
+\S &= +\frac{\kB}{e} \left( \frac{\Ef-\Ev}{\kT} + A_\text{V}\right) \PUNKT & \text{for h-conduction} \label{eq:Fritzsche-h}
+\end{align}
+The terms $A_\text{C}$ and $A_\text{V}$ in the order of 1 account for the energetic dependency of the \dosLong $\dos(E)$ and the mobility $\mob(E)$ above \Ec or below \Ev.
+If the \EfLong is at a large distance to the corresponding band edge
+(\mbox{$\Ec-\Ef\gg\kT$} or \mbox{$\Ef-\Ev\gg\kT$}), $A_\text{C}$ and $A_\text{V}$ can be neglected. This leads to a simplified version of the equations above:
+\begin{align}
+\S &= - \frac{\Ec-\Ef}{e\,\T} & \quad\quad\text{for e-conduction} \label{eq:Fritzsche-e-ohneA} \\
+\S &= + \frac{\Ef-\Ev}{e\,\T} \PUNKT & \quad\quad\text{for h-conduction} \label{eq:Fritzsche-h-ohneA}
+\end{align}
+%
+%
+In conclusion, the sign of the Seebeck coefficient \S identifies whether electrons or holes are the dominating charge carriers, whereas the value of \S is correlated to the difference between the \EfLong and the corresponding band edge, \Ec or \Ev. In the following, the term \EsLong \Es will be used for this difference, which has a negative value for electron conduction and a positive value for hole conduction:
+\begin{align}
+\Es := \Ef-\Ec \quad\text{ or }\quad \Es := \Ef-\Ev
+\label{eq:DefEs-Ec-Ev-inorg}
+\PUNKT
+\end{align}
+Equations \eqref{Fritzsche-e-ohneA} and \eqref{Fritzsche-h-ohneA} can hence be simplified to
+% For large \Es, the terms $A_\text{C}$ and $A_\text{V}$ in equations \eqref{Fritzsche-e} and \eqref{Fritzsche-h} can be neglected, thus equations \eqref{Fritzsche-e-ohneA} and \eqref{Fritzsche-h-ohneA} are valid and can be simplified to
+\begin{align}
+\S =& \frac{\Es}{e\,\T} \quad \Rightarrow \quad \Es = \S \cdot e \cdot \T \label{eq:S-Es-inorg}
+\PUNKT
+\end{align}
+This relation allows for the direct correlation of thermoelectric measurements and the relative position of the \EfLong, using the same equation for both, electron and hole conduction. Therefore, Seebeck measurements are an important tool to investigate doped semiconductors.
+
+One interesting phenomenon is that at high doping concentrations and low temperatures, a sign change of \S can occur, as first reported by Geballe\etal\cite{Geballe1955} for n- and p-doped silicon. The reason is that the role of host and dopant is exchanged and conduction along the ionized dopants, instead of along the host material, becomes the dominating transport mechanism.
+
+\subsubsection{Organic Semiconductors}%
+\label{sec:TheoSchmechel}
+%\was{Seebeck in OSCs (Schmechel)}
+In \OSCs where no band structure is present, Fritzsche's equations~\eqref{Fritzsche-e} and \eqref{Fritzsche-h} are not valid. For this case, Schmechel derived a similar expression\cite{Schmechel2003}. He described the \dosLong $\dos(E)$ of an amorphous sample by a single Gaussian distribution, as defined by \eqnrefPage{DefGaussianDOS}.
+This distribution was assumed to include all electronic states of host and dopant (if the sample is doped).
+%, can be written accordingly to \eqnref{DefGaussianDOS}:
+% \todof{later in III a 2nd Gaussian for traps of the poly-cryst. samples is introduced}
+% \begin{equation}
+% \dosE dE = \frac{\nH}{\sqrt{2 \pi} ~ \gausswidth} \exp{-\frac{E^2}{2\gausswidth^2}} dE
+% \PUNKT
+% \end{equation}
+% Here, \gausswidth is the standard deviation, defining the width of the Gaussian distribution, and \nH is the total density of molecules. Integrating $\dosE dE$ over all energies the result is \nH.
+
+Schmechel defined a \EtLong \Et as the averaged energy of the charge carriers contributing to the conductivity, weighted by the conductivity distribution
+\begin{equation}
+\Et :=  \frac
+{ \int_{-\infty} ^{+\infty} E ~ \c'(E) ~ dE }
+{ \int_{-\infty} ^{+\infty} \c'(E) ~ dE } 
+= \frac{1}{\c} \int_{-\infty} ^{+\infty} E ~ \c'(E) ~ dE
+\label{eq:DefEt}
+\PUNKT
+\end{equation}
+This quantity is used to simplify \eqnref{SeebeckIntFritzsche} for the Seebeck coefficient
+\begin{align}
+\S &= - \frac{1}{e\,T} ~ \int_{-\infty} ^{+\infty} (E-\Ef) ~ \frac{\c'(E)}{\c} ~ dE
+\nonumber
+%  \tag{\ref{eq:SeebeckIntFritzsche}}
+ \\
+%  &= - \frac{1}{e\,T} \left(\Et - \int_{-\infty} ^{+\infty} \Ef ~ \frac{\c'(E)}{\c}  ~ dE \right) \\
+ &= - \frac{1}{e\,T} \left(\Et - \frac{\Ef}{\c} \int_{-\infty} ^{+\infty} \c'(E)  ~ dE \right)\\
+\S &=\frac{\Ef-\Et}{e\,T} \label{eq:Schmechel-S}
+\PUNKT
+\end{align}
+The expression \lasteq is similar to the equations \eqref{Fritzsche-e} and \eqref{Fritzsche-h} derived by Fritzsche. Here, the terms $A_\text{C}$ and $A_\text{V}$ are missing and the band edges \Ec and \Ev are replaced by the \EtLong \Et. If \Es is again introduced, in this case as the difference between \EfLong and \emph{transport} level %hier kein Punkt, Satz geht weiter
+\begin{equation}
+\Es := \Ef - \Et\label{eq:Es=Ef-Et}
+\KOMMA
+\end{equation}
+one obtains the same equation as for \CSCs (CSCs)%\eqref{S-Es-inorg}.
+\begin{align}
+\S &=\frac{\Es}{e\,T} \quad \Rightarrow \quad \Es = e \cdot T \cdot S
+% \tag{\ref{eq:S-Es-inorg}}
+\label{eq:S-Es-org}
+\PUNKT
+\end{align}
+The field-dependency of the Seebeck coefficient of high mobility organic compounds was studied and found to be similar to \CSCs\cite{Pernstich2008}.
+Recently, the conductivity and the Seebeck coefficient of a single molecular junction was successfully measured simultaneously\cite{Widawsky2012} which allowed an insight into the fundamental physics of single molecules.
+
+% \newpage
+% \subsection*{Further Conclusions of Schmechel}
+% \todo{
+% The total charge carrier density \ne is the integral over all energies
+% \begin{equation}
+% \ne = \int_{-\infty} ^{+\infty} \dosE ~ \fFD(E,\Ef, T) ~ dE
+% \PUNKT
+% \end{equation}
+% This integral is considered independent of the temperature and only determined by the doping concentration. Therefore, for a known total carrier density \ne and given temperature the \EfLong \Ef can be determined.
+% }
+%
+
+\newpage
+\section{Correlation of Seebeck Coefficient and Charge Carrier Density}%
+\label{sec:CCD-v-S}
+\subsection{Conventional Semiconductors}
+In \secref{TheoConventionalSemiconductors}, a correlation of the \nLong and the energy levels is calculated for \CSCs using the Boltzmann approximation\footnote{requiring $\Ec-\Ef\gg\kT$ or $\Ef-\Ev\gg\kT$}, leading to the following equations for electrons and holes
+\begin{align}
+\ne &=\Nc\exp{-\frac{\Ec-\Ef}{\kT}} %\quad\quad\text{\eqref{ne-InOrg-via-Boltzmann}}
+\tag{\ref{eq:ne-InOrg-via-Boltzmann}}
+%&
+\\
+\nh &=\Nv\exp{-\frac{\Ef-\Ev}{\kT}}
+\tag{\ref{eq:nh-InOrg-via-Boltzmann}}
+\PUNKT
+\end{align}
+Fritzsche's findings for the correlation of the Seebeck coefficient and the energy levels (in case of a one band only transport)
+are discussed in \secref{TheoFritzsche}. If the \EfLong is far away from the corresponding band edge, the simple relation of \eqnref{S-Es-inorg} is obtained
+\begin{align}
+\S &= \frac{\Es}{e\,\T}
+\tag{\ref{eq:S-Es-inorg}}
+\\
+\text{with} \quad \Es := \Ef-\Ec \quad&\text{ or }\quad \Es := \Ef-\Ev
+\tag{\ref{eq:DefEs-Ec-Ev-inorg}}
+\PUNKT
+\end{align}
+
+% , and the substitution \Es for the energy difference between the relevant band edge and the \EfLong, as defined in equations \eqref{DefEs-Ec-Ev-inorg}
+% two simple equations for electrons and holes are derived:
+% \begin{align*}
+% \S &= - \frac{\Ec-\Ef}{e\,\T} \quad\quad\text{\eqref{Fritzsche-e-ohneA}}
+%  & \S &= + \frac{\Ef-\Ev}{e\,\T} \tag{\ref{eq:Fritzsche-h-ohneA}}
+% \PUNKT
+% \end{align*}
+% Using the substitution \Es for the energy difference between the relevant band edge and the \EfLong, as defined in equations \eqref{DefEs-Ec-Ev-inorg}, for both cases the same equation is obtained:
+
+%
+Substituting this \eqnref{S-Es-inorg} into the equations \eqref{ne-InOrg-via-Boltzmann} and \eqref{nh-InOrg-via-Boltzmann}, one obtains
+\begin{align}
+\ne &=\Nc\exp{-\frac{-\Es}{\kT}}
+\label{eq:ne-von-Es-inorg}
+\\
+\nh &=\Nv\exp{-\frac{+\Es}{\kT}}
+\label{eq:nh-von-Es-inorg}
+\PUNKT
+\end{align}
+As \S, and hence \Es, is negative for electron conducting materials, the argument of the exponential function in both equations is negative, \eg a greater value of the Seebeck coefficient $|\S|$, and hence $|\Es|$, is directly correlated to a smaller \nLong \neh. In these equations, the temperature dependence of \neh is given by the temperature dependencies of the prefactors \Nc or \Nv and of the \EfLong \Ef, contributing to \S and hence \Es.
+
+A sketch of the energy levels \Ef, \Ec and \Es is presented in \figref{sim_Fermi-DOS-Es-inorg+org}\,(a) on page \pageref{fig:sim_Fermi-DOS-Es-inorg+org}, for the case of n-doping with $|\Es|=\meV{200}$. Analogously to \figrefPage{sim_Fermi-DOS-n-inorg}, the \fFDLong $\fFD(E)$ and the square root shaped $\dos(E)$ are drawn in order to derive their product, the differential \neLong $\ne'(E)$, which is shown in a normalized scale as well. Integrating $\ne'(E)$ over all energies yields the total \neLong \ne, corresponding to the area under the curve. It can be seen that at energies $E<\Ec$, there is no contribution to \ne, as the \dos is zero. The strongest contribution to \ne is at energies above but close to \Ec. An analogous picture can be drawn for p-doping, where \Es corresponds to the difference between \Ef and the \EvLong \Ev and the \nhLong \nh is derived the same way.
+
+\subsection{Organic Semiconductors}\label{sec:TheoSeeOSC}
+In \secref{TheoOrganicSemiconductors}, a calculation of the \nLong for OSCs with a Gaussian distributed \dosLong is shown, resulting in the following equations, where again the Boltzmann approximation is used to solve the integration analytically: %\todo{Gleichung nicht gültig, weil Boltzmann?! Entsprechend auch die nächsten :-(}
+\begin{align*}
+\ne &= \nH
+  \exp{-\frac{ \gausscenter - \Ef - \frac{\gausswidth^2}{2\kT}}{\kT} }
+\tag{\ref{eq:ne-org-solved}}
+\\
+\nh &= \nH
+  \exp{-\frac{ \Ef - \gausscenter - \frac{\gausswidth^2}{2\kT}}{\kT} }
+\tag{\ref{eq:nh-org-solved}}
+\PUNKT
+\end{align*}
+%
+In \secref{TheoSchmechel}, the correlation between the Seebeck coefficient and the difference between \EfLong \Ef and \EtLong \Et is derived for OSCs to:
+\begin{align}
+S &= \frac{\Es}{e\,T}
+\tag{\ref{eq:S-Es-org}}
+\\
+\text{~~~with~~~} \Es:=\Ef-\Et &\Rightarrow \Ef=\Es+\Et
+\tag{\ref{eq:Es=Ef-Et}}
+\PUNKT
+\end{align}
+This allows for deriving a relation of the Seebeck coefficient to the \nLong by combining above equations, while setting the origin of the energy scale to \mbox{$\gausscenter=0$}:
+\begin{align}
+&\ne = \nH \cdot
+  \exp{-\frac{ -(\Es+\Et ) - \frac{\gausswidth^2}{2\kT}}{\kT} }
+\label{eq:ne-von-Es-org}
+%
+\\
+&\nh = \nH \cdot
+  \exp{-\frac{   \Es+\Et - \frac{\gausswidth^2}{2\kT}}{\kT} }
+\label{eq:nh-von-Es-org} %theo-CCD-von-S-org
+\PUNKT
+\end{align}
+
+Note that in \lasteqn[1], both \Es and \Et have negative values due to electron conduction. Therefore, equations \lasteq[1] and \lasteq[0] show formally the same dependency on \Es as derived for CSCs (compare \eqref{ne-von-Es-inorg} and \eqref{nh-von-Es-inorg}):
+\begin{equation}\label{eq:n-von-Es-org-prop} %theo-CCD-von-S-org-prop
+\n_\text{e,h} \propto \nH \cdot \exp{-\frac{|\Es|}{\kT} }
+\PUNKT
+\end{equation}
+
+\cBild[t]
+{sim_Fermi-DOS-Es-inorg+org}
+{Seebeck energy levels, $\fFD(E)$, $\dos(E)$ and $\ne'(E)$ in CSCs and OSCs}
+{Energy levels, \fFDLong $\fFD(E)$, normalized \dosLong $\dos(E)$ as well as their normalized product, the differential \neLong $\ne'(E)=\fFD(E) \cdot \dos(E)$ for n-doped (a) conventional and (b) organic \SCs.
+The area under $\ne'(E)$ corresponds to the total \neLong \ne. Parameters: \T[25], $|\Es|=\meV{200}$, $\gausswidth=\meV{100}$, $\Et=-2\,\gausswidth$.
+}
+
+The above discussed energy levels are plotted in \figref{sim_Fermi-DOS-Es-inorg+org}\,(b), for the case of n-doping and choosing $|\Es|=\meV{200}$, $\gausswidth=\meV{100}$ and $\Et=-2\,\gausswidth$. Again, the \fFDLong $\fFD(E)$ and the normalized \dosLong $\dos(E)$ are drawn in order to derive their product, the differential \neLong $\ne'(E)$, which is shown in a normalized scale as well. Integrating $\ne'(E)$ over all energies yields the total \neLong \ne, corresponding to the filled area under the curve.
+
+Comparing $\ne'(E)$ for organic and conventional SCs, a completely different shape is found. While for CSCs the maximum is close to the \EcLong $\Ec=\Ef+|Es|$, for OSCs the maximum is between \Ef and \Et. For a different set of parameters, the maximum can even be shifted below \Ef, showing that it is important to use the \fFDLong instead of the approximation via the \fBLong. Still the trends expected from the analytical calculations using the Boltzmann approximation hold, as a decreasing value of \Es is related to a gain in \ne, due to a larger overlap of the \dos and the \fFD, as expected from \CSCs.
+
+\subsection{Temperature Dependencies}\label{sec:TheoTempDepMob}
+The temperature dependencies of the conductivity \c and the \nLong \neh can be compared to draw conclusions for the temperature dependence of the mobility $\mob(\T)$. In the following, hole only conduction is assumed, but the same argumentation holds for electron conduction. Starting from \eqnref{Cond-CCD-Mob}
+\begin{align}
+\c(T) &= e \cdot \nh(T) \cdot \mobh(T)
+\nonumber
+% \tag{\ref{eq:Cond-CCD-Mob}}
+\KOMMA
+\\
+\intertext{and substituting the \eqnref{CondActivation} for the temperature activation of \c and the above derived correlation of \nh and \Es \eqref{nh-von-Es-org}}
+\c(T) &\propto \exp{-\frac{\Eact}{\kT}}
+% \nonumber
+\tag{\ref{eq:CondActivation}}
+\\
+\nh(T) &\propto
+ \exp{-\frac{\Es(T)}{\kT}}
+ \cdot
+ \exp{-\frac{ \Et  - \frac{\gausswidth^2}{2\kT}}{\kT} }
+% \nonumber
+\tag{\ref{eq:nh-von-Es-org}}
+\KOMMA
+\\
+\intertext{the temperature dependencies of the mobility is estimated to}
+\Rightarrow
+\mobh(T) &\propto \exp{-\frac{\Eact-\Es(T)}{\kT}} \cdot \exp{+\frac{ \Et  - \frac{\gausswidth^2}{2\kT}}{\kT} }
+\label{eq:mob-von-Eact-Es-org}
+\PUNKT
+\end{align}
+As the Boltzmann approximation is used to derive \eqnref{nh-von-Es-org} and furthermore the temperature dependence of the conductivity might differ from the simple case, given in \eqnref{CondActivation}, the temperature dependence of the mobility might deviate from the simple model derived here. More complex models can be found in the literature\cite{Bassler1982,Vissenberg1998}, but these require profound knowledge of the underlying mechanism, which are still under scientific debate.
+Therefore, rather the above presented model is used to explain trends of the data presented in the subsequent chapters.
+

@@ -1,0 +1,111 @@
+\chapter{Summary and Outlook}\label{chap:summary}
+
+\section{Summary}
+
+\subsection*{Experimental}
+First, an existing setup was fundamentally improved and several possible sources of errors or interferences were eliminated. Software access to all devices allowed for better control of deposition rates as well as for monitoring and logging during sample fabrication process, supporting diagnostics.
+Furthermore, the computer control make automation and remote control of measurements possible, enabling for longer measurement time and more stable temperature control without electrical disturbances by people operating the setup. The enhanced accuracy and reproducibility of the measurements are the basis for the data presented in this thesis.
+
+\subsection*{n-Doping}
+The high electron mobility material \CS was chosen as host for five different n-dopants (\CrPd, \WPd, \aob, \dmbi and \meodmbiI), to study and compare the doping mechanism of these compounds.
+Each dopant was able to dope \CS, tuning the conductivity by several orders of magnitude through varying the \CLong.
+Probing the conductivity directly after sample fabrication, changes over time were detected, which could be accelerated and saturated by thermal annealing the samples prior to further measurements, to ensure stable measurement conditions.
+%
+Rather large conductivities were achieved, with four of the five dopants reaching \mbox{$\c>\Scm{1}$} and a record of \c[10.9] using \meodmbiI.
+At low \CLongs, the air-sensitive compounds \CrPd and \WPd were superior, but showed a drop at high \CLongs, which is attributed to a decreasing mobility. Thus, both air-stable DMBI derivatives, \dmbi and \meodmbiI reached greater \cLongs at elevated \CLongs.
+%
+Thereby, it is proven that the easier to handle air-stable precursor n-dopants have the potential to replace air-sensitive dopants in future devices.
+%
+While most n-dopants showed a linear relation of \cLong to \CLong, the DMBI derivatives resulted in a superlinear relation.
+%
+\aob yielded several orders of magnitude lower conductivities directly after sample fabrication than the other dopants. Thermal annealing all samples reduced this difference significantly, but the samples of \aob stayed one order of magnitude below the values achieved for the other dopants, indicating a rather large \IE of the active dopant compound of \aob.
+%
+% Eact
+The conductivity rose with temperature, indicating a temperature-activated hopping transport with an \EactLong that lowers upon doping.
+
+% Seebeck
+Thermoelectric studies yielded a decreasing value of the Seebeck coefficient upon doping, indicating a shift of the \EfLong towards the \EtLong and thus an increasing \neLong with raising \CLong. For most materials, at high \CLongs the difference between the two energy levels saturated at \mbox{$\Es<2\,\kT$}.
+% Comparing Eact and Es
+A deviation between the \EactLong and the \Es, observed for all \aob samples, as well as for highly doped samples of \CrPd and \WPd, was attributed to a thermal activation of the charge carrier mobility.
+
+AFM probing yielded a correlation between surface roughness and \CLong, but highly doped samples of \CrPd and \WPd showed smooth layers, which was interpreted as an artifact due to measurement in air.
+
+The study of the degradation by air-exposure of a \CS sample doped by the air-sensitive dopant \WPd, proved that a post-exposure vacuum and heat treatment can restore a large fraction of the initial conductivity, which allows for device processing steps under ambient conditions, greatly enhancing device fabrication possibilities.
+
+\subsection*{p-Doping}
+% Intro
+Investigations of p-doped samples using two hosts (\meo and \lili) and two dopants (\FS and \CSF) were performed to study the influence of the molecular energy levels on the doping effect.
+
+% Hosts
+Comparing the hosts \meo and \lili of similar structure and OFET-mobility, the expected trend was verified, as \meo with smaller \IE leads to a higher \cLong along with a lower Seebeck coefficient at each \CLong.
+
+% Dopants
+The dopants \FS and \CSF on the other hand, revealed a different picture, since doping by \FS was more efficient despite the estimated literature value of its \EA being lower. It was concluded that the estimated literature values are incorrect and that the real \EA of \CSF is most likely smaller than \eV{5.2}, whereas the real \EA of \FS is larger.
+
+% Superlin Cond
+A superlinearly rising \cLong with \CLong was observed for most material combinations, opposite to the n-doping experiments, where mostly a linear relation was found.
+No saturation of this tendency was visible for samples doped by \FS and an increasing doping efficiency with \CLong was postulated.
+For the heavier \CSF, a smaller \cLong slope at elevated \CLong was explained by a disturbance of the morphology and hence a reduction of the mobility.
+
+% Eact - Es
+Similar to the n-doped samples, the conductivity rose with temperature and again an \EactLongL was derived that decreased upon doping. This energy, however, was found to be much larger for the p-doped samples and comparing it to Seebeck investigations the difference was attributed to a strong thermal activation of the mobility.
+
+Concluding, for device application, the use of the thermally more robust \lili as host and the more efficient dopant \FS is suggested.
+
+% P5
+Investigating the model system of the polycrystalline \pen p-doped by the similar-sized \FV, much larger conductivities compared to the amorphous hosts \meo and \lili were measured and attributed to a higher mobility.
+Directly after sample deposition, a strong reduction of the \insitu \cLong over time was detected, which could be accelerated and saturated by heat treatment and was attributed to morphological changes in the layer, reducing the mobility. This effect explained the difference between published studies on this material system.
+However, neither the presence of a threshold \CLong for the generation of free charge carriers nor indications for an increasing \DopEffLong with \CLong, as theoretically predicted for this material system, were observed in the experiments.
+It is possible that these phenomena were concealed by morphological effects or that they occur at lower \CLongs.
+
+\subsection*{Estimating the Doping Efficiency and the Mobility}
+Finally, a model was developed that allows to derive lower limits for the charge carrier mobility, the \nLong as well as the \DopEffLong from a conductivity measurement. 
+Combining the derived lower limit of the \DopEffLong with Seebeck data, the energetic position of the \EtLong could be narrowed down.
+In case of the n-doped \CS samples the rather drastic assumption of a constant \EtLong for all material combinations and doping concentrations yielded quite reasonable results for the derived \neLongs, \DopEffLongs as well as charge carrier mobilities.
+
+\section{Outlook}
+
+\subsection*{Further Improvements of the Setup}
+Several further improvement of the setup may be worth considering in the future.
+Firstly, the replacement of the water-cooling by an electrically driven and remotely controllable cooling system. These rather expensive systems can provide liquid solvents at temperatures down to \grad{-50} and would greatly enhance the measurement range. Cooling is preferred over heating, since at elevated temperatures the morphology might change or the molecules might even decompose or re-evaporated from the sample. As \cLong measurements do not require as stable temperature control as Seebeck experiments, \cLong studies on doped samples could be performed using liquid nitrogen cooling at the existing setup, as mentioned in \secref{ExpTechDetails}.
+Secondly, the temperature gradient required for Seebeck investigations could be generated by a Peltier element instead of two individually heated copper blocks\cite{Pernstich2008}, which should result in an even more stable temperature gradient during Seebeck measurements.
+Thirdly, \insitu mounting the sample via a transfer system without opening the chamber to air would greatly enhance sample fabrication speed, by preventing contamination and re-evacuation of the chamber.
+This could furthermore allow for the measurement of samples fabricated in other labs, if they are encapsulated during transport to prevent degradation in air.
+Finally, full automation of the rate control during co-deposition of host and dopant materials may be worth considering.
+
+\subsection*{Short-Term Studies}
+% MR>1
+It would be interesting to study the influence of much lower and even higher \CLongs.
+Lower concentrations would require a modified setup, for example by introducing a shutter above the dopant source, reducing the material flow.
+An optimized sample geometry for conductivity studies with a high contact length to distance ratio could even allow measuring intrinsic conductivities.
+Higher concentrations on the other hand are cost-intensive, since the dopants are usually rather expensive, but especially for the p-dopant \FS, such a study would be interesting, since no saturation of the superlinearly rising \cLong with \CLong was observed so far.
+Furthermore, it would be fascinating to try whether host and dopant switch roles at \Cgr{1.0}, which would be visible in a sign change of the Seebeck coefficient.
+
+Further studies of the influence of air-exposure and post-exposure heat and vacuum treatment on doped layers would be of great interest for device fabrication issues. Additionally, the influence of the \CLong on the thermal stability of the layers could be of interest.
+
+The n-dopants studied should be tested in a series of hosts of smaller \EAs to check their doping capability.
+\meodmbiI, which did not deploy its full doping capability in a vacuum chamber of lower base pressure, should be tried in different setups.
+Modifications of the chemical structure of the promising novel air-stable precursor n-dopant class of DMBI derivatives should be studied in more detail, since it might reveal further insight of the doping mechanism.
+
+\subsection*{Medium-Term Studies}
+The higher fluorinated compound C$_{60}$F$_{48}$ might be a better choice than the investigated \CSF, since its \EA is reported to be larger\cite{Liu1997}.
+
+The materials investigated in this work should be employed in devices to study the influence of conductivity and Seebeck coefficient on device performance. First tests in electron and hole transporting layers of photovoltaic cells where successful, but so far insufficient data were collected to compare the materials.
+
+The origin for the change in \cLong over time observed for many samples directly after sample deposition should be investigated further, for example by performing similar measurements in a vacuum chamber of lower base pressure or by encapsulating the films shortly after fabrication to identify whether it is an artifact of contamination or an internal effect.
+
+Applying p- and n-doping on the same host allows fabrication of p-n-junctions, being the building block for most electronic devices. First p-n-junctions of ZnPc by employing \CSF and \WPd were promising\cite{Burtone2013}.
+
+In the presented setup, nitrogen cooling could be used to study the temperature dependence of the conductivity in more detail. First conductivity studies were successful, but the temperature control was too unstable for Seebeck investigations.
+
+\subsection*{Long-Term Studies}
+A model describing the energetic dependency of the microscopic mobility would be of great use, since combined with Seebeck data this knowledge would allow for determination of the positions of \EtLong and \EfLong.
+
+The influence of doping on the morphology is another interesting topic, since the morphology strongly influences the mobility and consequently the conductivity. Morphological analysis of the molecular arrangement could be investigated by techniques like X-ray diffraction or refraction in addition to AFM surface probing.
+
+The optical properties of doped layers are of interest as well, since in optoelectronic devices parasitic light absorption hinders device performance.
+
+Studying the same material system by several techniques could greatly enhance the scientific output compared to single experiments. For example, impedance spectroscopy could be used to derive the density of ionized dopants and thereby the doping efficiency. By the surface sensitive technique of ultraviolet photoelectron spectroscopy (UPS), the \EfLong position in p-doped layers could be determined.
+The influence of temperature and doping concentration on the mobility might be obtained using Hall or time of flight (TOF) measurements.
+Combining this knowledge with a Seebeck and conductivity study should provide a deep insight into the underlaying physics.
+
