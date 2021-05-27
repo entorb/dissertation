@@ -1,0 +1,102 @@
+\subsection[Leitfähigkeit]{Leitfähigkeitsstudie}%
+
+\begin{frame}{Leitfähigkeit \vs Dotierung}%
+\only<1-2>{\AS Dotanden}%
+\only<3-4>{\Pd Dotanden}%
+\spalten[0.55\textwidth]% leer wichtig?
+{%
+\only<1>{\bildbox[unscaled]{plot/MR-Cond-n-AS-evap.pdf}{6cm}
+ \par\vspace*{0.3ex}\tiny{direkt nach Präparation, \Tmess[25] \phant }}%
+\only<2>{\bildbox[unscaled]{plot/MR-Cond-n-AS-evap+25.pdf}{6cm}
+ \par\vspace*{0.3ex}\tiny{nach Ausheizen 1\,h bei \T[100], \Tmess[25] \phant }}%
+\only<3>{\bildbox[unscaled]{plot/MR-Cond-n-Pd-evap.pdf}{6cm}
+ \par\vspace*{0.3ex}\tiny{direkt nach Präparation, \Tmess[25] \phant }}%
+\only<4>{\bildbox[unscaled]{plot/MR-Cond-n-Pd-evap+30.pdf}{6cm}
+ \par\vspace*{0.3ex}\tiny{nach Ausheizen 1\,h bei \T[70], \Tmess[30] \phant }}%
+\par
+%\only<5>{~\bildboxAlt{plot/MR-Cond-n-All-evap.pdf}{6cm}~\\after thermal annealing}%
+%\end{center}%
+}%
+{
+\begin{itemize}
+\item $\C \uparrow ~ \Pfeil \, \c\uparrow$
+\only <1> {\item \dmbi $\approx 100\times$ höhere \c als \aob}
+\only <2> {
+\item Ausheizen: starke Verbesserung für \aob
+\item Vermutlich Umformung der Vorstufe nicht abgeschlossen
+\item Maximum:\\
+\Scm{5.3} @ \C[0.650]
+}
+
+\item <3-> Abnahme bei hohen \C
+\item <4-> Ausheizen: \\Zunahme bei kl. \C \\Abnahme bei gr. \C
+\item <4-> Maximum:\\\Scm{4.3} @ \C[0.045] % 4.3 steht in T=30 Datei!!!
+\only<4->{\ton{Zuname=Ausrichten, Abnahme=gr Pd Mol stören}}
+\only<4->{
+\begin{textblock}{30}[1,1](113,82)% mm
+\bildbox[scaled]{pics/mat-C60+Pd.jpg}{3cm}
+\end{textblock}
+}
+\end{itemize}
+}
+\begin{textblock}{50}[0,0.5](10,70)% mm
+% \scriptsize
+\footnotesize
+% \begin{equation*}
+$\text{\C (MR)} = \frac{\text{\# Dotand Mol.}}{\text{\# Wirt Mol.}}$
+% \end{equation*}
+\end{textblock}
+\begin{textblock}{50}[0,0.5](10,78)% mm
+\footnotesize
+\CS undotiert: $\c\approx \Scm{e-8}$ \fnSym
+\\Rekordwert: $\c\approx \Scm{10} ^{\ddagger}$
+\fn{Li \etal JAP 100, 23716 (2006) ; $^\ddagger$Olthof\etal PRL 109, 176601 (2012)}
+\end{textblock}
+%
+\only<1>{\ton{DopLogSkala}}
+\end{frame}
+
+\begin{frame}{Leitfähigkeit \vs Dotierung}%
+alle 4 Dotanden%
+\spalten[.55\textwidth]%
+{%
+\only<1>{\bildbox[unscaled]{plot/MR-Cond-n-AS25+Pd30.pdf}{6cm}}%
+\only<2>{\bildbox[unscaled]{plot/MR-Cond-n-AS25+Pd30+fit.pdf}{6cm}}%
+\par\vspace*{0.3ex}\tiny{nach Ausheizen, $T=25$ / \grad{30}}%
+}%
+{%
+\begin{itemize}
+%\item <1-> low doping: reactive dopants better than air-stable ones
+% \item Nahe an Literaturrekordwert \Scm{10}
+\item <2-> $\c(\C)$ meist linear
+\\superlinear für \dmbi
+\item <2-> \Pfeil Dotiereffizienz $\uparrow$ oder Beweglichkeit $\uparrow$
+\end{itemize}
+
+}
+% \ton{}
+\end{frame}
+
+\subsection[Seebeck]{Seebeckstudie}
+% \subsection[\S \vs \C]{Seebeck \vs Dotierung}
+
+\begin{frame}{Seebeck \vs Dotierung}%
+\spalten[0.55\textwidth]{%
+\only<1>{\bildbox[unscaled]{plot/MR-See+Es-n1}{6cm}}%    AOB
+\only<2>{\bildbox[unscaled]{plot/MR-See+Es-n12}{6cm}}%   DMBI
+%\only<4>{\bildbox[unscaled]{plot/MR-See+Es-n123}{6cm}}%  W2
+\only<3>{\bildbox[unscaled]{plot/MR-See+Es-n1234}{6cm}}% Cr2
+\scriptsize{$\Tm=\grad{40}$, nach Ausheizen}
+}{%
+\begin{itemize}
+ \item <1-> $S$ neg. \pfeil e-Leitung
+ \item <1-> Fermi-Niveau schiebt \pfeil Transport-Niveau
+ \item <2-> \dmbi:\\\n gr. als für \aob
+ \item <3-> \Pd Dotanden:\\ \n gr. als für \AS
+ \item <3-> \n sinkt monoton
+%  Wort Sättigung zu dreist  \item <3-> Sättigung um $40-\meV{50}$ für alle Dotanden
+\end{itemize}
+}
+\ton{\n steigt nicht wieder an (vgl \c (Pd)}
+\end{frame}
+
