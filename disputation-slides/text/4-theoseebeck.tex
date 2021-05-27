@@ -1,0 +1,145 @@
+\subsection[Seebeck]{Seebeckeffekt}
+
+\begin{frame}{Seebeckeffekt}%
+\spalten[4.5cm]{
+~\bildbox{pics/ThomasSeebeck.jpg}{4cm}~%
+}{
+Thomas Johann Seebeck, 1821:
+\par\vspace*{3cm}
+
+Temperaturgradient \\ entlang Metall oder Halbleiter \\ erzeugt elektrische Spannung
+}
+\begin{textblock}{31}[1.0,0.0](105,31)
+\includegraphics[page=1]{pics/skizze-dT-erzeugt-V.pdf}
+\end{textblock}
+\begin{textblock}{16}[0.0,0.0](10,78)
+\tiny Bild: Wikipedia
+\end{textblock}
+
+\end{frame}
+
+\begin{frame}{Seebeckeffekt in konv. HL}%
+\begin{itemize}
+% \item Seebeckeffekt: Temp. Unterschied \\ entlang Metall oder HL. \\ erzeugt Spannung% \pause
+\item <1-> Seebeck Koeffizient $\S=\frac{V_\text{th}}{T_2-T_1}$
+\item <1-> Vorzeichen \pfeil Majoritätsladungsträger % von \S \\ 
+% \pause
+% \pause
+% \item \S $\propto$ (Fermi-Niveau \Ef\, --\,\, Transport-Niveau \Et) \quad $\S = \frac{\Ef-\Et}{e T}$
+\item <2-> \S $\propto$ Diff. Fermi (\Ef) und Transport (\Et) Niveau %$\S \approx \frac{\Ef-\Et}{e \Tm}  \fnSym$
+%\\ \hspace*{3cm} $\S \approx \frac{\Ef-\Et}{e T}  \fnSym$ %
+% approx, weil konst A weggelassen
+% \only<2->\zitat{Schmechel, JAP 93, 4653 (2003)}
+\end{itemize}
+\begin{textblock}{31}[1.0,0.0](124,14)
+\includegraphics[page=1]{pics/skizze-dT-erzeugt-V.pdf}
+\end{textblock}
+\only<2->{
+\vspace*{1ex}
+\begin{center}
+\includegraphics[page=1]{pics/skizze-Es-AHL.pdf}
+\end{center}
+}
+% \only<1->{%
+% \begin{textblock}{20}[0.0,0.0](98,25)
+% $\S=\frac{V_{12}}{T_2-T_1}$
+% \end{textblock}
+% }
+\only<2->{%
+\fn{Fritzsche, SSC 9, 1813 (1971)}
+\begin{textblock}{25}[0.0,0.0](104,26)% 26 {3} (0,0) % pagewidth=128mm, 15mm border to page top, [1.0,0.0] = rel. box coordinates
+$\S \approx \frac{\Ef-\Et}{e \Tm}  \fnSym$
+% \\
+% $\Es := \Ef-\Et$
+\end{textblock}
+}
+\only<2->{%
+\begin{textblock}{20}[0.0,0.0](104,54)
+$\S \approx \frac{\,\Es\,}{e \Tm}$
+\end{textblock}
+}
+%
+% \todo{}
+\ton{pos/neg \S\&\Es, \Tm, T \pfeil Drift \pfeil Diff}
+\end{frame}
+
+\begin{frame}{Seebeckeffekt in org. HL}%
+% \vspace*{1ex}
+Für organische Halbleiter mit gaußförmiger Zustandsdichte lässt sich ein \Et definieren\zitat{Schmechel, JAP 93, 4653 (2003)}
+\vspace*{4ex}
+\begin{equation*}
+\Et :=  \frac
+{ \int_{-\infty} ^{+\infty} E ~ \c'(E) ~ dE }
+{ \int_{-\infty} ^{+\infty} \c'(E) ~ dE } 
+= \frac{1}{\c} \int_{-\infty} ^{+\infty} E  ~ \c'(E) ~ dE
+\end{equation*}
+\\\vspace*{2.5ex}
+für das gilt
+\vspace*{3ex}
+\begin{equation*}
+\S = \frac{\Ef-\Et}{e T} = \frac{\,\Es\,}{e T} % \quad \text{mit} \quad \Es := \Ef-\Et
+% \\ &= 
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Freie Ladungsträger}%
+\vspace*{-2ex}
+\begin{center}
+Dichte freier Ladungsträger (n-dotiert)
+\end{center}
+\vspace*{-1ex}
+\begin{equation*}
+\n = \int_{-\infty}^{\infty} \textcolor{WPd}{\fFD(E,\Ef,T)} \cdot \textcolor{CrPd}{\dos(E)} dE
+\end{equation*}
+\vspace*{-3ex}
+\spalten{}{%
+\only<2>{%
+\begin{block}
+{\centering\phant Konventionelle HL \phant}
+\vspace*{-1ex}
+\begin{align*}
+\dos(E) &\propto \sqrt {E-\Ec} \\
+\Pfeil \n &\propto \exp\left(-\frac{E_\text{C}-\Ef}{\kT}\right) \fnSym{}
+\end{align*}
+\vspace*{-0.75ex}
+per Definition
+\vspace*{-1ex}\begin{equation*}
+E_\text{C}-\Ef =: |\Es|
+\end{equation*}
+\begin{equation*}
+\textcolor{yellow}{|\Es| \downarrow \, \Leftrightarrow \n \uparrow}
+\end{equation*}
+\end{block}
+}
+\only<3>{%
+\begin{block}
+{\centering\phant Organische HL \phant}
+\par
+\vspace*{2ex}
+% \begin{itemize}
+- exakte \dos unbekannt
+\\- Gauß-Verteilung üblich angenommen
+{\small $\Pfeil \n \propto \exp{\left(-\frac{ |\Es|+|\Et| - \frac{\gausswidth^2}{2\kT}}{\kT} \right)} \fnSym{}$ }
+\\gleicher Trend
+\begin{equation*}
+\textcolor{yellow}{|\Es| \downarrow \, \Leftrightarrow \n \uparrow}
+\end{equation*}
+\end{block}
+}%
+}
+
+\begin{textblock*}{50mm}[0,1](8mm,85.5mm) % Seite: 128mm x 96mm
+% \includegraphics[width=4cm]{plot/sim_Fermi-DOS-Es-org.pdf} %sim_Fermi-DOS-Es-org
+\only<2>{\bildbox[scaled]{plot/sim_Fermi-DOS-Es-csc.pdf}{50mm}}
+\only<3>{\bildbox[scaled]{plot/sim_Fermi-DOS-Es-org.pdf}{50mm}}
+\end{textblock*}
+%
+\ton{Dot schiebt \Ef!}
+\only<2->{
+\begin{textblock}{64}[0.0,0.0](66,85)
+\tiny{\fnSym{}Boltzmann Näherung verwendet}%
+\end{textblock}%
+}
+
+\end{frame}
+

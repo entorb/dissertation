@@ -1,0 +1,290 @@
+% geo: 128mm x 96mm
+
+\newcommand{\grad}[1] {\SI{#1}{\celsius}}
+\newcommand{\K}[1] {\SI{#1}{\kelvin}}
+\newcommand{\Scm} [1] {\SI[per=frac,fraction=nice,valuesep=thick]{#1}{\siemens\per\centi\meter}}
+\newcommand{\mV}  [1] {\SI{#1}{\milli\volt}}
+\newcommand{\V}  [1] {\SI{#1}{\volt}}
+\newcommand{\meV} [1] {\SI{#1}{\milli\electronvolt}}
+\newcommand{\nm} [1] {\SI{#1}{\nano\meter}}
+\newcommand{\mm} [1] {\SI{#1}{\milli\meter}}
+\newcommand{\uVK} [1] {\SI{#1}{\mu\volt\per\kelvin}} % \micro -> Font eurm10 at 10pt not found
+\newcommand{\cmVs}  [1] {\SI{#1}{\centi\meter\squared\per\volt\per\second}}
+\newcommand{\mr}[1] {\SI{#1}{MR}}
+
+\newcommand{\vs}[0] {vs.\ }
+\newcommand{\etal}[0] { \mbox{et al.}\xspace}
+\newcommand{\insitu}[0] {in~situ\xspace}
+
+\newcommand{\phant}[0]{\hspace*{-2ex}\phantom{fg}} % invisible box for fixing jumping text
+
+\newcommand{\pfeil} [0] {\ensuremath{\rightarrow}\xspace}
+\newcommand{\Pfeil} [0] {\ensuremath{\Rightarrow}\xspace}
+
+% \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% \newcommand{\zitat} [1] {\footnote{\tiny{#1}}}
+\newcommand{\zitat} [1] {\fnSym\fn{#1}}
+\newcommand{\fnSym}[0]{\ensuremath{^\ast}} % \ast is schlecht weil in Gleichung verwendet
+\newcommand{\fn} [1] {%
+\begin{textblock}{108}[0.0,0.0](10,85)
+\tiny{\fnSym#1}%
+\end{textblock}%
+}
+
+% \newcommand{\cond} [0] {\ensuremath{\sigma}\xspace}
+\let\corg\c
+\renewcommand{\c} [1][\empty]%
+{%
+\ifthenelse{\equal{#1}{\empty}}%
+{\ensuremath{\sigma}\xspace}%
+{\mbox{\ensuremath{\sigma=\Scm{#1}}}}%
+}
+\newcommand{\C} [1][\empty]%
+{%
+\ifthenelse{\equal{#1}{\empty}}%
+{\ensuremath{C}\xspace}%
+{\mbox{\ensuremath{C=#1}}}%
+}
+
+\newcommand{\Eact} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\texorpdfstring{\ensuremath{E_\text{act,\c}}}{Eact}\xspace}%
+ {\mbox{\ensuremath{E_\text{act,\c}=\meV{#1}}}}%
+}
+% \newcommand{\Eact} [0] {\texorpdfstring{\ensuremath{E_\text{act,\c}}}{Eact}\xspace}
+\newcommand{\Es} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{E_\text{S}}\xspace}%
+ {\mbox{\ensuremath{E_\text{S}=\meV{#1}}}}%
+}
+\newcommand{\Et} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{E_\text{Tr}}\xspace}%
+ {\mbox{\ensuremath{E_\text{Tr}=\meV{#1}}}}%
+}
+\newcommand{\Ef} [0] {\ensuremath{E_\text{F}}\xspace}
+\newcommand{\Ec} [0] {\ensuremath{E_\text{C}}\xspace}
+\newcommand{\Ev} [0] {\ensuremath{E_\text{V}}\xspace}
+\newcommand{\Egap} [0] {\ensuremath{E_\text{gap}}\xspace}
+\newcommand{\kB} [0] {\ensuremath{k_\text{B}}\xspace}
+\newcommand{\kT} [0] {\ensuremath{\kB T}\xspace}
+\newcommand{\Tm} [0] {\ensuremath{T_\text{m}}\xspace}
+\newcommand{\Tmess} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{T_\text{Mess}}\xspace}%
+ {\mbox{\ensuremath{T_\text{Mess}=\grad{#1}}}}%
+}
+\newcommand{\T} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{T}\xspace}%
+ {\mbox{\ensuremath{T=\grad{#1}}}}%
+}
+\let\Sorg\S
+\renewcommand{\S} [0] {\ensuremath{S}\xspace}
+
+\newcommand{\dos}     [0] {\ensuremath{D}\xspace}
+
+\newcommand{\DopEff} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\eta_\text{dot}}\xspace}%
+ {\mbox{\ensuremath{\eta_\text{dot}=\SI{#1}{\percent}}}}%
+}
+\newcommand{\DopEffLL} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\eta_\text{dot,min}}\xspace}%
+ {\mbox{\ensuremath{\eta_\text{dot,min}=\SI{#1}{\percent}}}}%
+}
+\newcommand{\mob}  [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\mu}\xspace}%
+ {\mbox{\ensuremath{\mu=\cmVs{#1}}}}%
+}
+\newcommand{\mobLL}  [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\mu_\text{min}}\xspace}%
+ {\mbox{\ensuremath{\mu_\text{min}=\cmVs{#1}}}}%
+}
+\newcommand{\mobUL}  [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\mu_\text{max}}\xspace}%
+ {\mbox{\ensuremath{\mu_\text{max}=\cmVs{#1}}}}%
+}
+\newcommand{\n} [0] {\ensuremath{n_\text{e}}\xspace}
+\newcommand{\nLL} [0] {\ensuremath{n_\text{min}}\xspace}
+
+\newcommand{\nM} [0] {\ensuremath{n_\text{Mol}}\xspace}
+\newcommand{\nH} [0] {\ensuremath{n_\text{W}}\xspace}
+\newcommand{\nD} [0] {\ensuremath{n_\text{D}}\xspace}
+
+\newcommand{\fFD}     [0] {\ensuremath{f_\text{FD}}\xspace}
+\newcommand{\gausswidth} [1][\empty]{\ifthenelse{\equal{#1}{\empty}}%
+ {\ensuremath{\sigma_\text{G}}\xspace}%
+ {\mbox{\ensuremath{\sigma_\text{G}=\meV{#1}}}}%
+}
+
+\newcommand{\gausscenter} [0] {\ensuremath{E_\text{G}}\xspace}
+
+\newcommand{\meo} [0] {MeO-TPD\xspace}
+\newcommand{\lili} [0] {BF-DPB\xspace}
+\newcommand{\CSF} [0] {\texorpdfstring{C$_{60}$F$_{36}$}{C60F36}\xspace}
+\newcommand{\FS} [0] {\texorpdfstring{F$_{6}$-TCNNQ}{F6TCNNQ}\xspace}
+
+\newcommand{\AS} [0] {\textcolor{AOB}{luft}\textcolor{DMBI}{stabile}\xspace}
+\newcommand{\Pd} [0] {\textcolor{CrPd}{luft}\textcolor{WPd}{reaktive}\xspace}
+\newcommand{\CS} [0] {\texorpdfstring{C$_{60}$}{C60}\xspace}
+\newcommand{\aob} [0] {\textcolor{AOB}{AOB}\xspace}
+\newcommand{\CrPd}[0] {\textcolor{CrPd}{Cr$_2$(hpp)$_4$}\xspace} %Magenta
+\newcommand{\WPd} [0] {\textcolor{WPd}{W$_2$(hpp)$_4$}\xspace}
+\newcommand{\aobLong} [0] {3,6-bis(dimethylamino)acridine\xspace}
+\newcommand{\dmbiPOHLong}[0] {2-(1,3-dimethyl-1\textsl{H}-benzoimidazol-3-ium-2-yl)phenolatehydrate\xspace}
+\newcommand{\CrPdLong}[0] {tetrakis(1,3,4,6,7,8-hexahydro-2H-pyrimido[1,2-a]pyrimidinato)dichromium (II)\xspace}
+\newcommand{\WPdLong}[0]  {tetrakis(1,3,4,6,7,8-hexahydro-2H-pyrimido[1,2-a]pyrimidinato)ditungsten (II)\xspace}
+\newcommand{\dmbiPOH}[0] {\textcolor{DMBI}{DMBI-POH}\xspace}
+\newcommand{\dmbi}[0] {\dmbiPOH}
+
+% redefine the section
+% \let\sectionorg\section % damit keine endlosschleife erzeugt wird
+% \renewcommand{\section}[1]{\sectionorg{#1}\einzeiler{\huge\bfseries\thesection. #1}}
+% \let\subsectionorg\subsection % damit keine endlosschleife erzeugt wird
+% \renewcommand{\subsection}[1]{\subsectionorg{#1}\einzeiler{\large\bfseries\thesection.\thesubsection{} #1}}
+
+% [1]=width colum1
+% {2}=column1, {3}=column2
+\newdimen\SpalteL%
+\newdimen\SpalteR%
+
+\newcommand{\spalten}[3][0.5\textwidth]{%
+\SpalteL=0mm%
+\SpalteR=0mm%
+\advance\SpalteL by #1 %
+\advance\SpalteR by \textwidth %
+\advance\SpalteR by -\SpalteL %
+\begin{columns}[T]%t/c/T alignment
+\begin{column}{\SpalteL}%
+#2%
+\end{column}%
+\begin{column}{\SpalteR}%
+#3%
+\end{column}%
+\end{columns}%
+}
+
+\newcommand{\spaltenC}[3][\empty]{% Zentriert
+\SpalteL=0mm%
+\SpalteR=0mm%
+\ifthenelse{\equal{#1}{\empty}}%
+{\advance\SpalteL by 0.5\textwidth}
+{\advance\SpalteL by #1}%
+\advance\SpalteR by \textwidth%
+\advance\SpalteR by -\SpalteL%
+\begin{columns}[T]%t/c/T alignment
+\begin{column}{\SpalteL}%
+\centering%
+#2%
+\end{column}%
+\begin{column}{\SpalteR}%
+\centering%
+#3%
+\end{column}%
+\end{columns}%
+}
+
+% \einzeiler[title]{text}
+\newcommand{\einzeiler}[2][\empty]{%
+\begin{frame}[c]
+\begin{center}
+\frametitle{#1\phant} \phant#2\phant
+\end{center}
+\end{frame}
+}
+
+%\todoframe[title]{Slope of Cond}
+\newcommand{\todoframe}[1]{% [2][TODO]
+\einzeiler{\textcolor{red}{\bfseries \Large TODO: #1}}
+}
+
+\newcommand{\todo}[1]{%
+\begin{textblock}{128}[1.0,0.0](128,0)%
+\tiny{\phant\textcolor{yellow}{\hfill TODO: #1}}%
+\end{textblock}
+}
+
+\newcommand{\ton}[1]{%
+\begin{textblock}{128}[0.0,1.0](0,95.5)%
+\tiny{\phant\textcolor{yellow}{Ton: #1}}%
+\end{textblock}
+}
+
+\newcommand{\bildbox}[3][scaled]{% [1]=unscaled  2=file; 3=width
+% Achtung: rounded=true -> box + 4pt in jeder Richtung
+\begin{beamercolorbox}[center,rounded=true,shadow=false,wd=#3]{colorfigurebox}%
+\centering%
+\ifthenelse{\equal{#1}{unscaled}}%
+{\includegraphics[page=1]{#2}}%
+{\includegraphics[page=1,width=#3]{#2}}%
+\end{beamercolorbox}%
+}
+
+\newcommand{\bildframe}[4][scaled]{% [1]=unscaled  2=title 2=file; 3=width
+\begin{frame}{#2}%
+\bildbox[#1]{#3}{#4}%
+\end{frame}%
+}
+
+\newdimen \boxbreite %wird dann gesetzt
+\newcommand{\calcBoxBreite}[1]{% 1=wunschbreite
+\boxbreite=#1%
+\advance\boxbreite by -8pt % leer hier wichtig! rahmen bei rounded=true= 2x 4pt
+%\the \boxbreite%
+}
+
+%calculate box width from given imagewidth
+%\newdimen\boxbreite%
+%\boxbreite=#1
+%\advance\boxbreite by \boxrahmen % leer hier wichtig!
+%\advance\boxbreite by \boxrahmen % leer hier wichtig!
+%Ergebnis: \the\boxbreite
+
+% tableofcontents-Options
+% currentsection
+% currentsubsection
+% firstsection=⟨section number⟩ specifies which section should be numbered as section "1"
+% hideallsubsections
+% hideothersubsections
+% part=⟨part number⟩ causes the table of contents of (part number) to be shown, instead of the
+% table of contents of the current part
+% pausesections pause before each secton
+% pausesubsections pause before each subsecton
+% sectionstyle=show/shaded  -> specifies how sections should be displayed. show,shaded,hide
+% subsectionstyle=show/shaded/hide
+% subsubsectionstyle
+
+% DIES IST DIE URSACHE FÜR Acrobat Absturz!!!
+% \AtBeginSection[] % Do nothing for \section*
+% {%
+% \einzeiler{\textcolor{white}{\bfseries \Large \thesection{}. \secname}}%kein plan warum textcolor entscheident ist...
+% %\thesection{}.
+% }
+% \AtBeginSubsection[] % Do nothing for \subsection*
+% {%
+% \einzeiler{\textcolor{white}{\bfseries \large \thesection{}.\thesubsection{} \subsecname}}%kein plan warum textcolor entscheident ist...
+% %\thesection{}.\thesubsection{}
+% }
+
+% Show the Outline at the beginning of every section
+% \AtBeginSection[] % Do nothing for \section*
+% {
+% \begin{frame}[c]%
+% \bfseries\Large%
+% \begin{beamercolorbox}[wd=1.0\textwidth,ht=2.25ex,dp=1.0ex,center]{framehead}% ht=2.25ex,dp=1.0ex -> always same size
+% %\thesection{}.
+% \secname\phant
+% \end{beamercolorbox}\par
+% % \frametitle{Outline}
+% %\tableofcontents[currentsection] %,hideallsubsections
+% \end{frame}
+% }
+
+% \AtBeginSubsection[] % Do nothing for \subsection*
+% {
+% \begin{frame}[c]%
+% \bfseries\large%
+% \begin{beamercolorbox}[wd=1.0\textwidth,ht=2.25ex,dp=1.0ex,center]{framehead}%
+% %\thesection{}.\thesubsection{}
+% \subsecname\phant
+% \end{beamercolorbox}\par
+% \end{frame}
+% }
+
+% \einzeiler{\textcolor{red}{\bfseries \Large TODO: #1}}

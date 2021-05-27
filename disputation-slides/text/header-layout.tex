@@ -1,0 +1,180 @@
+% THEME
+% Source: http://www2.informatik.hu-berlin.de/~mischulz/beamer.html
+
+\usetheme{Antibes}
+% /usr/share/texmf/tex/latex/beamer/base/themes/theme/
+% AnnArbor , Antibes , Bergen , Berkeley , Berlin , Boadilla , boxes , CambridgeUS , Copenhagen , Darmstadt , default , Dresden , Frankfurt , Goettingen ,Hannover , Ilmenau , JuanLesPins , Luebeck , Madrid , Malmoe , Marburg , Montpellier , PaloAlto , Pittsburgh , Rochester , Singapore , Szeged , Warsaw %\usetheme[height=13mm]{Rochester}
+
+\useinnertheme{rounded}
+% circles , default , inmargin , rectangles , rounded
+
+% Transparent Overlays
+%\setbeamercovered{transparent}
+
+% Disable Navigationselements
+\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\newlength\Logoheight
+\setlength\Logoheight{0.7cm}
+% \pgfdeclareimage[height=\Logoheight,page=1]{logo-tu}{logo-tu_white.pdf}
+% \pgfdeclareimage[height=\Logoheight,page=1]{logo-iapp}{logo-iapp_white.pdf}
+
+% Faktor zur PPT-Vorlage: / 0,1984375      * 5,04
+
+% Template infolines used: /usr/share/texmf/tex/latex/beamer/themes/outer
+\defbeamertemplate{footline}{slides}%
+{%
+\usebeamercolor*{framefoot}%
+\hbox{%
+\hspace*{.02\paperwidth}%
+\begin{beamercolorbox}[wd=.13\paperwidth,left ]{framefoot}\usebeamercolor*[fg]{framefoot}\insertshortdate\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.70\paperwidth,center]{framefoot}\usebeamercolor*[fg]{framefoot}\insertshorttitle\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.13\paperwidth,right]{framefoot}\usebeamercolor*[fg]{framefoot}\insertframenumber\end{beamercolorbox}%\insertpagenumber or \insertframenumber
+}%
+\vspace*{0.5ex}%
+\hbox{%
+\hspace*{.02\paperwidth}%
+\begin{beamercolorbox}[wd=.13\paperwidth,left ]{framefoot}\usebeamercolor*[fg]{framefoot}\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.70\paperwidth,center]{framefoot}\usebeamercolor*[fg]{framefoot}\insertauthor\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.13\paperwidth,right]{framefoot}\usebeamercolor*[fg]{framefoot}\end{beamercolorbox}%
+}%
+\vspace{5pt}%
+}
+
+\defbeamertemplate{footline}{titlepage}{}
+
+\setbeamertemplate{footline}[slides]%
+
+\defbeamertemplate{headline}{titlepage}
+{%
+\vspace{2.3pt}%
+\begin{beamercolorbox}[wd=1.0\paperwidth]{framehead}%,dp=0.1cm
+\hspace*{.02\paperwidth}
+\includegraphics[page=1,height=\Logoheight]{pics/logo-tu_white2.pdf}%
+\hfill%
+\includegraphics[page=1,height=\Logoheight]{pics/logo-iapp_white2.pdf}%
+\hspace*{.02\paperwidth}
+\end{beamercolorbox}%
+\usebeamercolor*{framehead}%
+\vspace*{2pt}%
+\rule{\paperwidth}{0.5pt}\par
+\hbox{%
+\begin{beamercolorbox}[wd=.5\paperwidth,ht=2ex,dp=.5ex,center]{framehead}%
+\usebeamerfont{section in head/foot}\bfseries%
+\phant%
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.5\paperwidth,ht=2ex,dp=.5ex,left]{framehead}%
+\usebeamerfont{subsection in head/foot}%
+\phant%
+\end{beamercolorbox}%
+}\par%
+\rule{\paperwidth}{0.5pt}\par%
+% \vspace*{-2.70pt}% % weil warnung vbox too high
+}%
+
+\defbeamertemplate{headline}{intro}
+{%
+\vspace{2.3pt}%
+\begin{beamercolorbox}[wd=1.0\paperwidth]{framehead}%,dp=0.1cm
+\hspace*{.02\paperwidth}
+\includegraphics[page=1,height=\Logoheight]{pics/logo-tu_white2.pdf}
+\hfill%
+\includegraphics[page=1,height=\Logoheight]{pics/logo-iapp_white2.pdf}
+\hspace*{.02\paperwidth}
+\end{beamercolorbox}%
+\vspace*{2pt}%
+\par
+\usebeamercolor*[fg]{framehead}%
+\rule{\paperwidth}{.5pt}\par%
+\hbox{%
+\begin{beamercolorbox}[wd=.5\paperwidth,ht=2ex,dp=.5ex,center]{framehead}%
+\usebeamerfont{section in head/foot}\bfseries%
+\phant%
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.5\paperwidth,ht=2ex,dp=.5ex,left]{framehead}%
+\usebeamerfont{subsection in head/foot}%
+\phant%
+\end{beamercolorbox}%
+}\par%
+\usebeamercolor*[fg]{framehead}%
+\rule{\paperwidth}{0.5pt}\par%
+% \vspace*{-1.89pt}% % weil warnung vbox too high
+}%
+
+\defbeamertemplate{headline}{slides}
+{%
+\vspace{2.3pt}%
+\begin{beamercolorbox}[wd=1.0\paperwidth]{framehead}%,dp=0.1cm
+\hspace*{.02\paperwidth}
+\includegraphics[page=1,height=\Logoheight]{pics/logo-tu_white2.pdf}
+\hfill%
+\includegraphics[page=1,height=\Logoheight]{pics/logo-iapp_white2.pdf}
+\hspace*{.02\paperwidth}
+\end{beamercolorbox}%
+\vspace*{2pt}%
+\par
+\usebeamercolor*[fg]{framehead}%
+\rule{\paperwidth}{.5pt}\par%
+\hbox{%
+\begin{beamercolorbox}[wd=.5\paperwidth,ht=2ex,dp=.5ex,center]{framehead}%
+\usebeamerfont{section in head/foot}\bfseries%
+\insertsectionnavigationhorizontal{0.5\paperwidth}{\hskip0pt plus1filll}{}%
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.5\paperwidth,ht=2ex,dp=.5ex,left]{framehead}%
+\usebeamerfont{subsection in head/foot}%
+\insertsubsectionnavigationhorizontal{0.5\paperwidth}{}{\hskip0pt plus1filll}%
+\end{beamercolorbox}%
+}\par%
+\usebeamercolor*[fg]{framehead}%
+\rule{\paperwidth}{0.5pt}\par%
+% \vspace*{-1.89pt}% % weil warnung vbox too high
+}%
+
+\defbeamertemplate{frametitle}{slides}
+{%
+\begin{textblock}{87}[0.5,0.0](71,3)% {3} (0,0) % 87mm wide, (pagewidth=128mm), 3mm border to page top, [0.5,0.0] = center in x, top in y
+\centering%
+\insertframetitle\phant% Phant = Zeichen"fp" damit alle Boxen gleich hoch sind
+\end{textblock}%
+\vspace*{-2.6pt}% bei diesem wert ist die erste Zeile einer Folie mit titel an der selben stelle wie die einer Folie ohne titel, warum auch immer
+}
+
+\defbeamertemplate*{title page}{titlepage}{
+\vfill\vfill%
+{
+\usebeamerfont*{title}%
+\inserttitle%
+\par%
+}%
+\vfill%
+{%
+\ifx\insertsubtitle\empty
+\else
+\usebeamerfont*{subtitle}\insertsubtitle
+\vfill
+\vfill
+\scriptsize \insertauthor % by 
+\fi%
+\vfill\scriptsize\insertdatecity, \insertdate
+}%
+\vfill%
+\begin{textblock*}{2cm}[0,0](90mm,28mm) % Seite: 128mm x 96mm
+\includegraphics{pics/titel-spritze.pdf} % width=2cm
+\end{textblock*}
+}
+
+\renewcommand\maketitle{%
+\setbeamertemplate{headline}[titlepage]%
+\setbeamertemplate{footline}[titlepage]%
+\frame{\titlepage}
+\setbeamertemplate{headline}[intro]%
+% \setbeamertemplate{headline}[slides]% Later, manually after Intro
+\setbeamertemplate{footline}[slides] % does not work here, so later...
+\setbeamertemplate{frametitle}[slides]
+\setbeamertemplate{note page}[TorbensNotizen]
+}%
+
+\renewcommand{\footnoterule}{} % remove ruler above footnotes
+
