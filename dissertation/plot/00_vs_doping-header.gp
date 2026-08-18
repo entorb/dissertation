@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 set xlabel axisLabelMR
 set logscale x ; set logscale x2
 #xmin =  ; xmax = 1.0

@@ -30,4 +30,3 @@ plot [left:right] [:] [left:right] \
 , dLeak u (1000./($3+c0C)):(ItoCond($2)) t "leakage" w l ls 20
 
 # d4 u (1000./($1+c0C)):($2) title "0.028 " with points ls 4lw 2 ps 1.5, exp(f4(x)) notitle with lines ls 4 lw 2
-

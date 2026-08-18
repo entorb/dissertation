@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 
 term = "eps"
 color="sw"
@@ -205,4 +204,3 @@ unset multiplot
 unset output
 
 load "footer.gp"
-

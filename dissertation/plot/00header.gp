@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 set size 1,1
 
 # if (term eq "png") set terminal png enhanced giant size 1024,768
@@ -214,7 +213,7 @@ set style line 24 lw 4 ps 2.5*1.1*1.135 pointtype 13 #= quadrat gedreht, muss gr
 set style line 25 lw 4 ps 2.5*1.11 pointtype 7 #= kreis voll
 
 # wie 1-5, nur mit vollen symbolen, aber:
-# p-doping: ls 1, 32, 3, 34 = 
+# p-doping: ls 1, 32, 3, 34 =
 # 1  dreieck oben
 # 32 dreieck oben voll
 # 3  quadrat gerade

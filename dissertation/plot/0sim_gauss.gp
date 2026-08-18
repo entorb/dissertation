@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 
 term = "eps"
 color="sw"
@@ -64,4 +63,3 @@ unset output
 # unset output
 
 load "footer.gp"
-

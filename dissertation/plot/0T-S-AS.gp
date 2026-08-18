@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 # todo überarbeiten via set tmargin at screen etc, siehe 0T-Cond-n3+n4.gp
 
 term = "eps"
@@ -188,4 +187,3 @@ unset multiplot
 unset output
 
 load "footer.gp"
-

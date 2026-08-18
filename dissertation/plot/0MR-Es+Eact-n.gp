@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 
 term="eps"
 color="sw"
@@ -73,7 +72,7 @@ set lmargin at screen marL
 set rmargin at screen marL+plotbreite
 set y2tics format ''
 set ytics format '%g'
-set ylabel axisLabelE ; set ylabel offset 1.0,0.0 
+set ylabel axisLabelE ; set ylabel offset 1.0,0.0
 set xlabel axisLabelMR offset screen 0.5*plotbreite, character 0.5
 
 plot \

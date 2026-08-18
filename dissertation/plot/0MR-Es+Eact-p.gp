@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 
 term="eps"
 color="sw"

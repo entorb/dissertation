@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 
 term="eps"
 color="sw"
@@ -98,7 +97,7 @@ set bmargin at screen 1.0-marT-2*plotY-plotDY
 unset ylabel; set ytics format ""
 unset xlabel; set xtics format "%g"
 load "00_vs_doping-header.gp"
-unset x2label; 
+unset x2label;
 unset y2label;
 
 set key l b at first 0.03, first 50 invert width -2
