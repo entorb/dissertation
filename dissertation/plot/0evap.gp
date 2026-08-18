@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 
 term="eps"
 color="sw"
@@ -43,7 +42,7 @@ set label 3 "Time" at 12.5, graph 0.10 center
 
 # Strich-Punkt
 if (color eq "color") set style line  3 lt 5 linecolor rgb "dark-magenta"
-if (color eq "sw")    set style line  3 lt 3 
+if (color eq "sw")    set style line  3 lt 3
 
 # s in S/cm = I/V * d/l * 1 / thickness * 1/100
 V=10

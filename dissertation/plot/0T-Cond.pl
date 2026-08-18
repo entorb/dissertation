@@ -124,4 +124,3 @@ close FH;
 system "gnuplot temp.gp";
 $_ = 'fit.log'; unlink $_ if -f $_;
 #$_ = 'temp.gp'; unlink $_ if -f $_;
-

@@ -178,4 +178,3 @@ close FH;
 
 system "gnuplot temp.gp";
 #$_ = 'temp.gp'; unlink $_ if -f $_;
-

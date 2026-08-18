@@ -7,7 +7,7 @@
 %% merlin.mbs  (with options: `alph,alf-1,seq-no,vonx,nm-init,ed-au,ed-rev,nmft,nmft-sc,nmfted,nmand-rm,xmth,tit-it,atit-u,jttl-rm,volp-com,jpg-1,num-xser,jnm-x,pub-par,isbn,edpar,bkedcap,edby,blk-com,fin-bare,pp,abr,mth-bare,ord,amper,and-xcom,etal-it,url,url-nl,nfss,')
 %% ----------------------------------------
 %% ***  ***
-%% 
+%%
 %% Copyright 1994-2011 Patrick W Daly
  % ===============================================================
  % IMPORTANT NOTICE:

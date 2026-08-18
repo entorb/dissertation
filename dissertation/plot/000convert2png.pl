@@ -11,6 +11,6 @@ foreach my $f (@L) {
   print "$f\n";
   my $n = $f;
   $n =~ s/\.pdf/.png/;
-  $_ = "convert -density $den -trim +repage $f $n" ; # -type Palette 
+  $_ = "convert -density $den -trim +repage $f $n" ; # -type Palette
   system ($_);
   }

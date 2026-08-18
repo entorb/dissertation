@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 
 term="eps"
 color="sw"
@@ -93,4 +92,3 @@ unset output
 #,(feav(x)+yOffset) lt 2 t "average"
 
 load "footer.gp"
-

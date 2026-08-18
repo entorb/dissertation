@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 # todo überarbeiten via set tmargin at screen etc, siehe 0T-Cond-n3+n4.gp
 
 term = "eps"
@@ -199,4 +198,3 @@ unset output
 # end ../data/n4_C60+Cr2hpp4
 
 load "footer.gp"
-

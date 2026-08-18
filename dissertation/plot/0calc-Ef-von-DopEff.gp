@@ -1,4 +1,3 @@
-#!/usr/bin/gnuplot
 
 term="eps"
 color="sw"
@@ -37,8 +36,8 @@ set arrow 1 nohead from graph 0.3333,graph 0 rto graph 0,0.2 ls 50 front
 set label 1 "{/URWClassico-Ita DOS(E)}" at graph 0.16,graph .1 center font ",18"
 if (color eq "color") set label 1 textcolor rgb "blue"
 if (color eq "sw") set label 1 textcolor rgb "gray20"
-if (color eq "color") set arrow 1 lc rgb "blue" 
-if (color eq "sw") set arrow 1 lc rgb "gray20" 
+if (color eq "color") set arrow 1 lc rgb "blue"
+if (color eq "sw") set arrow 1 lc rgb "gray20"
 
 set yrange  [0:-500]
 set y2range [0:-500]
@@ -97,8 +96,8 @@ set ylabel axisLabelEs
 # set arrow 1 from graph 0.3333,graph 0 rto graph 0,first -25
 # set arrow 2 nohead from graph 0.0,first -75 rto graph 0.10,0 ls 50 lc rgb "blue" front
 set arrow 2 nohead from graph 0.0,first -75 rto graph 0.03,0 ls 50 front
-if (color eq "color") set arrow 2 lc rgb "blue" 
-if (color eq "sw") set arrow 2 lc rgb "gray20" 
+if (color eq "color") set arrow 2 lc rgb "blue"
+if (color eq "sw") set arrow 2 lc rgb "gray20"
 set label 1 at graph 0.08,graph 0.06
 set output "calc-Es-von-DopEff" . ".gp" . term
 # set grid front
